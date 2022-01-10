@@ -8,6 +8,7 @@ use App\Models\AttractionImage;
 use App\Models\AttractionCategory;
 use Illuminate\Support\Facades\Storage;
 
+
 class AttractionController extends Controller
 {
     /**
@@ -52,23 +53,24 @@ class AttractionController extends Controller
             'image_url' => $path,
             'content' => $request->content,
             'category_id' => 1,
-            'distance'=> $request->distance,
-            'direction'=> $request->direction,
-            
+            'distance' => $request->distance,
+            'direction' => $request->direction,
+
         ]);
+
         // 儲存其他圖片，利用迴圈讀出檔案
         if ($request->hasFile('image_urls')) {
             foreach ($request->image_urls as $image_url) {
-                $path = Storage::put('/attraction', $image_url);
+                $otherPath = Storage::put('/attraction', $image_url);
 
                 AttractionImage::create([
                     'attraction_id' => $attraction->id,
-                    'image_url' => $path
+                    'image_url' => $otherPath
                 ]);
             }
         }
 
-        return redirect()->route('');
+        return redirect()->route('attractions.index');
     }
 
     /**
@@ -93,7 +95,7 @@ class AttractionController extends Controller
         $attractionCategories = AttractionCategory::get();
         $attraction = Attraction::with('attractionImages')->find($id);
 
-        return view('admin.attraction.edit', compact('attractionCategories','attraction'));
+        return view('admin.attraction.edit', compact('attractionCategories', 'attraction'));
     }
 
     /**
@@ -122,8 +124,8 @@ class AttractionController extends Controller
             'image_url' => $path,
             'content' => $request->content,
             'category_id' => 1,
-            'distance'=> $request->distance,
-            'direction'=> $request->direction,
+            'distance' => $request->distance,
+            'direction' => $request->direction,
         ]);
         // 判斷是否有上傳新的其他圖片
         if ($request->hasFile('image_urls')) {

@@ -9,7 +9,6 @@ class AttractionImage extends Model
 {
     use HasFactory;
 
-    protected $table = 'attractions';
-    protected $fillable =['name','content','image_url','category_id','distance','direction'];
-
+    protected $table = 'attraction_images';
+    protected $fillable = ['image_url', 'attraction_id'];
 }

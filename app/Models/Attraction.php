@@ -9,6 +9,9 @@ class Attraction extends Model
 {
     use HasFactory;
     protected $table = 'attractions';
-    protected $fillable =['name','content','image_url','category_id','distance','direction'];
-
+    protected $fillable = ['name', 'content', 'image_url', 'category_id', 'distance', 'direction'];
+    public function attractionCategory()
+    {
+        return $this->belongsTo(AttractionCategory::class, "category_id", 'id');
+    }
 }
