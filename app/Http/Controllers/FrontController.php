@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class FrontController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,20 +23,8 @@ class ContactController extends Controller
      */
     public function create()
     {
-        public function contact(Request $request)
-        {
-          
-            $contact = Contact::create([
-                'name' => $request->name,
-                'phone' => $request->phone,
-                'email' => $request->email,
-                'content' => $request->content
-            ]);
-    
-            Mail::to($contact->email)->send(new ContactNotify($contact));
-            
-            return redirect()->route('index');
-         }
+        //
+    }
 
     /**
      * Store a newly created resource in storage.

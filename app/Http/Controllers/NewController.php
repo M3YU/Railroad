@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class NewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $news = News::get();
+        
+        return view('admin.news.index',compact('news'));
     }
 
     /**
@@ -23,20 +25,8 @@ class ContactController extends Controller
      */
     public function create()
     {
-        public function contact(Request $request)
-        {
-          
-            $contact = Contact::create([
-                'name' => $request->name,
-                'phone' => $request->phone,
-                'email' => $request->email,
-                'content' => $request->content
-            ]);
-    
-            Mail::to($contact->email)->send(new ContactNotify($contact));
-            
-            return redirect()->route('index');
-         }
+        return view('admin.news.create');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -46,7 +36,9 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        News::create($request->all());
+        
+        return redirect()->route('news.index');
     }
 
     /**
@@ -57,7 +49,9 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+        News::create($request->all());
+        
+        return redirect()->route('news.index');
     }
 
     /**
@@ -68,7 +62,9 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        //
+        $news = News::find($id);
+
+        return view('admin.news.edit',compact('news'));
     }
 
     /**
@@ -80,7 +76,9 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        News::find($id)->update($request->all());
+
+        return redirect()->route('news.index');
     }
 
     /**
@@ -91,6 +89,8 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        News::find($id)->delete();
+        
+        return redirect()->route('news.index');
     }
 }
