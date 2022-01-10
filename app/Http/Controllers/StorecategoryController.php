@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\StoreCategory;
 
-class StorecategoryController extends Controller
+class StoreCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class StorecategoryController extends Controller
      */
     public function index()
     {
-        //
+        $StoreCategories = StoreCategory::get();
+
+        return view('',compact(''));
     }
 
     /**
@@ -23,7 +26,7 @@ class StorecategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('');
     }
 
     /**
@@ -34,7 +37,9 @@ class StorecategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        StoreCategory::create($request->all());
+
+        return redirect()->route('');
     }
 
     /**
@@ -56,7 +61,10 @@ class StorecategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $StoreCategory = StoreCategory::find($id);
+
+        return view('',compact(''));
+
     }
 
     /**
@@ -68,7 +76,9 @@ class StorecategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        StoreCategory::find($id)->update($request->all());
+
+        return redirect()->route('');
     }
 
     /**
@@ -79,6 +89,23 @@ class StorecategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $StoreCategory = StoreCategory::with('')->find($id);
+        // 如果有產品
+        if($StoreCategory->products->count()){
+            return redirect()
+            ->route('')
+            ->with([
+                'message'=>$StoreCategory->name.'類別尚有'.$StoreCategory->Stores->count().'個產品，無法刪除。',
+                'color'=>'alert-danger'
+            ]);
+        }
+        
+        $StoreCategory->delete();
+        return redirect()
+        ->route('')
+        ->with([
+            'message'=>'刪除成功!!',
+            'color'=>'alert-success'
+        ]);
     }
 }

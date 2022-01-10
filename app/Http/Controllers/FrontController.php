@@ -81,4 +81,21 @@ class FrontController extends Controller
     {
         //
     }
+
+//     public function  (Request $request){
+//     // 分類
+//  $productCategories = ProductCategory::get();
+
+// if($request->category_id){
+// 	$products = Product::where('product_category_id',$request->category_id)
+// }else{
+// 	$products = Product::get();
+// }
+
+// return view('',compact('',''));
+
+    function news()
+    {
+        return view('');
+    }
 }

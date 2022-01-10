@@ -62,7 +62,6 @@ Route::resource('/journey',Controller::class);
 
 
 
-
 //服務中心
 Route::prefix('Contacts')->group(function(){
     Route::get('/',[ContactController::class,'ContactsList'])->name('contacts.list');
@@ -85,6 +84,13 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     // 自訂行程
 	Route::resource('/Member-itinerary',Controller::class);
+
+    
+    Route::prefix('/admin')->group(function(){
+        //沿途景點
+        Route::resource('/attractions',AttractionController::class);
+       
+    });
 
 
 });
