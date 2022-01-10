@@ -87,9 +87,11 @@ use App\Http\Controllers\AttractionCategoryController;
 Route::prefix('/admin')->group(function () {
     //沿途景點
     Route::resource('/attractions', AttractionController::class);
-    Route::resource('/attraction_categories', AttractionController::class);
-    Route::resource('/stores', AttractionController::class);
-    Route::resource('/store-categories', AttractionController::class);
+    Route::resource('/attraction_categories', AttractionCategoryController::class);
+    
+    Route::resource('/stores', StoreController::class);
+    Route::resource('/store-categories', StoreCategoryController::class);
+    Route::delete('/attraction_image',[AttractionController::class,'imageDelete'])->name('attraction.image-delete');
 });
 
 

@@ -13,4 +13,8 @@ class AttractionCategory extends Model
     protected $table = 'attraction_categories';
     protected $fillable =['name'];
 
+    public function attractions()
+    {
+        return $this->hasMany(Attraction::class,'category_id','id');
+    }
 }

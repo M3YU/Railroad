@@ -17,7 +17,7 @@
             <div class="card">
                 <h2 class="card-header lh-1 pt-3 pb-2">產品類別管理</h2>
                 <div class="form-group pt-4 px-3 m-0">
-                    <a href="{{route('product-categories.create')}}" class="btn btn-success">新增類別</a>
+                    <a href="{{route('attraction_categories.create')}}" class="btn btn-success">新增類別</a>
                 </div>
                 <hr>
                 <div class="card-body">
@@ -29,13 +29,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($productCategories as $productCategory)
+                            @foreach ($attractionCategories as $attractionCategory)
                                 <tr>
-                                    <td>{{$productCategory->name}}</td>
+                                    <td>{{$attractionCategory->name}}</td>
                                     <td>
-                                        <a href="{{route('product-categories.edit',['product_category'=>$productCategory->id])}}" class="btn btn-primary">編輯</a>
+                                        <a href="{{route('attraction_categories.edit',['attraction_category'=>$attractionCategory->id])}}" class="btn btn-primary">編輯</a>
                                         <button class="btn btn-danger delete-btn">刪除</button>
-                                        <form class="d-none" action="{{route('product-categories.destroy',['product_category'=>$productCategory->id])}}" method="post">
+                                        <form class="d-none" action="{{route('attraction_categories.destroy',['attraction_category'=>$attractionCategory->id])}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                         </form>
@@ -52,6 +52,7 @@
 @endsection
 
 @section('js')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script>
     // 初始化datatable
@@ -64,6 +65,7 @@
         });
     });
     const deleteElements = document.querySelectorAll('.delete-btn');
+    console.log(deleteElements);
     deleteElements.forEach(function(deleteElement){
         deleteElement.addEventListener('click',function () {
             if(confirm('你確定要刪除這筆資料嗎？')){

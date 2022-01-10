@@ -14,4 +14,9 @@ class Attraction extends Model
     {
         return $this->belongsTo(AttractionCategory::class, "category_id", 'id');
     }
+
+    public function attractionImage()
+    {
+        return $this->hasMany(AttractionImage::class,'attraction_id','id');
+    }
 }

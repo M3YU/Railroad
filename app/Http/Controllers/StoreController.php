@@ -17,9 +17,9 @@ class StoreController extends Controller
      */
     public function index()
     {
-        $stores = Store::with('')->orderBy('', '')->get();
+        $store = Store::with('storeCategory')->get();
 
-        return view('', compact(''));
+        return view('admin.store.index', compact('stores'));
     }
 
     /**
@@ -30,7 +30,7 @@ class StoreController extends Controller
     public function create()
     {
         $storeCategories = StoreCategory::get();
-        return view('', compact(''));
+        return view('admin.store.create', compact('storeCategories'));
     }
 
     /**
@@ -41,31 +41,36 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
+
         // 判斷主要圖片有沒有上傳
         if ($request->hasFile('image_url')) {
             $path = Storage::put('/store', $request->image_url);
         }
-        // 建立商店
+        // 建立沿途風景
         $store = Store::create([
-            'store_category_id' => $request->store_category_id,
             'name' => $request->name,
-            'price' => $request->price,
             'image_url' => $path,
-            'description' => $request->description,
+            'content' => $request->content,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'category_id' => $request->category_id,
+            'distance' => $request->distance,
+            'direction' => $request->direction,
         ]);
+
         // 儲存其他圖片，利用迴圈讀出檔案
         if ($request->hasFile('image_urls')) {
             foreach ($request->image_urls as $image_url) {
-                $path = Storage::put('/store', $image_url);
+                $otherPath = Storage::put('/store', $image_url);
 
                 StoreImage::create([
                     'store_id' => $store->id,
-                    'image_url' => $path
+                    'image_url' => $otherPath
                 ]);
             }
         }
 
-        return redirect()->route('');
+        return redirect()->route('stores.index');
     }
 
     /**
@@ -88,9 +93,9 @@ class StoreController extends Controller
     public function edit($id)
     {
         $storeCategories = StoreCategory::get();
-        $store = Store::with('')->find($id);
+        $store = Store::with('storeImages')->find($id);
 
-        return view('', compact('', ''));
+        return view('admin.store.edit', compact('storeCategories', 'store'));
     }
 
     /**
@@ -113,13 +118,14 @@ class StoreController extends Controller
             // 沿用舊圖片
             $path = $store->image_url;
         }
-        // 更新商店資料
+        // 更新沿途風景
         $store->update([
-            'store_category_id' => $request->store_category_id,
             'name' => $request->name,
-            'price' => $request->price,
             'image_url' => $path,
-            'description' => $request->description,
+            'content' => $request->content,
+            'category_id' => 1,
+            'distance' => $request->distance,
+            'direction' => $request->direction,
         ]);
         // 判斷是否有上傳新的其他圖片
         if ($request->hasFile('image_urls')) {
@@ -133,7 +139,7 @@ class StoreController extends Controller
             }
         }
 
-        return redirect()->route('.');
+        return redirect()->route('');
     }
 
     /**
@@ -149,16 +155,16 @@ class StoreController extends Controller
         Storage::delete($store->image_url);
 
         // 利用迴圈將每一張圖片刪除
-        foreach ($store->storeImages as $storeImage) {
+        foreach ($store->storeImage as $storeImage) {
             // 刪除其他圖片檔案
             Storage::delete($storeImage->image_url);
             // 刪除圖片資料
             $storeImage->delete();
         }
-        // 刪除商店資料
+        // 刪除風景資料
         $store->delete();
 
-        return redirect()->route('.');
+        return redirect()->route('');
     }
 
     public function imageDelete(Request $request)

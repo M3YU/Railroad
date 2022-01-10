@@ -14,9 +14,9 @@ class AttractionCategoryController extends Controller
      */
     public function index()
     {
-        $AttractionCategories = AttractionCategory::get();
+        $attractionCategories = AttractionCategory::get();
 
-        return view('',compact(''));
+        return view('admin.attraction-category.index',compact('attractionCategories'));
 
     }
 
@@ -27,7 +27,7 @@ class AttractionCategoryController extends Controller
      */
     public function create()
     {
-        return view('');
+        return view('admin.attraction-category.create');
     }
 
     /**
@@ -40,7 +40,7 @@ class AttractionCategoryController extends Controller
     {
         AttractionCategory::create($request->all());
 
-        return redirect()->route('');
+        return redirect()->route('attraction_categories.index');
     }
 
     /**
@@ -62,9 +62,9 @@ class AttractionCategoryController extends Controller
      */
     public function edit($id)
     {
-        $AttractionCategory = AttractionCategory::find($id);
+        $attractionCategory = AttractionCategory::find($id);
 
-        return view('',compact(''));
+        return view('admin.attraction-category.edit',compact('attractionCategory'));
     }
 
     /**
@@ -78,7 +78,7 @@ class AttractionCategoryController extends Controller
     {
         AttractionCategory::find($id)->update($request->all());
 
-        return redirect()->route('');
+        return redirect()->route('attraction_categories.index');
     }
 
     /**
@@ -89,20 +89,22 @@ class AttractionCategoryController extends Controller
      */
     public function destroy($id)
     {
-        $AttractionCategory = AttractionCategory::with('')->find($id);
+        
+        $attractionCategory = AttractionCategory::with('attractions')->find($id);
+        
         // 如果有產品
-        if($AttractionCategory->products->count()){
+        if($attractionCategory->attractions->count()){
             return redirect()
-            ->route('')
+            ->route('attraction_categories.index')
             ->with([
-                'message'=>$AttractionCategory->name.'類別尚有'.$AttractionCategory->Attractions->count().'個產品，無法刪除。',
+                'message'=>$attractionCategory->name.'類別尚有'.$attractionCategory->attractions->count().'個產品，無法刪除。',
                 'color'=>'alert-danger'
             ]);
         }
         
-        $AttractionCategory->delete();
+        $attractionCategory->delete();
         return redirect()
-        ->route('')
+        ->route('attraction_categories.index')
         ->with([
             'message'=>'刪除成功!!',
             'color'=>'alert-success'

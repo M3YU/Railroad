@@ -93,7 +93,7 @@ class AttractionController extends Controller
     public function edit($id)
     {
         $attractionCategories = AttractionCategory::get();
-        $attraction = Attraction::with('attractionImages')->find($id);
+        $attraction = Attraction::with('attractionImage')->find($id);
 
         return view('admin.attraction.edit', compact('attractionCategories', 'attraction'));
     }
@@ -139,7 +139,7 @@ class AttractionController extends Controller
             }
         }
 
-        return redirect()->route('');
+        return redirect()->route('attractions.index');
     }
 
     /**
@@ -150,8 +150,9 @@ class AttractionController extends Controller
      */
     public function destroy($id)
     {
-        $attraction = Attraction::with('attractionImages')->find($id);
+        $attraction = Attraction::with('attractionImage')->find($id);
         // 刪除主要圖片檔案
+        // dd($attraction);
         Storage::delete($attraction->image_url);
 
         // 利用迴圈將每一張圖片刪除
@@ -164,7 +165,7 @@ class AttractionController extends Controller
         // 刪除風景資料
         $attraction->delete();
 
-        return redirect()->route('');
+        return redirect()->route('attractions.index');
     }
 
     public function imageDelete(Request $request)

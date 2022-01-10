@@ -70,6 +70,14 @@
                                     required>
                             </div>
                         </div>
+                        <div class="form-group row py-2">
+                            <label for="price" class="col-sm-2 col-form-label">價格<span
+                                    class="text-danger">*</span></label>
+                            <div class="col-sm-10">
+                                <input type="number" min="0" class="form-control" id="price" name="price"
+                                    value="{{$attraction->price}}" required>
+                            </div>
+                        </div>
                         <hr>
                         <div class="form-group row py-2">
                             <label for="image-url" class="col-sm-2 col-form-label">主要圖片</label>
@@ -88,10 +96,10 @@
                         <div class="form-group row py-2">
                             <label for="image-urls" class="col-sm-2 col-form-label">其他圖片</label>
                             <div class="col-sm-10 row">
-                                @foreach ($attraction->attractionImage as $attractionImage)
+                                @foreach ($attraction->attractionImages as $attractionImage)
                                 <div class="img"
                                     style="background-image: url({{Storage::url($attractionImage->image_url)}})">
-                                    <div class="delete-btn" data-id="{{$attractionImage->id}} "></div>
+                                    <div class="delete-btn" data-id="{{$attractionImage->id}}">X</div>
                                 </div>
                                 @endforeach
                             </div>
@@ -105,29 +113,13 @@
                         </div>
                         <hr>
                         <div class="form-group row py-2">
-                            <label for="content" class="col-sm-2 col-form-label">描述<span
+                            <label for="description" class="col-sm-2 col-form-label">描述<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="content" id="content" rows="5"
-                                    required>{{$attraction->content}}</textarea>
+                                <textarea class="form-control" name="description" id="description" rows="5"
+                                    required>{{$attraction->description}}</textarea>
                             </div>
                         </div>
-
-                        <div class="form-group row py-2">
-                            <label for="distance" class="col-sm-2 col-form-label">距離<span
-                                    class="text-danger">*</span></label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" name="distance" id="distance" rows="5"
-                                    required>{{$attraction->distance}}</textarea>
-                            </div>
-                        </div>
-                        <div class="form-group row py-2">
-                            <label for="direction" class="col-sm-2 col-form-label">方向<span
-                                    class="text-danger">*</span></label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" name="direction" id="direction" rows="5"
-                                    required>{{$attraction->direction}}</textarea>
-                            </div>
                         <div class="form-group row py-2">
                             <div class="col-sm-12 text-center">
                                 <button type="submit" class="btn btn-primary">更新</button>

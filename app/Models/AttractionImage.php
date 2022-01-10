@@ -11,4 +11,10 @@ class AttractionImage extends Model
 
     protected $table = 'attraction_images';
     protected $fillable = ['image_url', 'attraction_id'];
+    
+    public function attraction()
+    {
+        return $this->belongsTo(Attraction::class, "attraction_id", 'id');
+    }
+
 }
