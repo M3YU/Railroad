@@ -10,7 +10,7 @@ class AttractionCategory extends Model
 
     use HasFactory;
     //
-    protected $table = 'attractioncategories';
+    protected $table = 'attraction_categories';
     protected $fillable =['name'];
 
 }

@@ -18,12 +18,12 @@
                 <h2 class="card-header pt-3 pb-2">產品 - 新增</h2>
 
                 <div class="card-body">
-                    <form method="POST" action="" enctype="multipart/form-data">                    
+                    <form method="POST" action="{{route('attractions.index')}}" enctype="multipart/form-data">                    
                         @csrf
                         <div class="form-group row py-2">
                             <label for="category" class="col-sm-2 col-form-label">類別<span class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="attraction_category_id" id="category"  required>
+                                <select class="form-control" name="attraction_category_id" id="category"  >
                                     <option value="" hidden>請選擇類別</option>
                                     @foreach ($attractionCategories as $attractionCategory)                                
                                     <option value="{{$attractionCategory->id}}">{{$attractionCategory->name}}</option>
@@ -35,12 +35,6 @@
                             <label for="name" class="col-sm-2 col-form-label">名稱<span class="text-danger">*</span></label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="name" name="name" required>
-                            </div>
-                        </div>
-                        <div class="form-group row py-2">
-                            <label for="price" class="col-sm-2 col-form-label">價格<span class="text-danger">*</span></label>
-                            <div class="col-sm-10">
-                                <input type="number" min="0" class="form-control" id="price" name="price" required>
                             </div>
                         </div>
                         <div class="form-group row py-2">
@@ -56,9 +50,21 @@
                             </div>
                         </div>
                         <div class="form-group row py-2">
-                            <label for="description" class="col-sm-2 col-form-label">描述<span class="text-danger">*</span></label>
+                            <label for="content" class="col-sm-2 col-form-label">描述<span class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="description" id="description" rows="5" required></textarea>
+                                <textarea class="form-control" name="content" id="content" rows="5" required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row py-2">
+                            <label for="distance" class="col-sm-2 col-form-label">距離<span class="text-danger">*</span></label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="distance" id="distance" rows="5" required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row py-2">
+                            <label for="direction" class="col-sm-2 col-form-label">方向<span class="text-danger">*</span></label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="direction" id="direction" rows="5" required></textarea>
                             </div>
                         </div>
                         <div class="form-group row py-2">

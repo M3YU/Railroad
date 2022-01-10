@@ -22,61 +22,61 @@ use App\Http\Controllers\AttractionCategoryController;
 */
 
 
-//形象頁
-Route::get('railroad', [FrontController::class, 'railroad'])->name('Railroad.Page');
+// //形象頁
+// Route::get('railroad', [FrontController::class, 'railroad'])->name('Railroad.Page');
 
-//首頁
-Route::get('/', [FrontController::class, 'index'])->name('index');
-
-
-//沿途景點
-Route::resource('/attractions', AttractionController::class);
-
-//景點分類
-Route::resource('/attraction-categories', AttractionCategoryController::class);
+// //首頁
+// Route::get('/', [FrontController::class, 'index'])->name('index');
 
 
-//鄰近商店
-Route::resource('/stores', StoreController::class);
+// //沿途景點
+// Route::resource('/attractions', AttractionController::class);
+
+// //景點分類
+// Route::resource('/attraction-categories', AttractionCategoryController::class);
 
 
-//揪一起騎
-Route::resource('/teams', TeamController::class);
-
-//揪成會員(已定義)
-
-Route::prefix('/user')->group(function () {
-    Route::get('/', [Controller::class, 'index'])->name('user.index');
-    Route::get('/create', [Controller::class, 'create'])->name('user.create');
-    Route::post('/store', [Controller::class, 'store'])->name('user.store');
-    Route::get('/{id}/edit', [Controller::class, 'edit'])->name('user.edit');
-    Route::patch('/{id}', [Controller::class, 'update'])->name('user.update');
-});
-
-//行程(未定義)
-Route::resource('/journey', Controller::class);
+// //鄰近商店
+// Route::resource('/stores', StoreController::class);
 
 
+// //揪一起騎
+// Route::resource('/teams', TeamController::class);
 
-//服務中心
-Route::prefix('Contacts')->group(function () {
-    Route::get('/', [ContactController::class, 'ContactsList'])->name('contacts.list');
-});
+// //揪成會員(已定義)
+
+// Route::prefix('/user')->group(function () {
+//     Route::get('/', [Controller::class, 'index'])->name('user.index');
+//     Route::get('/create', [Controller::class, 'create'])->name('user.create');
+//     Route::post('/store', [Controller::class, 'store'])->name('user.store');
+//     Route::get('/{id}/edit', [Controller::class, 'edit'])->name('user.edit');
+//     Route::patch('/{id}', [Controller::class, 'update'])->name('user.update');
+// });
+
+// //行程(未定義)
+// Route::resource('/journey', Controller::class);
 
 
 
-//最新消息
-Route::resource('/news', NewController::class);
-
-//會員行程(未定義)
-Route::resource('/uese-itinerary', Controller::class);
-
-// 自訂行程
-Route::resource('/Member-itinerary', Controller::class);
+// //服務中心
+// Route::prefix('Contacts')->group(function () {
+//     Route::get('/', [ContactController::class, 'ContactsList'])->name('contacts.list');
+// });
 
 
 
-//上面前台
+// //最新消息
+// Route::resource('/news', NewController::class);
+
+// //會員行程(未定義)
+// Route::resource('/uese-itinerary', Controller::class);
+
+// // 自訂行程
+// Route::resource('/Member-itinerary', Controller::class);
+
+
+
+// //上面前台
 
 
 // //////////////////////////////////////////////////////////// //

@@ -17,9 +17,9 @@ class AttractionController extends Controller
      */
     public function index()
     {
-        $Attractions = Attraction::with('attractionCategory')->get();
+        $attractions = Attraction::with('attractionCategory')->get();
 
-        return view('', compact('attractions'));
+        return view('admin.attraction.index', compact('attractions'));
     }
 
     /**
@@ -30,7 +30,7 @@ class AttractionController extends Controller
     public function create()
     {
         $attractionCategories = AttractionCategory::get();
-        return view('', compact('attractionCategories'));
+        return view('admin.attraction.create', compact('attractionCategories'));
     }
 
     /**
@@ -41,17 +41,20 @@ class AttractionController extends Controller
      */
     public function store(Request $request)
     {
+
         // 判斷主要圖片有沒有上傳
         if ($request->hasFile('image_url')) {
             $path = Storage::put('/attraction', $request->image_url);
         }
         // 建立沿途風景
         $attraction = Attraction::create([
-            'attraction_category_id' => $request->attraction_category_id,
             'name' => $request->name,
-            'price' => $request->price,
             'image_url' => $path,
-            'description' => $request->description,
+            'content' => $request->content,
+            'category_id' => 1,
+            'distance'=> $request->distance,
+            'direction'=> $request->direction,
+            
         ]);
         // 儲存其他圖片，利用迴圈讀出檔案
         if ($request->hasFile('image_urls')) {
@@ -90,7 +93,7 @@ class AttractionController extends Controller
         $attractionCategories = AttractionCategory::get();
         $attraction = Attraction::with('attractionImages')->find($id);
 
-        return view('', compact('', ''));
+        return view('admin.attraction.edit', compact('attractionCategories','attraction'));
     }
 
     /**
@@ -115,11 +118,12 @@ class AttractionController extends Controller
         }
         // 更新沿途風景
         $attraction->update([
-            'attraction_category_id' => $request->attraction_category_id,
             'name' => $request->name,
-            'price' => $request->price,
             'image_url' => $path,
-            'description' => $request->description,
+            'content' => $request->content,
+            'category_id' => 1,
+            'distance'=> $request->distance,
+            'direction'=> $request->direction,
         ]);
         // 判斷是否有上傳新的其他圖片
         if ($request->hasFile('image_urls')) {
