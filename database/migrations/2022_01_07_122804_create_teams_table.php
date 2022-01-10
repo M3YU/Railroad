@@ -21,7 +21,6 @@ class CreateTeamsTable extends Migration
             $table->date('start_time');
             $table->date('end_time');
             $table->longText('content');
-            $table->string('created_at');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAttractionTable extends Migration
+class CreateRepliesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateAttractionTable extends Migration
      */
     public function up()
     {
-        Schema::create('attraction', function (Blueprint $table) {
+        Schema::create('replies', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->longText('content');
-            $table->longText('image_url');
-            $table->string('category_id');
-            $table->string('distance');
-            $table->string('direction');
+            $table->string('team_id');
+            $table->string('user_id');
+            $table->longText('comment');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreateAttractionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attraction');
+        Schema::dropIfExists('replies');
     }
 }
