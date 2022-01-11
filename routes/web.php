@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NewController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\AttractionCategoryController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\StoreCategoryController;
+use App\Http\Controllers\NewsController;
 
 
 
@@ -88,13 +88,15 @@ Route::prefix('/admin')->group(function () {
     //沿途景點
     Route::resource('/attractions', AttractionController::class);
     Route::resource('/attraction_categories', AttractionCategoryController::class);
-
+    Route::delete('/attraction_image',[AttractionController::class,'imageDelete'])->name('attraction.image-delete');
+    
     Route::resource('/stores', StoreController::class);
     Route::resource('/store_categories',StoreCategoryController::class);
-    
-
-    Route::delete('/attraction_image',[AttractionController::class,'imageDelete'])->name('attraction.image-delete');
     Route::delete('/store_image',[StoreController::class,'storesimageDelete'])->name('stores.image-delete');
+    Route::resource('/news', NewsController::class);
+    Route::get('/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
+    Route::patch('/{id}', [NewsController::class, 'update'])->name('news.update');
+    Route::delete('/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
 });
 
 
