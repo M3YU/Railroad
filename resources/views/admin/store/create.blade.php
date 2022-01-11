@@ -18,16 +18,16 @@
                 <h2 class="card-header pt-3 pb-2">產品 - 新增</h2>
 
                 <div class="card-body">
-                    <form method="POST" action="{{route('attractions.store')}}" enctype="multipart/form-data">
+                    <form method="POST" action="{{route('stores.store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row py-2">
                             <label for="category" class="col-sm-2 col-form-label">類別<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="attraction_category_id" id="category">
+                                <select class="form-control" name="store_category_id" id="category">
                                     <option value="" hidden>請選擇類別</option>
-                                    @foreach ($attractionCategories as $attractionCategory)
-                                    <option value="{{$attractionCategory->id}}">{{$attractionCategory->name}}</option>
+                                    @foreach ($storeCategories as $storeCategory)
+                                    <option value="{{$storeCategory->id}}">{{$storeCategory->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -37,6 +37,13 @@
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                        </div>
+                        <div class="form-group row py-2">
+                            <label for="phone" class="col-sm-2 col-form-label">電話<span
+                                    class="text-danger">*</span></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="phone" name="phone" required>
                             </div>
                         </div>
                         <div class="form-group row py-2">
@@ -74,6 +81,14 @@
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
                                 <textarea class="form-control" name="direction" id="direction" rows="5"
+                                    required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row py-2">
+                            <label for="address" class="col-sm-2 col-form-label">地址<span
+                                    class="text-danger">*</span></label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="address" id="address" rows="5"
                                     required></textarea>
                             </div>
                         </div>

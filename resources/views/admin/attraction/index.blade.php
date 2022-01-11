@@ -26,7 +26,7 @@
                             <tr>
                                 <th>類別</th>
                                 <th>名稱</th>
-                                <th>價格</th>
+                                <th>內容</th>
                                 <th width="250">主要圖片</th>
                                 <th width="120">操作</th>
                             </tr>

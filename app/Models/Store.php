@@ -11,5 +11,15 @@ class Store extends Model
 
     protected $table = 'stores';
     protected $fillable =['name','content','image_url','phone','address','category_id','distance','direction'];
+    public function storeCategory()
+    {
+        return $this->belongsTo(StoreCategory::class, "category_id", 'id');
+    }
+
+    public function storeImage()
+    {
+        return $this->hasMany(StoreImage::class,'store_id','id');
+    }
+
 
 }

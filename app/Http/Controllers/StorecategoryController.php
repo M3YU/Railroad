@@ -14,9 +14,9 @@ class StoreCategoryController extends Controller
      */
     public function index()
     {
-        $StoreCategories = StoreCategory::get();
+        $storeCategories = StoreCategory::get();
 
-        return view('',compact(''));
+        return view('admin.store-category.index',compact('storeCategories'));
     }
 
     /**
@@ -26,7 +26,7 @@ class StoreCategoryController extends Controller
      */
     public function create()
     {
-        return view('');
+        return view('admin.store-category.create');
     }
 
     /**
@@ -39,7 +39,7 @@ class StoreCategoryController extends Controller
     {
         StoreCategory::create($request->all());
 
-        return redirect()->route('');
+        return redirect()->route('store_categories.index');
     }
 
     /**
@@ -61,9 +61,9 @@ class StoreCategoryController extends Controller
      */
     public function edit($id)
     {
-        $StoreCategory = StoreCategory::find($id);
+        $storeCategory = StoreCategory::find($id);
 
-        return view('',compact(''));
+        return view('admin.store-category.edit',compact('storeCategory'));
 
     }
 
@@ -78,7 +78,7 @@ class StoreCategoryController extends Controller
     {
         StoreCategory::find($id)->update($request->all());
 
-        return redirect()->route('');
+        return redirect()->route('store_categories.index');
     }
 
     /**
@@ -89,20 +89,20 @@ class StoreCategoryController extends Controller
      */
     public function destroy($id)
     {
-        $StoreCategory = StoreCategory::with('')->find($id);
+        $storeCategory = StoreCategory::with('stores')->find($id);
         // 如果有產品
-        if($StoreCategory->products->count()){
+        if($storeCategory->stores->count()){
             return redirect()
-            ->route('')
+            ->route('store_categories.index')
             ->with([
-                'message'=>$StoreCategory->name.'類別尚有'.$StoreCategory->Stores->count().'個產品，無法刪除。',
+                'message'=>$storeCategory->name.'類別尚有'.$storeCategory->Stores->count().'個產品，無法刪除。',
                 'color'=>'alert-danger'
             ]);
         }
         
-        $StoreCategory->delete();
+        $storeCategory->delete();
         return redirect()
-        ->route('')
+        ->route('store_categories.index')
         ->with([
             'message'=>'刪除成功!!',
             'color'=>'alert-success'

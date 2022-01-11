@@ -47,17 +47,17 @@
                 <h2 class="card-header pt-3 pb-2">產品 - 編輯</h2>
 
                 <div class="card-body">
-                    <form method="POST" action="{{route('attractions.update',['attraction'=>$attraction->id])}}"
+                    <form method="POST" action="{{route('stores.update',['store'=>$store->id])}}"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                         <div class="form-group row py-2">
                             <label for="category" class="col-sm-2 col-form-label">類別<span class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="attraction_category_id" id="category" required>
+                                <select class="form-control" name="store_category_id" id="category" required>
                                     <option value="" hidden>請選擇類別</option>
-                                    @foreach ($attractionCategories as $attractionCategory)
-                                    <option value="{{$attractionCategory->id}}" @if($attractionCategory->id == $attraction->attraction_category_id)selected @endif>{{$attractionCategory->name}}</option>
+                                    @foreach ($storeCategories as $storeCategory)
+                                    <option value="{{$storeCategory->id}}" @if($storeCategory->id == $store->store_category_id)selected @endif>{{$storeCategory->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -66,23 +66,23 @@
                             <label for="name" class="col-sm-2 col-form-label">名稱<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="name" name="name" value="{{$attraction->name}}"
+                                <input type="text" class="form-control" id="name" name="name" value="{{$store->name}}"
                                     required>
                             </div>
                         </div>
                         <div class="form-group row py-2">
-                            <label for="price" class="col-sm-2 col-form-label">價格<span
+                            <label for="phone" class="col-sm-2 col-form-label">名稱<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <input type="number" min="0" class="form-control" id="price" name="price"
-                                    value="{{$attraction->price}}" required>
+                                <input type="text" class="form-control" id="phone" name="phone" value="{{$store->phone}}"
+                                    required>
                             </div>
                         </div>
                         <hr>
                         <div class="form-group row py-2">
                             <label for="image-url" class="col-sm-2 col-form-label">主要圖片</label>
                             <div class="col-sm-10">
-                                <img src="{{Storage::url($attraction->image_url)}}" alt="" width="200">
+                                <img src="{{Storage::url($store->image_url)}}" alt="" width="200">
                             </div>
                         </div>
                         <div class="form-group row py-2">
@@ -96,10 +96,10 @@
                         <div class="form-group row py-2">
                             <label for="image-urls" class="col-sm-2 col-form-label">其他圖片</label>
                             <div class="col-sm-10 row">
-                                @foreach ($attraction->attractionImages as $attractionImage)
+                                @foreach ($store->storeImage as $storeImage)
                                 <div class="img"
-                                    style="background-image: url({{Storage::url($attractionImage->image_url)}})">
-                                    <div class="delete-btn" data-id="{{$attractionImage->id}}">X</div>
+                                    style="background-image: url({{Storage::url($storeImage->image_url)}})">
+                                    <div class="delete-btn" data-id="{{$storeImage->id}} "></div>
                                 </div>
                                 @endforeach
                             </div>
@@ -111,15 +111,39 @@
                                     name="image_urls[]" multiple>
                             </div>
                         </div>
+                        <div class="form-group row py-2">
+                            <label for="address" class="col-sm-2 col-form-label">地址<span
+                                     class="text-danger">*</span></label>
+                              <div class="col-sm-10">
+                                 <textarea class="form-control" name="address" id="address" rows="5"
+                                    required>{{$store->address}}</textarea>
+                           </div>
                         <hr>
                         <div class="form-group row py-2">
-                            <label for="description" class="col-sm-2 col-form-label">描述<span
+                            <label for="content" class="col-sm-2 col-form-label">描述<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="description" id="description" rows="5"
-                                    required>{{$attraction->description}}</textarea>
+                                <textarea class="form-control" name="content" id="content" rows="5"
+                                    required>{{$store->content}}</textarea>
                             </div>
                         </div>
+
+                        <div class="form-group row py-2">
+                            <label for="distance" class="col-sm-2 col-form-label">距離<span
+                                    class="text-danger">*</span></label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="distance" id="distance" rows="5"
+                                    required>{{$store->distance}}</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row py-2">
+                            <label for="direction" class="col-sm-2 col-form-label">方向<span
+                                    class="text-danger">*</span></label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="direction" id="direction" rows="5"
+                                    required>{{$store->direction}}</textarea>
+                            </div>
+
                         <div class="form-group row py-2">
                             <div class="col-sm-12 text-center">
                                 <button type="submit" class="btn btn-primary">更新</button>
@@ -148,7 +172,7 @@
             formData.append('_method','delete');
             formData.append('id',imageId);
             // 送出請求至後端刪除檔案及資料
-            let url = '{{route('attraction.image-delete')}}';
+            let url = '{{route('stores.image-delete')}}';
             fetch(url,{
                 'method':'post',
                 'body':formData

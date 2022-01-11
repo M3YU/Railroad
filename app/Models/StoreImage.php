@@ -11,4 +11,10 @@ class StoreImage extends Model
     protected $table = 'store_images';
     protected $fillable =['image_url','store_id'];
 
+    public function stores()
+    {
+        return $this->belongsTo(Store::class, "store_id", 'id');
+    }
+
+
 }

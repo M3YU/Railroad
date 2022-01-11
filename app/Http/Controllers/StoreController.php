@@ -17,7 +17,7 @@ class StoreController extends Controller
      */
     public function index()
     {
-        $store = Store::with('storeCategory')->get();
+        $stores = Store::with('storeCategory')->get();
 
         return view('admin.store.index', compact('stores'));
     }
@@ -46,14 +46,14 @@ class StoreController extends Controller
         if ($request->hasFile('image_url')) {
             $path = Storage::put('/store', $request->image_url);
         }
-        // 建立沿途風景
+        // 建立商店
         $store = Store::create([
             'name' => $request->name,
             'image_url' => $path,
             'content' => $request->content,
             'phone' => $request->phone,
             'address' => $request->address,
-            'category_id' => $request->category_id,
+            'category_id' => 1,
             'distance' => $request->distance,
             'direction' => $request->direction,
         ]);
@@ -93,7 +93,7 @@ class StoreController extends Controller
     public function edit($id)
     {
         $storeCategories = StoreCategory::get();
-        $store = Store::with('storeImages')->find($id);
+        $store = Store::with('storeImage')->find($id);
 
         return view('admin.store.edit', compact('storeCategories', 'store'));
     }
@@ -123,6 +123,8 @@ class StoreController extends Controller
             'name' => $request->name,
             'image_url' => $path,
             'content' => $request->content,
+            'phone' => $request->phone,
+            'address' => $request->address,
             'category_id' => 1,
             'distance' => $request->distance,
             'direction' => $request->direction,
@@ -139,7 +141,7 @@ class StoreController extends Controller
             }
         }
 
-        return redirect()->route('');
+        return redirect()->route('stores.index');
     }
 
     /**
@@ -150,7 +152,7 @@ class StoreController extends Controller
      */
     public function destroy($id)
     {
-        $store = Store::with('storeImages')->find($id);
+        $store = Store::with('storeImage')->find($id);
         // 刪除主要圖片檔案
         Storage::delete($store->image_url);
 
@@ -164,7 +166,7 @@ class StoreController extends Controller
         // 刪除風景資料
         $store->delete();
 
-        return redirect()->route('');
+        return redirect()->route('stores.index');
     }
 
     public function imageDelete(Request $request)

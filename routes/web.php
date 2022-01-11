@@ -3,12 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TeamController;
-use App\Http\Controllers\FrontController;
-use App\Http\Controllers\StoreController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\AttractionCategoryController;
+use App\Http\Controllers\StoreController;
+use App\Http\Controllers\StoreCategoryController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -88,10 +88,13 @@ Route::prefix('/admin')->group(function () {
     //沿途景點
     Route::resource('/attractions', AttractionController::class);
     Route::resource('/attraction_categories', AttractionCategoryController::class);
-    
+
     Route::resource('/stores', StoreController::class);
-    Route::resource('/store-categories', StoreCategoryController::class);
+    Route::resource('/store_categories',StoreCategoryController::class);
+    
+
     Route::delete('/attraction_image',[AttractionController::class,'imageDelete'])->name('attraction.image-delete');
+    Route::delete('/store_image',[StoreController::class,'storesimageDelete'])->name('stores.image-delete');
 });
 
 

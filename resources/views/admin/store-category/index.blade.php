@@ -15,35 +15,27 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
-                <h2 class="card-header lh-1 pt-3 pb-2">產品管理</h2>
+                <h2 class="card-header lh-1 pt-3 pb-2">產品類別管理</h2>
                 <div class="form-group pt-4 px-3 m-0">
-                    <a href="{{route('stores.create')}}" class="btn btn-success">新增產品</a>
+                    <a href="{{route('store_categories.create')}}" class="btn btn-success">新增類別</a>
                 </div>
                 <hr>
                 <div class="card-body">
                     <table id="my-table" class="table table-bordered table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>類別</th>
                                 <th>名稱</th>
-                                <th>電話</th>
-                                <th>地址</th>
-                                <th width="250">主要圖片</th>
                                 <th width="120">操作</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($stores as $store)
+                            @foreach ($storeCategories as $storeCategory)
                                 <tr>
-                                    <td>{{$store->storeCategory->name}}</td>
-                                    <td>{{$store->name}}</td>
-                                    <td>{{$store->phone}}</td>
-                                    <td>{{$store->address}}</td>
-                                    <td><img src="{{Storage::url($store->image_url)}}" alt="" width="200"></td>
+                                    <td>{{$storeCategory->name}}</td>
                                     <td>
-                                        <a href="{{route('stores.edit',['store'=>$store->id])}}" class="btn btn-primary">編輯</a>
+                                        <a href="{{route('store_categories.edit',['store_category'=>$storeCategory->id])}}" class="btn btn-primary">編輯</a>
                                         <button class="btn btn-danger delete-btn">刪除</button>
-                                        <form class="d-none" action="{{route('stores.destroy',['store'=>$store->id])}}" method="post">
+                                        <form class="d-none" action="{{route('store_categories.destroy',['store_category'=>$storeCategory->id])}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                         </form>
@@ -73,6 +65,7 @@
         });
     });
     const deleteElements = document.querySelectorAll('.delete-btn');
+    console.log(deleteElements);
     deleteElements.forEach(function(deleteElement){
         deleteElement.addEventListener('click',function () {
             if(confirm('你確定要刪除這筆資料嗎？')){
