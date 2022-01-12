@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AttractionController;
-use App\Http\Controllers\AttractionCategoryController;
-use App\Http\Controllers\StoreController;
-use App\Http\Controllers\StoreCategoryController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\StoreController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AttractionController;
+use App\Http\Controllers\StoreCategoryController;
+use App\Http\Controllers\AttractionCategoryController;
 
 
 
@@ -58,10 +59,11 @@ use App\Http\Controllers\NewsController;
 
 
 
-// //服務中心
-// Route::prefix('Contacts')->group(function () {
-//     Route::get('/', [ContactController::class, 'ContactsList'])->name('contacts.list');
-// });
+//服務中心
+Route::prefix('/contact')->group(function () {
+    Route::get('/', [ContactController::class, 'index'])->name('contact.index');
+    Route::post('/contact', [ContactController::class, 'contact'])->name('contact.mail');
+});
 
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Contact;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -26,8 +27,9 @@ class ContactNotify extends Mailable
      *
      * @return $this
      */
-    public function build($contact)
+    public function build()
     {
-        return $this->view('emails.contact');
+        $contact = $this-> contact;
+        return $this->view('emails.contact',compact('contact'));
     }
 }

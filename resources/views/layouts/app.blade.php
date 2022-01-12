@@ -33,6 +33,23 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
 
+                        @php
+                         $permission =Auth::user() ? Auth::user()->permission:'';
+                         
+                        
+
+
+                         @endphp
+ 
+                        @if($permission == "admin")
+                        
+
+                        @elseif($permission == "member")
+
+
+                       @else
+                       @endif
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->

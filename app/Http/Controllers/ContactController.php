@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
+use App\Mail\ContactNotify;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -13,7 +16,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return view('front.contact.contact');
     }
 
     /**
@@ -21,22 +24,9 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        public function contact(Request $request)
-        {
-          
-            $contact = Contact::create([
-                'name' => $request->name,
-                'phone' => $request->phone,
-                'email' => $request->email,
-                'content' => $request->content
-            ]);
-    
-            Mail::to($contact->email)->send(new ContactNotify($contact));
-            
-            return redirect()->route('index');
-         }
+        }
 
     /**
      * Store a newly created resource in storage.
@@ -93,4 +83,21 @@ class ContactController extends Controller
     {
         //
     }
+
+
+
+    public function contact(Request $request)
+    {
+    
+        $contact = Contact::create([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'content' => $request->content
+        ]);
+        $email = 'foraswell@gmail.com';
+        Mail::to($email)->send(new ContactNotify($contact));
+        
+        return redirect()->route('contact.index');
+     }
 }

@@ -1,4 +1,4 @@
-@extends('')
+@extends('layouts.template')
 
 
 @section('title')

@@ -63,9 +63,6 @@
     $(document).ready( function () {
         $('#my-table').DataTable({
             "order": [],
-            language:{
-                url: "{{asset('js/datatable-zh.json')}}"
-            }
         });
     });
     const deleteElements = document.querySelectorAll('.delete-btn');
