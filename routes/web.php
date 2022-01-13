@@ -24,8 +24,8 @@ use App\Http\Controllers\AttractionCategoryController;
 */
 
 
-// //形象頁
-// Route::get('railroad', [FrontController::class, 'railroad'])->name('Railroad.Page');
+//形象頁
+Route::get('bike', [FrontController::class, 'bike'])->name('bike.Page');
 
 // //首頁
 Route::get('/', [FrontController::class, 'index'])->name('index');
@@ -42,8 +42,8 @@ Route::get('/attractions', [FrontController::class, 'attraction'])-> name('attra
 // Route::resource('/stores', StoreController::class);
 
 
-// //揪一起騎
-// Route::resource('/teams', TeamController::class);
+//揪一起騎
+Route::resource('/teams', TeamController::class);
 
 // //揪成會員(已定義)
 
