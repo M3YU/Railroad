@@ -15,20 +15,20 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
-                <h2 class="card-header lh-1 pt-3 pb-2">產品管理</h2>
+                <h2 class="card-header lh-1 pt-3 pb-2">景點列表</h2>
                 <div class="form-group pt-4 px-3 m-0">
-                    <a href="{{route('attractions.create')}}" class="btn btn-success">新增產品</a>
+                    <a href="{{route('attractions.create')}}" class="btn btn-success">新增景點</a>
                 </div>
                 <hr>
                 <div class="card-body">
                     <table id="my-table" class="table table-bordered table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>類別</th>
-                                <th>名稱</th>
-                                <th>內容</th>
-                                <th width="250">主要圖片</th>
-                                <th width="120">操作</th>
+                                <th width="70">類別</th>
+                                <th width="100">名稱</th>
+                                <th width="300">內容</th>
+                                <th width="70">主要圖片</th>
+                                <th width="50">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,8 +36,8 @@
                                 <tr>
                                     <td>{{$attraction->attractionCategory->name}}</td>
                                     <td>{{$attraction->name}}</td>
-                                    <td>{{$attraction->price}}</td>
-                                    <td><img src="{{Storage::url($attraction->image_url)}}" alt="" width="200"></td>
+                                    <td>{{$attraction->content}}</td>
+                                    <td><img src="{{Storage::url($attraction->image_url)}}" alt="" width="200" height="150"></td>
                                     <td>
                                         <a href="{{route('attractions.edit',['attraction'=>$attraction->id])}}" class="btn btn-primary">編輯</a>
                                         <button class="btn btn-danger delete-btn">刪除</button>

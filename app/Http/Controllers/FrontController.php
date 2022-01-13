@@ -13,9 +13,13 @@ class FrontController extends Controller
      */
     public function index()
     {
-        //
+        return view('index');
     }
 
+    public function attraction()
+    {
+        return view('attraction');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -68,7 +72,6 @@ class FrontController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
     }
 
     /**
@@ -82,17 +85,17 @@ class FrontController extends Controller
         //
     }
 
-//     public function  (Request $request){
-//     // 分類
-//  $productCategories = ProductCategory::get();
+    //     public function  (Request $request){
+    //     // 分類
+    //  $productCategories = ProductCategory::get();
 
-// if($request->category_id){
-// 	$products = Product::where('product_category_id',$request->category_id)
-// }else{
-// 	$products = Product::get();
-// }
+    // if($request->category_id){
+    // 	$products = Product::where('product_category_id',$request->category_id)
+    // }else{
+    // 	$products = Product::get();
+    // }
 
-// return view('',compact('',''));
+    // return view('',compact('',''));
 
     function news()
     {

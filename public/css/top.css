@@ -1,0 +1,72 @@
+ html {
+   overflow-y: scroll;
+ }
+
+ :root {
+   overflow-y: auto;
+   overflow-x: hidden;
+ }
+
+ :root body {
+   position: absolute;
+ }
+
+ body {
+   width: 100vw;
+ }
+
+ #top {
+   width: 100vw;
+   height: 20.78vw;
+   position: relative;
+ }
+
+ #top .title {
+   position: absolute;
+   z-index: 2;
+   top: 0;
+   left: 0;
+   width: 41.146vw;
+   height: 3.646vw;
+   font-size: 3.333vw;
+   font-weight: 900;
+   margin-left: 19.0625vw;
+   margin-top: 7.135vw;
+   color: #606060;
+ }
+
+ #top .title-mask {
+   width: 31.667vw;
+   position: absolute;
+   z-index: 1;
+   left: 3.6%;
+   top: 1%;
+ }
+
+ #top .slogan {
+   color: #ffffff;
+   position: absolute;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   font-size: 1.719vw;
+   margin-left: 32.969vw;
+   margin-top: 12.24vw;
+ }
+
+
+ .banner {
+   width: 100vw;
+   height: 46.88vw;
+   background-color: #999999;
+   position: relative;
+   clip-path: ellipse(100% 100% at 50% -58%);
+ }
+
+ .banner-mask {
+   width: 100%;
+   position: absolute;
+   bottom: -5%;
+   z-index: -1;
+
+ }

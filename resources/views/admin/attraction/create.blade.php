@@ -8,14 +8,14 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href=>首頁</a></li>
-            <li class="breadcrumb-item"><a href=>產品管理</a></li>
-            <li class="breadcrumb-item active" aria-current="page">新增產品</li>
+            <li class="breadcrumb-item"><a href=>景點列表</a></li>
+            <li class="breadcrumb-item active" aria-current="page">新增景點</li>
         </ol>
     </nav>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <h2 class="card-header pt-3 pb-2">產品 - 新增</h2>
+                <h2 class="card-header pt-3 pb-2">景點 - 新增</h2>
 
                 <div class="card-body">
                     <form method="POST" action="{{route('attractions.store')}}" enctype="multipart/form-data">

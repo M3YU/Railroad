@@ -1,0 +1,208 @@
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+h1 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.mySwiper {
+  width: calc(100% - (12% * 2));
+  margin-right: 12%;
+  margin-left: 12%;
+}
+
+.mySwiper .swiper-slide .img {
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("https://dummyimage.com/275x275");
+}
+
+.title {
+  width: 100%;
+  height: 100%;
+  min-width: 438px;
+  min-height: 95px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: url("/img/store/title.png");
+}
+
+.title h1 {
+  padding-left: 24px;
+  padding-top: 32px;
+}
+
+.title:after {
+  content: '';
+  width: calc( 438px / 2);
+  height: 2px;
+  border-bottom: 2px solid #000000;
+}
+
+.subtitle {
+  padding-left: 9%;
+}
+
+.maps {
+  background-color: rgba(78, 86, 67, 0.7);
+  margin: 300px 0px;
+}
+
+.maps .container {
+  padding-top: 1%;
+  padding-bottom: 5%;
+}
+
+.maps .row:nth-child(2) .col {
+  width: 100%;
+  height: 730px;
+}
+
+.omiyage .row:nth-child(2) {
+  margin-right: 11%;
+  margin-left: 11%;
+}
+
+.omiyage .row:nth-child(2) .col {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  max-width: 300px;
+  max-height: 300px;
+  margin-bottom: 0;
+  color: #000000;
+  text-align: center;
+  -webkit-perspective: 50em;
+          perspective: 50em;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods * {
+  -webkit-box-sizing: padding-box;
+          box-sizing: padding-box;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods .img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-image: url("https://dummyimage.com/300x300");
+}
+
+.omiyage .row:nth-child(2) .col figure.goods img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods figcaption {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  opacity: 0;
+  z-index: 1;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods h1 {
+  font-size: 2rem;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods h2, .omiyage .row:nth-child(2) .col figure.goods h4 {
+  margin: 0;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods h2 {
+  font-weight: 600;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods h4 {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods i {
+  font-size: 32px;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods:after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  display: block;
+  background-color: #ffffff;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  opacity: 0;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods:hover figcaption, .omiyage .row:nth-child(2) .col figure.goods .hover figcaption {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  opacity: 1;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods:hover:after, .omiyage .row:nth-child(2) .col figure.goods .hover:after {
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+  opacity: 0.9;
+}
+
+.omiyage .row:nth-child(2) .col p {
+  width: 300px;
+  padding: 1.5rem;
+  text-align: justify;
+  color: #000;
+}
+/*# sourceMappingURL=store.css.map */
