@@ -13,6 +13,7 @@ class FrontController extends Controller
      */
     public function index()
     {
+        return view('index');
     }
 
     /**
@@ -67,7 +68,6 @@ class FrontController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
     }
 
     /**

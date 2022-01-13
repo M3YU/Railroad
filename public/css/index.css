@@ -1,0 +1,534 @@
+        * {
+          box-sizing: border-box;
+          max-width: 100%;
+        }
+
+        /* 下面這四個是避免用 100vw 的時候 下方出現滾輪軸的方法 */
+        /* 這邊的vw 都是原本的 px/1920 */
+
+        html {
+          overflow-y: scroll;
+        }
+
+        :root {
+          overflow-y: auto;
+          overflow-x: hidden;
+        }
+
+        :root body {
+          position: absolute;
+        }
+
+        body {
+          width: 100vw;
+        }
+
+        /* 標題logo */
+
+        #top {
+          width: 100vw;
+          height: 53vw;
+          position: relative;
+        }
+
+        .logo {
+          position: absolute;
+          top: 27.93%;
+          left: 9.64%;
+          z-index: 1;
+          line-height: 0.9;
+          width: 55vw;
+        }
+
+        .slogan {
+          z-index: 1;
+          position: absolute;
+          font-size: 1.72vw;
+        }
+
+        .slogan-first {
+          margin-top: 29.01vw;
+          margin-left: 15.36vw;
+        }
+
+        .slogan-end {
+          margin-top: 32.08vw;
+          margin-left: 28.18vw;
+        }
+
+        /* 大圖 */
+
+        .banner {
+          width: 100vw;
+          height: 41vw;
+          background-color: #ffffff;
+          position: relative;
+          clip-path: ellipse(100% 100% at 50% -6%);
+        }
+
+        .banner img{
+          width: 100vw;
+          opacity: 0.6;
+          margin: -400px 0;
+        }
+
+        .banner-mask {
+          width: 100%;
+          position: absolute;
+          bottom: 23%;
+          z-index: -1;
+        }
+
+        .sub-slogan {
+          z-index: 1;
+          position: absolute;
+        }
+
+        /* 第二段文字 */
+
+        .sub-slogan-first,
+        .sub-slogan-middle {
+          margin-top: 50vw;
+          font-size: 3vw;
+          color: #3F4042;
+        }
+
+        .sub-slogan-first {
+          margin-left: 29.79vw;
+        }
+
+        .sub-slogan-middle {
+          margin-left: 39.17vw;
+        }
+
+        .sub-slogan-end {
+          margin-top: 57.81vw;
+          margin-left: 41.82vw;
+          font-size: 1.5vw;
+        }
+
+        .sub-slogan-mask {
+          position: absolute;
+          margin-top: 50vw;
+          margin-left: 28.4vw;
+          width: 19vw;
+        }
+
+        /* 腳踏車人物 */
+
+        .bike-img {
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-image: url('/img/index/bike.png');
+          width: 27vw;
+          height: 38vw;
+          position: absolute;
+          transform: rotate(-7deg);
+          top: 24vw;
+          right: 14vw;
+          z-index: 1;
+        }
+
+        .bike-mask {
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 21.04vw;
+          height: 4.27vw;
+          position: absolute;
+          bottom: 0%;
+          right: 9.27vw;
+          z-index: -1;
+        }
+
+        #middle {
+          width: 100vw;
+          height: 142.65vw;
+          padding-top: 11.2vw;
+          position: relative;
+
+        }
+
+        /* 騎腳踏車的小圖 */
+
+        #middle .bike-moving {
+          display: none;
+          width: 3vw;
+          height: 3vw;
+          background-image: url('/img/index/moving-bike-02.png');
+          transform: rotateY(-180deg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          top: -1%;
+          right: 29% 0.2s ease;
+          z-index: -1;
+        }
+
+        .middle-background {
+          width: 85.52vw;
+          height: 142.24vw;
+          position: absolute;
+          left: 50%;
+          top: 0;
+          transform: translate(-50%);
+          z-index: -2;
+        }
+
+        .column {
+          width: 100%;
+          background-color: transparent;
+          height: 26.04vw;
+        }
+
+        .column:nth-child(1) {
+          margin-bottom: 6.56vw;
+        }
+
+        .column:nth-child(2) {
+          margin-bottom: 7.5vw;
+        }
+
+        .column:nth-child(3) {
+          margin-bottom: 7.97vw;
+        }
+
+        .column:nth-child(4) {
+          margin-bottom: 4.64vw;
+        }
+
+        .gorgeousness-img,
+        .gorgeousness-text {
+          height: 100%;
+        }
+
+        .gorgeousness-img {
+          background-repeat: no-repeat;
+          background-size: contain, 88%;
+          background-position: center;
+        }
+
+        /* 左圖-1 */
+
+        .gorgeousness-img.left {
+          width: 65%;
+          margin-left: 25%;
+          margin-right: 1%;
+        }
+        
+        .left-1 {
+          background-image: url('/img/index/首頁方框用.png'), url('/img/index/25-news.ltn.com.tw-Larch-1.jpg');
+        }
+
+        .left-2 {
+          background-image: url('/img/index/首頁方框用.png'), url('/img/index/10-alberthsieh.com-26323-flpo_horse.jpg');
+        }
+
+        /* 右圖 */
+
+        .gorgeousness-img.right {
+          width: 65%;
+          margin-right: 25%;
+          margin-left: 1%;
+        }
+
+        .right-1 {
+          background-image: url('/img/index/首頁方框用.png'), url('/img/index/13-blue74.net-200days-4.jpg');
+        }
+
+        .right-2 {
+          background-image: url('/img/index/首頁方框用.png'), url('/img/index/07-www.tourism.taichung.gov.tw-No9Tunnel-2.jpg');
+        }
+
+        .gorgeousness-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        /* 左圖文字 */
+
+        .gorgeousness-text.left {
+          width: 55%;
+          margin-left: 30%;
+          margin-right: 5%;
+        }
+
+        /* 右圖文字 */
+
+        .gorgeousness-text.right {
+          width: 55%;
+          margin-right: 30%;
+          margin-left: 5%;
+        }
+
+        /* 方框標題 */
+
+        .title {
+          font-size: 1.6vw;
+          margin-bottom: 1.5vw;
+          color: #3F4042;
+        }
+
+        /* 方框內文 */
+
+        .content {
+          font-size: 0.8vw;
+          color: #3F4042;
+        }
+
+        /* 側邊進度條 */
+        .anchor-point {
+          display: flex;
+          position: absolute;
+          top: 15vw;
+          right: 5.5vw;
+          z-index: 1;
+        }
+
+        a {
+          text-decoration: none;
+          color: #AEA83E;
+        }
+
+        a:hover {
+          color: #AEA83E;
+        }
+
+
+
+        .anchor-point-titles {
+          width: 4.22vw;
+          height: 15.104vw;
+          font-size: 0.625vw;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          text-align: center;
+          margin-top: -0.325vw;
+          color: #AEA83E;
+        }
+
+        .anchor-point-title {
+          width: 4.22vw;
+          height: 0.781vw;
+        }
+
+        .anchor-point-img {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .anchor-point-circle {
+          width: 0.47vw;
+          height: 0.47vw;
+          clip-path: circle(50% at 50% 50%);
+          background-color: #AFAFAF;
+        }
+
+        .anchor-point-line {
+          width: 1px;
+          height: 3.125vw;
+          background-color: #AEA83E;
+        }
+
+        .mountain {
+          width: 100vw;
+          height: 37.892vw;
+          background-image: url('/img/index/mountain.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          z-index: -3;
+          bottom: -6%;
+        }
+
+        .mountain::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.8);
+          z-index: -3;
+        }
+
+        #bottom {
+          width: 100vw;
+          height: 122vw;
+          position: relative;
+        }
+
+        /* 照片牆 */
+
+        .photo-wall {
+          width: 100%;
+          height: 100%;
+          background-color: #86817C;
+          position: relative;
+          clip-path: ellipse(117vw 57vw at 50% 50%);
+          margin-top: -1.146vw;
+          margin-right: -3.125vw;
+        }
+
+        .photo-wall-mask {
+          width: 100vw;
+          height: 7.864vw;
+          position: absolute;
+          z-index: -1;
+          top: 2%;
+        }
+
+        .photo-wall-title {
+          font-size: 3vw;
+          padding-top: 11vw;
+          padding-bottom: 3vw;
+          margin-left: 46.5vw;
+        }
+
+        .photo-wall-title-mask {
+          width: 43.07vw;
+          height: 6.198vw;
+          position: absolute;
+          z-index: -1;
+          top: 8%;
+          left: 29%;
+        }
+
+        .photo-wall-categories {
+          list-style: none;
+          font-size: 1.25vw;
+          width: 40.36vw;
+          padding-left: 1.04vw;
+          display: flex;
+          justify-content: space-between;
+          margin-left: 29.9vw;
+        }
+
+        .photo-wall-category:nth-child(1) {
+          position: relative;
+        }
+
+        .photo-wall-category:nth-child(1)::after {
+          content: '';
+          background-color: #AEA83E;
+          width: 3.96vw;
+          height: 0.47vw;
+          position: absolute;
+          bottom: -0.47vw;
+          left: 50%;
+          transform: translate(-50%);
+        }
+
+        /* 照片牆裡面照片 */
+
+        .photos {
+          margin-top: 4vw;
+          margin-left: 22vw;
+          width: 58vw;
+          height: 58vw;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-content: space-between;
+        }
+
+        .photo {
+          width: 18vw;
+          height: 18vw;
+          background-image: url('https://placeholder.pics/svg/346');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+
+        #bottom .grass {
+          position: absolute;
+          bottom: 3%;
+          right: 0%;
+          width: 33vw;
+          padding-top: 10vw;
+        }
+
+        .billboard {
+          display: none;
+          width: 7.8125vw;
+          height: 14.25vw;
+          position: absolute;
+          bottom: 4.85%;
+          right: 10.5%;
+          background-image: url('/img/index/滑鼠01.png'), url('/img/index/告示牌-04.png');
+          background-size: 38%, contain;
+          background-repeat: no-repeat;
+          background-position: 54% 20%, center;
+          transform: rotate(-12deg);
+        }
+
+        footer {
+          width: 100vw;
+          height: 22.55vw;
+          background-color: #4E5643;
+          position: absolute;
+          margin-top: -9.427vw;
+          z-index: -1;
+        }
+
+        .footer-mask {
+          position: absolute;
+          width: 99.375vw;
+          height: 31.3vw;
+          bottom: -2%;
+        }
+
+        .footer-container {
+          width: 62.58vw;
+          height: 9.323vw;
+          position: absolute;
+          margin: 0;
+          margin-left: 29vw;
+          margin-top: 9vw;
+          display: flex;
+          color: #ffffff;
+        }
+
+        .footer-menu {
+          width: 8.39vw;
+        }
+
+        .footer-menu-title {
+          font-size: 1vw;
+          margin-bottom: 1.354vw;
+        }
+
+        .footer-menu-item {
+          font-size: 0.7vw;
+          margin-bottom: 0.5vw;
+        }
+
+        .footer-menu-item::before {
+          content: '一';
+          width: 0.573vw;
+          height: 1px;
+          color: #AEA83E;
+          margin-right: 0.573vw;
+        }
+
+        .footer-news {
+          width: 12.24vw;
+          height: 9.323vw;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-image: url('https://placeholder.pics/svg/235X179');
+        }
+
+        .footer-menu-title .footer-menu-item:last-child {
+          margin-bottom: 0;
+        }
+
+        .active {
+          display: block;
+        }
