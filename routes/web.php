@@ -43,7 +43,7 @@ Route::get('/attractions', [FrontController::class, 'attraction'])-> name('attra
 
 
 //揪一起騎
-Route::resource('/teams', TeamController::class);
+Route::get('/teams',[FrontController::class, 'teams'])-> name('teams.index');
 
 // //揪成會員(已定義)
 

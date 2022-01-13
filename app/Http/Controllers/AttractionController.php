@@ -52,7 +52,7 @@ class AttractionController extends Controller
             'name' => $request->name,
             'image_url' => $path,
             'content' => $request->content,
-            'category_id' => 1,
+            'category_id' => $request ->category_id,
             'distance' => $request->distance,
             'direction' => $request->direction,
 
@@ -123,7 +123,7 @@ class AttractionController extends Controller
             'name' => $request->name,
             'image_url' => $path,
             'content' => $request->content,
-            'category_id' => 1,
+            'category_id' => $request ->category_id,
             'distance' => $request->distance,
             'direction' => $request->direction,
         ]);

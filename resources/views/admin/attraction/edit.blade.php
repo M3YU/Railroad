@@ -54,10 +54,10 @@
                         <div class="form-group row py-2">
                             <label for="category" class="col-sm-2 col-form-label">類別<span class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="attraction_category_id" id="category" required>
-                                    <option value="" hidden>請選擇類別</option>
-                                    @foreach ($attractionCategories as $attractionCategory)
-                                    <option value="{{$attractionCategory->id}}" @if($attractionCategory->id == $attraction->attraction_category_id)selected @endif>{{$attractionCategory->name}}</option>
+                                <select class="form-control" name="category_id" id="category" required>
+                                    <option value="{{$attraction->category_id}}" hidden>請選擇類別</option>
+                                    @foreach ($attractionCategories as $attractionCategory)                               
+                                    <option value="{{$attractionCategory->id}}" @if($attractionCategory->id == $attraction->category_id)selected @endif>{{$attractionCategory->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
