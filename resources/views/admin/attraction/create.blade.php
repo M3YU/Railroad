@@ -24,7 +24,7 @@
                             <label for="category" class="col-sm-2 col-form-label">類別<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="attraction_category_id" id="category">
+                                <select class="form-control" name="category_id" id="category">
                                     <option value="" hidden>請選擇類別</option>
                                     @foreach ($attractionCategories as $attractionCategory)
                                     <option value="{{$attractionCategory->id}}">{{$attractionCategory->name}}</option>

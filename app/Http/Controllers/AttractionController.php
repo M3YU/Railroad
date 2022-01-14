@@ -170,6 +170,7 @@ class AttractionController extends Controller
 
     public function imageDelete(Request $request)
     {
+
         // 找出對應的其他圖片
         $attractionImage = AttractionImage::find($request->id);
         // 將圖片檔案刪除

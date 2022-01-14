@@ -150,13 +150,11 @@
             let imageId = e.target.getAttribute('data-id');
             // 利用JS建立表單
             let formData = new FormData();
-            // @csrf
             formData.append('_token','{{csrf_token()}}');
-            // @method('delete')
             formData.append('_method','delete');
             formData.append('id',imageId);
             // 送出請求至後端刪除檔案及資料
-            let url = '{{route('attraction.image-delete')}}';
+            let url = '{{route('attraction.image_delete')}}';
             fetch(url,{
                 'method':'post',
                 'body':formData

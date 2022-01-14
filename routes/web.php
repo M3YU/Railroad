@@ -9,8 +9,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\StoreCategoryController;
 use App\Http\Controllers\AttractionCategoryController;
-
-
+use App\Models\Attraction;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,12 +33,10 @@ Route::get('/', [FrontController::class, 'index'])->name('index');
 //沿途景點
 Route::get('/attractions', [FrontController::class, 'attraction'])-> name('attractions.index');
 
-// //景點分類
-// Route::resource('/attraction-categories', AttractionCategoryController::class);
 
 
-// //鄰近商店
-// Route::resource('/stores', StoreController::class);
+//鄰近商店
+Route::get('/store', [FrontController::class, 'store'])-> name('store.index');
 
 
 //揪一起騎
@@ -91,7 +88,8 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
     //沿途景點
     Route::resource('/attractions', AttractionController::class);
     Route::resource('/attraction_categories', AttractionCategoryController::class);
-    Route::delete('/attraction_image', [AttractionController::class, 'imageDelete'])->name('attraction.image-delete');
+
+    Route::delete('/attraction_image', [AttractionController::class, 'imageDelete'])->name('attraction.image_delete');
 
     Route::resource('/stores', StoreController::class);
     Route::resource('/store_categories', StoreCategoryController::class);

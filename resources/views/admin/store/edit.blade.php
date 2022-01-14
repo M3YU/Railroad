@@ -54,10 +54,10 @@
                         <div class="form-group row py-2">
                             <label for="category" class="col-sm-2 col-form-label">類別<span class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="store_category_id" id="category" required>
-                                    <option value="" hidden>請選擇類別</option>
+                                <select class="form-control" name="category_id" id="category" required>
+                                    <option value="category_id" hidden>請選擇類別</option>
                                     @foreach ($storeCategories as $storeCategory)
-                                    <option value="{{$storeCategory->id}}" @if($storeCategory->id == $store->store_category_id)selected @endif>{{$storeCategory->name}}</option>
+                                    <option value="{{$storeCategory->id}}" @if($storeCategory->id == $store->category_id)selected @endif>{{$storeCategory->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -166,9 +166,7 @@
             let imageId = e.target.getAttribute('data-id');
             // 利用JS建立表單
             let formData = new FormData();
-            // @csrf
             formData.append('_token','{{csrf_token()}}');
-            // @method('delete')
             formData.append('_method','delete');
             formData.append('id',imageId);
             // 送出請求至後端刪除檔案及資料

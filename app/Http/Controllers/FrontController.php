@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attraction;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -24,87 +25,19 @@ class FrontController extends Controller
 
     public function attraction()
     {
-        return view('attraction');
+        // // $array = ['13','17','25','30'];
+        // Attraction::where('id', 13)->get();
+        // Attraction::where('id', 17)->get();
+        // Attraction::where('id', 25)->get();
+        // Attraction::where('id', 30)->get();
+        return view('front.attraction.attraction');
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    
+
+    function store()
     {
-        //
+        return view('front.store.store');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    //     public function  (Request $request){
-    //     // 分類
-    //  $productCategories = ProductCategory::get();
-
-    // if($request->category_id){
-    // 	$products = Product::where('product_category_id',$request->category_id)
-    // }else{
-    // 	$products = Product::get();
-    // }
-
-    // return view('',compact('',''));
-
-    function news()
-    {
-        return view('');
-    }
 }
