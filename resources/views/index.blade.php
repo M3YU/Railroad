@@ -22,7 +22,7 @@
 
     <nav>
       <ul class="navbar">
-        <li><a><img class="nav-logo" src="./img/index/LOGO-icon.png" alt=""></a></li>
+        <li><a><img class="nav-logo" src="{{asset('img/index/LOGO-icon.png')}}" alt=""></a></li>
         <li class="navbar-title">消息
           <div class="nav-detail">
             <div class="nav-detail-title">消息</div>
@@ -125,60 +125,60 @@
     <section id="middle">
       <div class="bike-moving"></div>
       <embed class="middle-background" src="/img/index/首頁背景.png" type="">
-      <div id="visual" class="column d-flex" data-aos="fade-right">
-        <div class="col-6">
-          <div class="gorgeousness-img left left-1"></div>
-        </div>
-        <div class="col-6">
-          <div class="gorgeousness-text right">
-            <div class="title">視覺Visual_______________</div>
-            <div class="content">騎出隧道以後，眼前所見即為花樑鋼橋，同樣建置於日治
-              時期，全長約382公尺，每兩個橋墩上都有一組花樑的鋼製桁架，是現今較為罕見的工程作品，光是在遠處觀望便能感受其滂薄的氣勢。
-              <br> 騎在橋上，橫跨寬大的大甲溪流，除了能近距離一探雄偉的橋樑結構，向橋外眺望也能欣賞溪石相間的秀麗景緻，和其他單車道有著截然不同的風光。
-            </div>
+      <div id="visual" class="column d-flex">
+
+        <div class="gorgeousness-img left left-1" data-aos="fade-right"></div>
+
+
+        <div class="gorgeousness-text right" data-aos="fade-right">
+          <div class="title">視覺Visual_______________</div>
+          <div class="content">騎出隧道以後，眼前所見即為花樑鋼橋，同樣建置於日治
+            時期，全長約382公尺，每兩個橋墩上都有一組花樑的鋼製桁架，是現今較為罕見的工程作品，光是在遠處觀望便能感受其滂薄的氣勢。
+            <br> 騎在橋上，橫跨寬大的大甲溪流，除了能近距離一探雄偉的橋樑結構，向橋外眺望也能欣賞溪石相間的秀麗景緻，和其他單車道有著截然不同的風光。
           </div>
+
         </div>
       </div>
-      <div id="taste" class="column d-flex" data-aos="fade-left">
-        <div class="col-6">
-          <div class="gorgeousness-text left">
-            <div class="title">味覺Taste_______________</div>
-            <div class="content">后豐鐵馬道過去是臺鐵的舊山線，亦即停用或廢棄的鐵道，如今改建成自行車道，全長約4.5公里，路段看似短卻有非常多樣化的景觀。
-              <br> 從國道4號豐原端的高架橋下方開始，依著鐵馬道的起訖路程，包括蒼翠的田園綠林、迤邐清幽的隧道、宏偉的鋼橋以及壯闊的大甲溪流，都是這條鐵馬道吸引人的地方。
-            </div>
+      <div id="taste" class="column d-flex">
+
+        <div class="gorgeousness-text left" data-aos="fade-left">
+          <div class="title">味覺Taste_______________</div>
+          <div class="content">后豐鐵馬道過去是臺鐵的舊山線，亦即停用或廢棄的鐵道，如今改建成自行車道，全長約4.5公里，路段看似短卻有非常多樣化的景觀。
+            <br> 從國道4號豐原端的高架橋下方開始，依著鐵馬道的起訖路程，包括蒼翠的田園綠林、迤邐清幽的隧道、宏偉的鋼橋以及壯闊的大甲溪流，都是這條鐵馬道吸引人的地方。
           </div>
         </div>
-        <div class="col-6">
-          <div class="gorgeousness-img right right-1"></div>
-        </div>
+
+
+        <div class="gorgeousness-img right right-1" data-aos="fade-left"></div>
+
       </div>
-      <div id="tactile" class="column d-flex" data-aos="fade-right">
-        <div class="col-6">
-          <div class="gorgeousness-img left left-2"></div>
-        </div>
-        <div class="col-6">
-          <div class="gorgeousness-text right">
-            <div class="title">觸覺Tactile_______________</div>
-            <div class="content">
-              在陽光溫煦、氣溫合宜之際，騎乘在鄉林的單車道上，一面悠閒的騎著與朋友談天、一面享受自然純粹的風光，當微風穿過耳際，挾帶著自然的清香，一不注意便會沈醉於這裡的美麗當中，拋下平時的煩惱和壓力，此刻就只專注在這場自然的騎乘裡。
-              <br> 林蔭夾道的悠閒騎乘
-            </div>
+      <div id="tactile" class="column d-flex">
+
+        <div class="gorgeousness-img left left-2" data-aos="fade-right"></div>
+
+
+        <div class="gorgeousness-text right" data-aos="fade-right">
+          <div class="title">觸覺Tactile_______________</div>
+          <div class="content">
+            在陽光溫煦、氣溫合宜之際，騎乘在鄉林的單車道上，一面悠閒的騎著與朋友談天、一面享受自然純粹的風光，當微風穿過耳際，挾帶著自然的清香，一不注意便會沈醉於這裡的美麗當中，拋下平時的煩惱和壓力，此刻就只專注在這場自然的騎乘裡。
+            <br> 林蔭夾道的悠閒騎乘
           </div>
         </div>
+
       </div>
-      <div id="hearing" class="column d-flex" data-aos="fade-left">
-        <div class="col-6">
-          <div class="gorgeousness-text left">
-            <div class="title">聽覺Hearing_____________</div>
-            <div class="content">騎出隧道以後，眼前所見即為花樑鋼橋，同樣建置於日治
-              時期，全長約382公尺，每兩個橋墩上都有一組花樑的鋼製桁架，是現今較為罕見的工程作品，光是在遠處觀望便能感受其滂薄的氣勢。
-              <br> 騎在橋上，橫跨寬大的大甲溪流，除了能近距離一探雄偉的橋樑結構，向橋外眺望也能欣賞溪石相間的秀麗景緻，和其他單車道有著截然不同的風光。
-            </div>
+      <div id="hearing" class="column d-flex">
+
+        <div class="gorgeousness-text left" data-aos="fade-left">
+          <div class="title">聽覺Hearing_____________</div>
+          <div class="content">騎出隧道以後，眼前所見即為花樑鋼橋，同樣建置於日治
+            時期，全長約382公尺，每兩個橋墩上都有一組花樑的鋼製桁架，是現今較為罕見的工程作品，光是在遠處觀望便能感受其滂薄的氣勢。
+            <br> 騎在橋上，橫跨寬大的大甲溪流，除了能近距離一探雄偉的橋樑結構，向橋外眺望也能欣賞溪石相間的秀麗景緻，和其他單車道有著截然不同的風光。
           </div>
         </div>
-        <div class="col-6">
-          <div class="gorgeousness-img right right-2"></div>
-        </div>
+
+
+        <div class="gorgeousness-img right right-2" data-aos="fade-left"></div>
+
       </div>
 
       <div class="anchor-point">
