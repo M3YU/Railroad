@@ -1,62 +1,179 @@
-@extends('layouts.app')
-@section('css')
+<!DOCTYPE html>
+<html lang="en">
 
-@endsection
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> @yield('title') </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-@section('main')
-<div class="container">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href=>首頁</a></li>
-            <li class="breadcrumb-item"><a href=>最新消息管理</a></li>
-            <li class="breadcrumb-item active" aria-current="page">新增消息</li>
-        </ol>
-    </nav>
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <h2 class="card-header pt-3 pb-2">最新消息 - 新增</h2>
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
+    <link rel="stylesheet" href="{{asset('css/footer.css')}}">
+    @yield('css')
+</head>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('news.store') }}">
-                        @csrf
-                        <div class="form-group row py-2">
-                            <label for="title" class="col-sm-2 col-form-label">標題</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="title" name="title" required>
-                            </div>
-                        </div>
-                        <div class="form-group row py-2">
-                            <label for="date" class="col-sm-2 col-form-label">日期</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="date" name="date" required>
-                            </div>
-                        </div>
-                        <div class="form-group row py-2">
-                            <label for="img" class="col-sm-2 col-form-label">圖片</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="img" name="image_url" required>
-                            </div>
-                        </div>
-                        <div class="form-group row py-2">
-                            <label for="content" class="col-sm-2 col-form-label">內容</label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" name="content" id="content" rows="5" required></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group row py-2">
-                            <div class="col-sm-12 text-center">
-                                <button type="submit" class="btn btn-primary">新增</button>
-                            </div>
-                        </div>
-                    </form>
+<body>
+    <main>
+
+        <nav>
+            <ul class="navbar">
+                <li><a><img class="nav-logo" src="{{asset('img/index/LOGO-icon.png')}}" alt=""></a></li>
+                <li class="navbar-title">消息
+                    <div class="nav-detail">
+                        <div class="nav-detail-title">消息</div>
+                        <a href="#">
+                            <span>鄰近活動</span>
+                        </a>
+                        <a href="">
+                            <span>施工消息</span>
+                        </a>
+                        <a href="">
+                            <span>租車優惠</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="navbar-title">景點
+                    <div class="nav-detail">
+                        <div class="nav-detail-title">景點</div>
+                        <a href="{{route('attractions')}}">
+                            <span>網美拍照</span>
+                        </a>
+                        <a href="">
+                            <span>特別推薦</span>
+                        </a>
+                        <a href="">
+                            <span>套裝行程</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="navbar-title">商家
+                    <div class="nav-detail">
+                        <div class="nav-detail-title">商家</div>
+                        <a href="">
+                            <span>美食饗宴</span>
+                        </a>
+                        <a href="">
+                            <span>騎上鐵馬</span>
+                        </a>
+                        <a href="">
+                            <span>帶伴手禮</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="navbar-title">揪團
+                    <div class="nav-detail">
+                        <div class="nav-detail-title">揪團</div>
+                        <a href="">
+                            <span>在線行程</span>
+                        </a>
+                        <a href="">
+                            <span>照片牆</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="navbar-title">服務
+                    <div class="nav-detail">
+                        <div class="nav-detail-title">服務</div>
+                        <a href="">
+                            <span>基本資訊</span>
+                        </a>
+                        <a href="">
+                            <span>交通資訊</span>
+                        </a>
+                        <a href="">
+                            <span>聯絡我們</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="navbar-title">登入
+                    <div class="nav-detail">
+                        <div class="nav-detail-title">登入</div>
+                        <a href="">
+                            <span>成為會員</span>
+                        </a>
+                        <a href="">
+                            <span>我的行程</span>
+                        </a>
+                    </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        @yield('main')
+
+
+        <footer>
+            @yield('footer')
+            <div class="footer-curve"></div>
+            <div class="footer-container">
+                <div class="footer-menu">
+                    <div class="footer-menu-title">最新消息</div>
+                    <div class="footer-menu-item">最近活動</div>
+                    <div class="footer-menu-item">施工消息</div>
+                    <div class="footer-menu-item">租車優惠</div>
                 </div>
+                <div class="footer-menu">
+                    <div class="footer-menu-title">景點介紹</div>
+                    <div class="footer-menu-item">朋友聚會</div>
+                    <div class="footer-menu-item">情侶約會</div>
+                    <div class="footer-menu-item">親子同樂</div>
+                    <div class="footer-menu-item">歷史巡禮</div>
+                    <div class="footer-menu-item">自然景觀</div>
+                </div>
+                <div class="footer-menu">
+                    <div class="footer-menu-title">附近店家</div>
+                    <div class="footer-menu-item">美食饗宴</div>
+                    <div class="footer-menu-item">伴手禮</div>
+                </div>
+                <div class="footer-menu">
+                    <div class="footer-menu-title">揪團</div>
+                    <div class="footer-menu-item">照片牆</div>
+                    <div class="footer-menu-item">揪團群</div>
+                </div>
+                <div class="footer-menu">
+                    <div class="footer-menu-title">會員系統</div>
+                    <div class="footer-menu-item">申請會員</div>
+                    <div class="footer-menu-item">管理</div>
+                </div>
+                <div class="footer-menu">
+                    <div class="footer-menu-title">服務中心</div>
+                    <div class="footer-menu-item">交通資訊</div>
+                    <div class="footer-menu-item">聯絡我們</div>
+                </div>
+
+                <div class="footer-news"></div>
+
             </div>
-        </div>
-    </div>
-</div>
-@endsection
 
-@section('js')
 
-@endsection
+        </footer>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+    <!-- swiper js -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="{{asset('js/navbar.js')}}"></script>
+    @yield('js')
+</body>
+
+</html>

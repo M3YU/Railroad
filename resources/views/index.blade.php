@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>揪騎后豐</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- aos -->
@@ -40,7 +40,7 @@
         <li class="navbar-title">景點
           <div class="nav-detail">
             <div class="nav-detail-title">景點</div>
-            <a href="">
+            <a href="{{route('attractions')}}">
               <span>網美拍照</span>
             </a>
             <a href="">

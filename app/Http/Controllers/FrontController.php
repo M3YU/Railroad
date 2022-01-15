@@ -25,19 +25,16 @@ class FrontController extends Controller
 
     public function attraction()
     {
-        // // $array = ['13','17','25','30'];
-        // Attraction::where('id', 13)->get();
-        // Attraction::where('id', 17)->get();
-        // Attraction::where('id', 25)->get();
-        // Attraction::where('id', 30)->get();
         return view('front.attraction.attraction');
     }
-    
+    public function attractionContent(Request $request)
+    {
+        return view('front.attraction.content');
+    }
+
 
     function store()
     {
         return view('front.store.store');
     }
-
-
 }

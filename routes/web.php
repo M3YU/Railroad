@@ -31,16 +31,18 @@ Route::get('/', [FrontController::class, 'index'])->name('index');
 
 
 //沿途景點
-Route::get('/attractions', [FrontController::class, 'attraction'])-> name('attractions.index');
+Route::get('/attractions', [FrontController::class, 'attraction'])->name('attractions');
+
+Route::get('/attractions/{id}', [FrontController::class, 'attractionContent'])->name('attraction-content');
 
 
 
 //鄰近商店
-Route::get('/store', [FrontController::class, 'store'])-> name('store.index');
+Route::get('/store', [FrontController::class, 'store'])->name('store');
 
 
 //揪一起騎
-Route::get('/teams',[FrontController::class, 'teams'])-> name('teams.index');
+Route::get('/teams', [FrontController::class, 'teams'])->name('teams');
 
 // //揪成會員(已定義)
 

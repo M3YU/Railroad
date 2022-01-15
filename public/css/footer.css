@@ -9,9 +9,8 @@
  footer {
    width: 100vw;
    height: 22.55vw;
-   background-color: #231D1A;
+   background-color: #4E5643;
    position: absolute;
-   margin-top: -9.427vw;
    z-index: -1;
  }
 
@@ -34,7 +33,7 @@
    margin-left: 29.84vw;
    margin-top: 9.323vw;
    display: flex;
-   color: azure;
+   color: #ffffff;
  }
 
  .footer-menu {
@@ -56,7 +55,7 @@
    content: '一';
    width: 0.573vw;
    height: 1px;
-   color: azure;
+   color: #AEA83E;
    margin-right: 0.573vw;
  }
 

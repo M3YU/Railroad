@@ -1,0 +1,164 @@
+#middle {
+    width: 100vw;
+    height: 145vw;
+    padding-top: 0;
+}
+
+/*區塊標題*/
+.title-1 {
+    padding-bottom: 115px;
+}
+
+.attraction-title {
+    position: relative;
+    left: 150px;
+    width: 435px;
+    height: 75px;
+    font-size: 36px;
+    background-image: url('/img/attraction-content/標題用.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.attraction-title h2 {
+    position: absolute;
+    margin: 0;
+    left: 45px;
+    bottom: 10px;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+.description-text {
+    position: absolute;
+    left: 115px;
+    bottom: -62px;
+    font-size: 28px;
+}
+
+.container {
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+/*景點圖片區*/
+.attraction-main-img {
+    margin-left: 27px;
+    width: 450px;
+    height: 450px;
+    background-image: url('https://placeholder.pics/svg/450');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.attraction-main-title {
+    position: relative;
+    margin-bottom: 55px;
+}
+
+.attraction-main-title h3 {
+    position: relative;
+}
+
+.attraction-main-title h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -130px;
+    width: 45px;
+    height: 4px;
+    background-color: #4e5643;
+    box-shadow: 0px 200px 0px 0px #777;
+}
+
+.mark-btn {
+    position: absolute;
+    left: 23%;
+    transform: translateX(-50%);
+
+}
+
+.col-7.right {
+    padding: 0;
+}
+
+.other {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.attraction-other-img {
+    width: 200px;
+    height: 200px;
+    background-color: #e0dda7;
+}
+
+
+/*報導區*/
+.news-title {
+    position: relative;
+    padding-left: 140px;
+    font-size: 1.72vw;
+}
+
+.news-title::after {
+    content: "";
+    position: absolute;
+    left: 142px;
+    bottom: -40px;
+    width: 106px;
+    height: 4px;
+    background-color: #000;
+}
+
+.news-title::before {
+    content: "";
+    position: absolute;
+    left: 142px;
+    bottom: -74px;
+    width: 73px;
+    height: 4px;
+    background-color: #000;
+}
+
+.news-content {
+    font-size: 0.8vw;
+    padding-left: 45px;
+    margin-bottom: 140px;
+}
+
+
+
+
+/*swiper*/
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #707070;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper {
+    width: 100%;
+    height: 530px;
+    margin: 0 auto;
+}

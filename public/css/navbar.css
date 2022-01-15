@@ -17,7 +17,7 @@ nav {
   display: flex;
   list-style: none;
   position: absolute;
-  top: -110%;
+  top: -250%;
   right: 0;
   margin: 0;
   z-index: 1;
@@ -43,8 +43,8 @@ nav {
   position: relative;
 }
 
-.nav-logo{
-  margin-left: -1300px;
+.nav-logo {
+  margin-left: -67.708vw;
 }
 
 
