@@ -35,18 +35,19 @@ Route::get('/news', [FrontController::class, 'news'])->name('news');
 //沿途景點
 Route::get('/attractions', [FrontController::class, 'attraction'])->name('attractions');
 
-Route::get('/attractions/{id}', [FrontController::class, 'attractionContent'])->name('attraction-content');
+Route::get('/attractions/{id}', [FrontController::class, 'attractionContent'])->name('attractions-content');
 
-
+Route::get('/members', [FrontController::class, 'member'])->name('members');
 
 //鄰近商店
-Route::get('/store', [FrontController::class, 'store'])->name('store');
+Route::get('/stores', [FrontController::class, 'store'])->name('stores');
 
+Route::get('/stores/{id}', [FrontController::class, 'storeContent'])->name('stores.content');
 
 //揪一起騎
 Route::get('/teams', [FrontController::class, 'teams'])->name('teams');
 
-Route::get('/service', [FrontController::class, 'service'])->name('service');
+Route::get('/services', [FrontController::class, 'service'])->name('services');
 
 
 // //揪成會員(已定義)

@@ -12,7 +12,8 @@
   <div class="title">揪一起騎________________</div>
   <embed class="title-mask" src="{{asset('img/index/banner點綴.png')}}" type="">
   <div class="slogan">騎車才不會錯過美麗的風景。</div>
-  <div class="banner"></div>
+  <div class="banner" style="background-image: url('{{asset('img/member/11-www.17travel.tw-ForestPark-1.jpg')}}')">
+  </div>
   <embed class="banner-mask" src="{{asset('img/top/banner-mask.png')}}" type="">
 </section>
 

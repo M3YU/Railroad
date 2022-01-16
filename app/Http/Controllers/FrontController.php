@@ -43,7 +43,11 @@ class FrontController extends Controller
 
     public function store()
     {
-        return view('front.store.store');
+        return view('front.store.index');
+    }
+    public function storeContent($id)
+    {
+        return view('front.store.content');
     }
     public function news()
     {
@@ -56,5 +60,10 @@ class FrontController extends Controller
     public function service()
     {
         return view('front.service.index');
+    }
+
+    public function member()
+    {
+        return view('front.member.index');
     }
 }

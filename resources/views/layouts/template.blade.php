@@ -35,7 +35,7 @@
             position: absolute;
             z-index: 1;
             right: 0%;
-            top: -12.5%;
+            top: -11.8%;
             width: 36%;
         }
     </style>
@@ -80,13 +80,13 @@
                 <li class="navbar-title">商家
                     <div class="nav-detail">
                         <div class="nav-detail-title">商家</div>
-                        <a href="">
+                        <a href="{{route('stores')}}">
                             <span>美食饗宴</span>
                         </a>
-                        <a href="">
+                        <a href="{{route('stores')}}">
                             <span>騎上鐵馬</span>
                         </a>
-                        <a href="">
+                        <a href="{{route('stores')}}">
                             <span>帶伴手禮</span>
                         </a>
                     </div>
@@ -105,13 +105,13 @@
                 <li class="navbar-title">服務
                     <div class="nav-detail">
                         <div class="nav-detail-title">服務</div>
-                        <a href="">
+                        <a href="{{route('services')}}">
                             <span>基本資訊</span>
                         </a>
-                        <a href="">
+                        <a href="{{route('services')}}">
                             <span>交通資訊</span>
                         </a>
-                        <a href="">
+                        <a href="{{route('services')}}">
                             <span>聯絡我們</span>
                         </a>
                     </div>
@@ -119,17 +119,18 @@
                 <li class="navbar-title">登入
                     <div class="nav-detail">
                         <div class="nav-detail-title">登入</div>
-                        <a href="">
+                        <a href="{{route('members')}}">
                             <span>成為會員</span>
                         </a>
-                        <a href="">
+                        <a href="{{route('members')}}">
                             <span>我的行程</span>
                         </a>
-                    </div>
                     </div>
                 </li>
             </ul>
         </nav>
+
+
         @yield('main')
 
 
@@ -188,7 +189,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
     </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 

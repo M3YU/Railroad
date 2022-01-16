@@ -14,7 +14,7 @@
 
 <section id="top">
   <div class="title" style="background-image: none;">最新消息________________</div>
-  <embed class="title-mask" src="{{asset('img/top/banner點綴.svg')}}" type="">
+  <embed class="title-mask" src="{{asset('img/index/banner點綴.png')}}" type="">
   <div class="slogan">騎車才不會錯過美麗的風景。</div>
   <div class="banner" style="background-image: url('{{asset('img/news/11-www.17travel.tw-ForestPark-1.jpg')}}')"></div>
   <embed class="banner-mask" src="{{asset('img/top/banner-mask.png')}}" type="">
@@ -205,7 +205,7 @@
 @endsection
 
 @section('footer')
-<embed class="footer-mask" src="/img/index/footer用-總和.png" type="">
+<embed class="footer-mask" src="{{asset('/img/index/footer用-總和.png')}}" type="">
 <embed class="grass" src="{{asset('img/index/footer草叢.png')}}" type="">
 
 @endsection

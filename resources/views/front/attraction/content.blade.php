@@ -27,7 +27,7 @@
 
 <section id="top">
     <div class="title" style="background-image: none">揪一起騎________________</div>
-    <embed class="title-mask" src="{{asset('img/top/banner點綴.svg')}}" type="">
+    <embed class="title-mask" src="{{asset('img/index/banner點綴.png')}}" type="">
     <div class="slogan">騎車才不會錯過美麗的風景。</div>
     <div class="banner"
         style="background-image: url('{{asset('img/attraction/27-travel.taichung.gov.tw-LoverBridge-2.jpg')}}')"></div>
@@ -45,7 +45,8 @@
     <div class="container">
         <div class="row ">
             <div class="col-5">
-                <div class="attraction-main-img" style="background-image: url({{Storage::url($attraction->image_url)}})"></div>
+                <div class="attraction-main-img"
+                    style="background-image: url({{Storage::url($attraction->image_url)}})"></div>
             </div>
             <div class="col-7 right">
                 <div class="other ">
@@ -62,22 +63,21 @@
                         </div>
                     </div>
                     <div class="row">
-                    @foreach ($attractionImgs as $index => $attractionImg)
+                        @foreach ($attractionImgs as $index => $attractionImg)
 
-                    @if ( $index < 3)
-
-                            <div class="col-4">
-                                <div class="attraction-other-img" style="background-image: url('{{Storage::url($attractionImg->image_url)}}')"></div>
-                            </div>
+                        @if ( $index < 3) <div class="col-4">
+                            <div class="attraction-other-img"
+                                style="background-image: url('{{Storage::url($attractionImg->image_url)}}')"></div>
+                    </div>
                     @endif
-                    
+
                     @endforeach
 
 
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div class="container">
         <div class="row">
@@ -90,7 +90,7 @@
             <div class="col-7 ">
                 <div class="row">
                     <div class="news-content">
-                            {{$attraction->content}}
+                        {{$attraction->content}}
                     </div>
                 </div>
             </div>
@@ -105,7 +105,8 @@
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         @foreach ($categories as $category)
-                            <div class="swiper-slide"  style="background-image: url('{{Storage::url($category->image_url)}}')"></div>
+                        <div class="swiper-slide"
+                            style="background-image: url('{{Storage::url($category->image_url)}}')"></div>
                         @endforeach
 
 
@@ -122,6 +123,7 @@
 @endsection
 @section('footer')
 <embed class="footer-mask" src="/img/index/footer用-總和.png" type="">
+<embed class="grass" src="{{asset('img/index/footer草叢.png')}}" type="">
 
 @endsection
 

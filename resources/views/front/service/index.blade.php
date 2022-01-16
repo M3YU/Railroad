@@ -23,7 +23,7 @@
 @section('main')
 
 <section id="top">
-  <div class="title">揪一起騎________________</div>
+  <div class="title">服務中心________________</div>
   <embed class="title-mask" src="{{asset('img/index/banner點綴.png')}}" type="">
   <div class="slogan">騎車才不會錯過美麗的風景。</div>
   <div class="banner"></div>

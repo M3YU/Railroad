@@ -1,0 +1,304 @@
+@charset "UTF-8";
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+.title {
+  width: 100%;
+  height: 100%;
+  min-width: 438px;
+  min-height: 95px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: url("/img/store-content/標題用.png");
+}
+
+.title h1 {
+  padding-left: 24px;
+  padding-top: 32px;
+  font-size: 2rem;
+}
+
+.title:after {
+  content: '';
+  width: calc( 438px / 2);
+  height: 2px;
+  border-bottom: 2px solid #000000;
+}
+
+.subtitle {
+  padding-left: 9%;
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.news-content-p {
+  font-size: 1rem;
+  line-height: 30px;
+}
+
+.store .row:nth-child(2) .store-img {
+  min-width: 475px;
+  height: 520px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("https://dummyimage.com/475x520");
+}
+
+.store .row:nth-child(2) .store-title {
+  height: 200px;
+  max-height: 200px;
+  position: relative;
+}
+
+.store .row:nth-child(2) .store-title .store-title-border {
+  width: 50px;
+  height: 100%;
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+}
+
+.store .row:nth-child(2) .store-title h2 {
+  position: absolute;
+  bottom: 1rem;
+  font-weight: bold;
+}
+
+.store .row:nth-child(2) .store-sub-img {
+  max-width: 220px;
+  height: 220px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("https://dummyimage.com/220x220");
+}
+
+.store .row:nth-child(3) .news-title {
+  padding-right: 10rem;
+}
+
+.store .row:nth-child(3) .news-title .news-title-border {
+  width: 6rem;
+  height: 2rem;
+  position: relative;
+  border-bottom: 2px solid #000000;
+}
+
+.store .row:nth-child(3) .news-title .news-title-border:after {
+  content: '';
+  width: 4rem;
+  height: 2rem;
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  border-bottom: 2px solid #000000;
+}
+
+.store .row:nth-child(3) .news-content {
+  text-align: justify;
+}
+
+.maps {
+  background-color: #4e5643;
+  margin: 100px 0px;
+}
+
+.maps .container {
+  padding-top: 1%;
+  padding-bottom: 5%;
+}
+
+.maps .container .map-title {
+  padding-right: 10rem;
+}
+
+.maps .container .map-title .map-title-border {
+  width: 12rem;
+  height: 0.5rem;
+  position: relative;
+  border-bottom: 2px solid #ffffff;
+}
+
+.maps .container .map-title .map-title-border:after {
+  content: '';
+  width: 3rem;
+  height: 1rem;
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  border-bottom: 2px solid #ffffff;
+}
+
+.maps .container .comment {
+  width: 320px;
+  min-height: 350px;
+}
+
+.maps .container .comment .comment-middle span {
+  font-size: 0.5rem;
+}
+
+.maps .container .comment .comment-middle .progress {
+  height: 8px;
+}
+
+.maps .container .comment .comment-middle .comment-info .score {
+  font-weight: bold;
+}
+
+.maps .container .comment .comment-middle .comment-info .stars {
+  color: #fbbc04;
+}
+
+.maps .container .comment .comment-middle .comment-info .comments {
+  font-size: 0.5rem;
+  font-weight: bold;
+}
+
+.maps .container .comment .comment-middle .comment-card {
+  font-size: 00.5rem;
+}
+
+.maps .container .comment .comment-middle .comment-card .user-img {
+  width: 32px;
+  height: 32px;
+}
+
+.maps .container .comment-bottom .comment-btn {
+  color: #1a73e8;
+}
+
+.maps .container .comment-bottom .comment-btn span {
+  color: #000000;
+}
+
+.maps .container .comment-bottom .comment-footer p {
+  font-size: 0.5rem;
+}
+
+.omiyage .row:nth-child(2) {
+  margin-right: 11%;
+  margin-left: 11%;
+}
+
+.omiyage .row:nth-child(2) .col {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  max-width: 300px;
+  max-height: 300px;
+  margin-bottom: 0;
+  color: #000000;
+  text-align: center;
+  perspective: 50em;
+  -webkit-perspective: 50em;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods * {
+  box-sizing: padding-box;
+  -webkit-box-sizing: padding-box;
+  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods .img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-image: url("https://dummyimage.com/300x300");
+}
+
+.omiyage .row:nth-child(2) .col figure.goods img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods figcaption {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  opacity: 0;
+  z-index: 1;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods h2, .omiyage .row:nth-child(2) .col figure.goods h4 {
+  margin: 0;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods h2 {
+  font-weight: 600;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods h4 {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods i {
+  font-size: 32px;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods:after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  display: block;
+  background-color: #ffffff;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transform: rotateX(-90deg);
+  -webkit-transform: rotateX(-90deg);
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  opacity: 0;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods:hover figcaption, .omiyage .row:nth-child(2) .col figure.goods .hover figcaption {
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+  opacity: 1;
+}
+
+.omiyage .row:nth-child(2) .col figure.goods:hover:after, .omiyage .row:nth-child(2) .col figure.goods .hover:after {
+  transform: rotateX(0);
+  -webkit-transform: rotateX(0);
+  opacity: 0.9;
+}
+
+.omiyage .row:nth-child(2) .col p {
+  width: 300px;
+  padding: 1.5rem;
+  text-align: justify;
+  color: #000;
+}
+/*# sourceMappingURL=store-content.css.map */
