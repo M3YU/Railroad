@@ -184,6 +184,7 @@
 
 @section('footer')
 <embed class="footer-mask" src="/img/index/footer用-總和.png" type="">
+<embed class="grass" src="{{asset('img/index/footer草叢.png')}}" type="">
 
 @endsection
 

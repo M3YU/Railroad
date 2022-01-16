@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* 下面這四個是避免用 100vw 的時候 下方出現滾輪軸的方法 */
+
+/* 這邊的vw 都是原本的 px/1920 */
+
+html {
+  overflow-y: scroll;
+}
+
+:root {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+:root body {
+  position: absolute;
+}
+
+body {
+  width: 100vw;
+  font-weight: 900;
+}
+
+
+
+#middle {
+  width: 100vw;
+  height: 46.458vw;
+  position: relative;
+
+
+}
+
+.middle-background {
+  background-image: url(/img/service/06-travel.taichung.gov.tw-SteelBridge-3.jpg);
+  background-position: center;
+  background-size: 107%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -21vw;
+  left: 0;
+  height: 76.458vw;
+  width: 100vw;
+  z-index: -1;
+}
+
+
+#middle .title {
+  position: absolute;
+  font-size: 2vw;
+  margin-left: 10.417vw;
+  margin-top: 3.906vw;
+}
+
+.title:after {
+  content: '';
+  width: calc(438px / 2);
+  height: 2px;
+  border-bottom: 2px solid #000000;
+}
+
+#middle .subtitle {
+  position: absolute;
+  font-size: 1.458vw;
+  margin-left: 14.115vw;
+  margin-top: 6.927vw;
+}
+
+#middle .title-mask {
+  width: 23.425vw;
+  height: 5.75vw;
+  position: absolute;
+  top: 5%;
+  left: 8%;
+  z-index: -1;
+}
+
+#middle .content {
+  font-size: 0.78125vw;
+  width: 38.298vw;
+  height: 15.833vw;
+  border: #e0e0e0 1px solid;
+  padding: 1.302vw 1.5625vw 1.302vw 1.2625vw;
+  line-height: 1.502vw;
+  position: absolute;
+  top: 12.917vw;
+  left: 18.4375vw;
+  background-color: rgba(227, 225, 176, 0.8);
+}
+
+
+
+#bottom {
+  width: 100vw;
+  height: 130.1vw;
+  position: absolute;
+  top: 84%;
+
+}
+
+#bottom .background {
+  width: 100%;
+  height: 88.02vw;
+  clip-path: ellipse(97.643vw 43.867vw at 50% 50%);
+  background-color: #86817c;
+}
+
+
+#bottom .background .title {
+  position: absolute;
+  font-size: 1.944vw;
+  top: 7%;
+  left: 10.5%;
+}
+
+#bottom .background .subtitle {
+  position: absolute;
+  font-size: 1.458vw;
+  top: 9.3%;
+  left: 14%;
+}
+
+#bottom .background .title-mask {
+  width: 23.425vw;
+  height: 5.75vw;
+  position: absolute;
+  top: 5.3%;
+  left: 8%;
+  z-index: -1;
+}
+
+#bottom .background .cards {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 23.02vw;
+  width: 53.073vw;
+  height: 20.833vw;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+#bottom .background .cards .card {
+  width: 15.625vw;
+  height: 20.833vw;
+  background-color: transparent;
+  border: 0.208vw solid #e0dda7;
+  position: relative;
+}
+
+#bottom .background .cards .card::before {
+  content: '';
+  background-color: #e0dda7;
+  width: 7.8125vw;
+  height: 7.8125vw;
+  clip-path: circle(50% at 50% 50%);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#bottom .background .cards .card .card-title {
+  width: 100%;
+  height: 4.375vw;
+  font-size: 1.198vw;
+  text-align: center;
+  line-height: 4.375vw;
+  margin-top: 5.573vw;
+  margin-bottom: 2.76vw;
+  position: relative;
+  color: #e0dda7;
+}
+
+#bottom .background .cards .card .card-title::before {
+  content: '';
+  width: 2.083vw;
+  height: 0.108vw;
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  background-color: #ffffff;
+}
+
+#bottom .background .cards .card .card-title::after {
+  content: '';
+  width: 2.083vw;
+  height: 0.108vw;
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  bottom: 0%;
+  background-color: #ffffff;
+}
+
+#bottom .background .cards .card .card-content {
+  padding-left: 1.042vw;
+  padding-right: 1.042vw;
+  font-size: 0.78125vw;
+  line-height: 1.302vw;
+}
+
+#bottom>.title {
+  font-size: 1.875vw;
+  padding-bottom: 0.25vw;
+  width: 7.5833vw;
+  border-bottom: 0.15625vw solid #ffffff;
+  position: absolute;
+  margin-top: -11.979vw;
+  margin-left: 19.115vw;
+  z-index: 1;
+}
+
+#bottom>.title::after {
+  content: '';
+  position: absolute;
+  width: 3.802vw;
+  height: 0.15625vw;
+  background-color: rgb(255, 255, 255);
+  bottom: -53%;
+  left: 0%;
+}
+
+#bottom>.title-mask {
+  width: 31.25vw;
+  position: absolute;
+  margin-top: -18.979vw;
+  margin-left: 5vw;
+}
+
+#bottom .contact {
+  width: 21.115vw;
+  height: 32.76vw;
+  background-color: #ffffff;
+  border: #C6C6C6 0.21vw solid;
+  padding-top: 2.344vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 28.125vw;
+  top: 67.5vw;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+}
+
+#bottom .contact>div {
+  font-size: 1.5625vw;
+  margin-bottom: 1vw;
+}
+
+#bottom .contact label {
+  margin-top: 0.99vw;
+  font-size: 0.99vw;
+  text-align: start;
+}
+
+#bottom .contact label:first-child {
+  margin-top: 0vw;
+}
+
+#bottom .contact input {
+  height: 1.33vw;
+}
+
+#bottom .contact textarea {
+  height: 6.1875vw;
+}
+
+#bottom .contact input,
+#bottom .contact textarea {
+  border: 0;
+  border-bottom: #C6C6C6 0.21vw solid;
+}
+
+#bottom .contact label,
+#bottom .contact input,
+#bottom .contact textarea {
+  width: 13.75vw;
+}
+
+#bottom .contact button {
+  width: 16.667vw;
+  height: 2.604vw;
+  position: absolute;
+  bottom: 1.4vw;
+}
+
+
+.footer-mask {
+  bottom: -2%;
+}

@@ -46,6 +46,9 @@ Route::get('/store', [FrontController::class, 'store'])->name('store');
 //揪一起騎
 Route::get('/teams', [FrontController::class, 'teams'])->name('teams');
 
+Route::get('/service', [FrontController::class, 'service'])->name('service');
+
+
 // //揪成會員(已定義)
 
 // Route::prefix('/user')->group(function () {

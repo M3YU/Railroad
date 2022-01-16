@@ -47,17 +47,18 @@
 
         <nav>
             <ul class="navbar">
-                <li><a><img class="nav-logo" src="{{asset('img/index/LOGO-icon.png')}}" alt=""></a></li>
+                <li><a href="{{route('index')}}"><img class="nav-logo" src="{{asset('img/index/LOGO-icon.png')}}"
+                            alt=""></a></li>
                 <li class="navbar-title">消息
                     <div class="nav-detail">
                         <div class="nav-detail-title">消息</div>
-                        <a href="#">
+                        <a href="{{route('news')}}">
                             <span>鄰近活動</span>
                         </a>
-                        <a href="">
+                        <a href="{{route('news')}}">
                             <span>施工消息</span>
                         </a>
-                        <a href="">
+                        <a href="{{route('news')}}">
                             <span>租車優惠</span>
                         </a>
                     </div>
@@ -68,10 +69,10 @@
                         <a href="{{route('attractions')}}">
                             <span>網美拍照</span>
                         </a>
-                        <a href="">
+                        <a href="{{route('attractions')}}">
                             <span>特別推薦</span>
                         </a>
-                        <a href="">
+                        <a href="{{route('attractions')}}">
                             <span>套裝行程</span>
                         </a>
                     </div>
@@ -93,10 +94,10 @@
                 <li class="navbar-title">揪團
                     <div class="nav-detail">
                         <div class="nav-detail-title">揪團</div>
-                        <a href="">
+                        <a href="{{route('teams')}}">
                             <span>在線行程</span>
                         </a>
-                        <a href="">
+                        <a href="{{route('teams')}}">
                             <span>照片牆</span>
                         </a>
                     </div>

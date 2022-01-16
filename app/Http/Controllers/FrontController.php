@@ -49,4 +49,12 @@ class FrontController extends Controller
     {
         return view('front.news.index');
     }
+    public function teams()
+    {
+        return view('front.group.index');
+    }
+    public function service()
+    {
+        return view('front.service.index');
+    }
 }
