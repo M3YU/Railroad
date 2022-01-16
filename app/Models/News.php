@@ -11,5 +11,10 @@ class News extends Model
 
     protected $table = 'news';
 
-    protected $fillable = ['title','date','content','image_url'];
+    protected $fillable = ['title', 'date', 'content', 'image_url', 'category_id'];
+
+    public function NewsCategory()
+    {
+        return $this->belongsTo(NewsCategory::class, 'category_id', 'id');
+    }
 }

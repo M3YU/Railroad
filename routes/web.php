@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
@@ -7,9 +8,9 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AttractionController;
+use App\Http\Controllers\NewsCategoryController;
 use App\Http\Controllers\StoreCategoryController;
 use App\Http\Controllers\AttractionCategoryController;
-use App\Models\Attraction;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,10 +103,16 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
     Route::resource('/stores', StoreController::class);
     Route::resource('/store_categories', StoreCategoryController::class);
     Route::delete('/store_image', [StoreController::class, 'storesimageDelete'])->name('stores.image-delete');
-    Route::resource('/news', NewsController::class);
-    Route::get('/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
-    Route::patch('/{id}', [NewsController::class, 'update'])->name('news.update');
-    Route::delete('/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+    Route::resource('/news_categories', NewsCategoryController::class);
+
+    Route::prefix('/news')->group(function () {
+        Route::get('/', [NewsController::class, 'index'])->name('news.index');
+        Route::get('/create', [NewsController::class, 'create'])->name('news.create');
+        Route::post('/', [NewsController::class, 'store'])->name('news.store');
+        Route::get('/{news}/edit', [NewsController::class, 'edit'])->name('news.edit');
+        Route::patch('/{news}', [NewsController::class, 'update'])->name('news.update');
+        Route::delete('/{news}', [NewsController::class, 'destroy'])->name('news.destroy');
+    });
 });
 
 
