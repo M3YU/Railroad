@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>(后豐.東豐)鐵馬道</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -33,22 +33,22 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('home')}}">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3" >首頁</div>
       </a>
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
+      {{-- <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
-      </li>
+      </li> --}}
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -63,31 +63,33 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
           aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
+          <span>設定</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        {{-- <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Components:</h6>
             <a class="collapse-item" href="buttons.html">Buttons</a>
             <a class="collapse-item" href="cards.html">Cards</a>
           </div>
         </div>
-      </li>
+      </li> --}}
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
           aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
+          <span>使用套件</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+            <h6 class="collapse-header" style="color: red">套件選單:</h6>
+            <a class="collapse-item" href="https://github.com/">github</a>
+            <a class="collapse-item" href="https://summernote.org/">summernote</a>
+            <a class="collapse-item" href="https://datatables.net/">datatable</a>
+            <a class="collapse-item" href="https://startbootstrap.com/theme/sb-admin-2">startbootstrap</a>
+            
+
           </div>
         </div>
       </li>
@@ -102,39 +104,55 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-          aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#back-end-page" aria-expanded="true"
+          aria-controls="back-end-page">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <span>後台頁面</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="back-end-page" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Main Pages:</h6>
-            <a class="collapse-item" href="">News</a>
-            <a class="collapse-item" href="">Facilities</a>
-            <a class="collapse-item" href="">Contacts</a>
-            <a class="collapse-item" href="">Products</a>
-            <a class="collapse-item" href="">Stores</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Category Pages:</h6>
-            <a class="collapse-item" href="">Product_categories</a>
-            <a class="collapse-item" href="">Store_areas</a>
+            <h6 class="collapse-header" style="color: red">後台頁面:</h6>
+            <a class="collapse-item" href="{{route('news.index')}}">最新消息</a>
+            <a class="collapse-item" href="{{route('stores.index')}}">商店</a>
+            <a class="collapse-item" href="{{route('attractions.index')}}">景點</a>
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#categories" aria-expanded="true"
+          aria-controls="categories">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>類別</span>
+        </a>
+        <div id="categories" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <div class="collapse-divider"></div>
+            <h6 class="collapse-header" style="color: red">類別:</h6>
+            <a class="collapse-item" href="{{route('store_categories.index')}}">商店類別</a>
+            <a class="collapse-item" href="{{route('attraction_categories.index')}}">景點類別</a>
+          </div>
+        </div>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#front-desk-page" aria-expanded="true"
+          aria-controls="front-desk-page">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>前台頁面</span>
+        </a>
+        <div id="front-desk-page" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header" style="color: red">前台頁面:</h6>
+            <a class="collapse-item" href="{{route('stores')}}">商店</a>
+            <a class="collapse-item" href="{{route('attractions')}}">景點</a>
+            <a class="collapse-item" href="{{route('news')}}">最新消息</a>
+            <a class="collapse-item" href="{{route('bike.Page')}}">形象頁</a>
+            <a class="collapse-item" href="{{route('contact.index')}}">聯絡我們</a>
+          </div>
+        </div>
       </li>
 
       <!-- Divider -->

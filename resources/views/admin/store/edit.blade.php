@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('css')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.css" rel="stylesheet">
 <style>
     .img {
-        width: 200px;
-        height: 200px;
+        width: 100px;
+        height: 100px;
         background-size: cover;
         background-position: center;
         border: 1px solid #000;
@@ -71,7 +72,7 @@
                             </div>
                         </div>
                         <div class="form-group row py-2">
-                            <label for="phone" class="col-sm-2 col-form-label">名稱<span
+                            <label for="phone" class="col-sm-2 col-form-label">電話<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="phone" name="phone" value="{{$store->phone}}"
@@ -99,7 +100,7 @@
                                 @foreach ($store->storeImage as $storeImage)
                                 <div class="img"
                                     style="background-image: url({{Storage::url($storeImage->image_url)}})">
-                                    <div class="delete-btn" data-id="{{$storeImage->id}} "></div>
+                                    <div class="delete-btn" data-id="{{$storeImage->id}} " >x</div>
                                 </div>
                                 @endforeach
                             </div>
@@ -108,41 +109,46 @@
                             <label for="image-urls" class="col-sm-2 col-form-label">其他圖片(上傳)</label>
                             <div class="col-sm-10">
                                 <input type="file" accept="image/*" class="form-control" id="image-urls"
-                                    name="image_urls[]" multiple>
+                                    name="image_urls[]" multiple >
                             </div>
                         </div>
+                                                 
                         <div class="form-group row py-2">
-                            <label for="address" class="col-sm-2 col-form-label">地址<span
-                                     class="text-danger">*</span></label>
-                              <div class="col-sm-10">
-                                 <textarea class="form-control" name="address" id="address" rows="5"
-                                    required>{{$store->address}}</textarea>
-                           </div>
-                        <hr>
+                            <label for="distance" class="col-sm-2 col-form-label">距離<span
+                                    class="text-danger">*</span></label>
+                            <div class="col-sm-10">
+                                <input class="form-control" name="distance" id="distance" rows="5"
+                                    required value="{{$store->distance}}">
+                            </div>
+                        </div>
+
                         <div class="form-group row py-2">
                             <label for="content" class="col-sm-2 col-form-label">描述<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="content" id="content" rows="5"
+                                <textarea class="form-control" name="content" id="store-content" rows="5"
                                     required>{{$store->content}}</textarea>
                             </div>
                         </div>
 
                         <div class="form-group row py-2">
-                            <label for="distance" class="col-sm-2 col-form-label">距離<span
-                                    class="text-danger">*</span></label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" name="distance" id="distance" rows="5"
-                                    required>{{$store->distance}}</textarea>
-                            </div>
+                            <label for="address" class="col-sm-2 col-form-label">地址<span
+                                     class="text-danger">*</span></label>
+                              <div class="col-sm-10">
+                                 <input class="form-control" name="address" id="address" rows="5"
+                                    required value="{{$store->address}}">
+                           </div>
                         </div>
                         <div class="form-group row py-2">
                             <label for="direction" class="col-sm-2 col-form-label">方向<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="direction" id="direction" rows="5"
-                                    required>{{$store->direction}}</textarea>
+                                <input class="form-control" name="direction" id="direction" rows="5"
+                                    required value="{{$store->direction}}">
                             </div>
+                        </div>
+
+
 
                         <div class="form-group row py-2">
                             <div class="col-sm-12 text-center">
@@ -158,6 +164,14 @@
 @endsection
 
 @section('js')
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+  $('#store-content').summernote();
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.js"></script>
 <script>
     let deleteBtns = document.querySelectorAll('.delete-btn');
     deleteBtns.forEach(function (deleteBtn) {

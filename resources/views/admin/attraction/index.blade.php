@@ -36,7 +36,7 @@
                                 <tr>
                                     <td>{{$attraction->attractionCategory->name}}</td>
                                     <td>{{$attraction->name}}</td>
-                                    <td>{{$attraction->content}}</td>
+                                    <td style="height: 5%">{{$attraction->content}}</td>
                                     <td><img src="{{Storage::url($attraction->image_url)}}" alt="" width="200" height="150"></td>
                                     <td>
                                         <a href="{{route('attractions.edit',['attraction'=>$attraction->id])}}" class="btn btn-primary">編輯</a>
