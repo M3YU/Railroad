@@ -14,7 +14,31 @@
     <!-- swiper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
+    <link rel="stylesheet" href="{{asset('css/top.css')}}">
     <link rel="stylesheet" href="{{asset('css/footer.css')}}">
+    <style>
+        #top .banner {
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        footer {
+            margin-top: 21.5vw;
+        }
+
+        .footer-mask {
+            bottom: 47%;
+            z-index: 1;
+        }
+
+        .grass {
+            position: absolute;
+            z-index: 1;
+            right: 0%;
+            top: -12.5%;
+            width: 36%;
+        }
+    </style>
     @yield('css')
 </head>
 

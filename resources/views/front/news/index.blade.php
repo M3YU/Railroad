@@ -6,26 +6,7 @@
 @section('css')
 <link rel="stylesheet" href="{{asset('css/news.css')}}">
 <style>
-  #top .banner {
-    background-size: cover;
-    background-position: bottom;
-  }
 
-  footer {
-    margin-top: 21.5vw;
-  }
-
-  .footer-mask {
-    bottom: 47%;
-    z-index: 1;
-  }
-
-  .grass {
-    position: absolute;
-    z-index: 1;
-    right: 0%;
-    top: -12.5%;
-  }
 </style>
 @endsection
 

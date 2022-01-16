@@ -29,6 +29,8 @@ Route::get('bike', [FrontController::class, 'bike'])->name('bike.Page');
 // //首頁
 Route::get('/', [FrontController::class, 'index'])->name('index');
 
+Route::get('/news', [FrontController::class, 'news'])->name('news');
+
 
 //沿途景點
 Route::get('/attractions', [FrontController::class, 'attraction'])->name('attractions');
