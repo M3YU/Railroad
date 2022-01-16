@@ -1,0 +1,262 @@
+*{
+    box-sizing: border-box;
+}
+.title {
+    width: 100%;
+    height: 100%;
+    min-width: 438px;
+    min-height: 95px;
+    font-size: 2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-image: url("/img/news/標題用.png");
+    margin-top: 200px;
+  }
+  .title-top{
+      margin-top: 0px;
+  }
+  
+  .title h1 {
+    padding-left: 24px;
+    padding-top: 32px;
+  }
+
+  
+  .title:after {
+    content: '';
+    width: calc( 438px / 2);
+    height: 2px;
+    border-bottom: 2px solid #000000;
+  }
+  
+  .subtitle {
+    padding-left: 9%;
+    font-size: 1.5rem;
+  }
+
+
+
+  /* 鄰近景點 */
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;
+    src: url(/img/news/03-sheep17go.com-RongTing-3.JPG) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: url(/img/news/04-FB@paintballyeke-YeKe-1.jpg) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/img/news/10-alberthsieh.com-26323-flpo_horse.jpg) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url(/img/news/31-yutzu4.pixnet.net-MeiTzu-1.jpg) format('truetype');
+  }
+
+  .accordion-group li:nth-child(4) .accordion-overlay {
+    background-color: #3F4042;
+    opacity: 0.8;
+  }
+
+  .accordion-group li:nth-child(4).out .accordion-overlay {
+    background-color: #3F4042;
+    opacity: 0;
+  }
+
+  .accordion-group li:nth-child(3) .accordion-overlay {
+    background-color: #4E5643;
+    opacity: 0.8;
+  }
+
+  .accordion-group li:nth-child(3).out .accordion-overlay {
+    background-color: #4E5643;
+    opacity: 0;
+  }
+
+  .accordion-group li:nth-child(2) .accordion-overlay {
+    background-color: #AEA83E;
+    opacity: 0.8;
+  }
+
+  .accordion-group li:nth-child(2).out .accordion-overlay {
+    background-color: #AEA83E;
+    opacity: 0;
+  }
+
+  .accordion-group li:nth-child(1) .accordion-overlay {
+    background-color: #86817C;
+    opacity: 0.8;
+  }
+
+  .accordion-group li:nth-child(1).out .accordion-overlay {
+    background-color: #86817C;
+    opacity: 0;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+    background: #fff;
+  }
+
+  *,
+  *:before,
+  *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .accordion-group {
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    transition: all 300ms ease;
+  }
+
+  .accordion-group li {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    margin: 0;
+    padding: 1.6em;
+    list-style: none;
+    width: 16.66666667%;
+    height: inherit;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 250ms ease-in-out;
+  }
+
+  .accordion-group li h3 {
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    padding: 0;
+    font-weight: 300;
+    margin: 6.5rem 0 0;
+  }
+
+  .accordion-group li .accordion-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transition: all 250ms ease-in-out;
+  }
+
+  .accordion-group li section {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    height: 100%;
+  }
+
+  .accordion-group li section.big-section {
+    width: 100%;
+  }
+
+  .accordion-group li section article {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 4rem;
+    position: relative;
+    right: -200%;
+    transition: all 250ms ease-in-out;
+  }
+
+  .accordion-group li section article p {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1.6rem;
+    color: #333;
+    font-size: 1.6rem;
+    letter-spacing: 0.15rem;
+  }
+
+  .accordion-group li section article p:before,
+  .accordion-group li section article p:after {
+    content: "";
+    display: block;
+    height: 1px;
+  }
+
+  .accordion-group li.out {
+    width: 50%;
+  }
+
+  .accordion-group li.out section article {
+    right: 0;
+  }
+
+  @media (max-width: 767px) {
+    .accordion-group {
+      height: 360px;
+    }
+
+    .accordion-group li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .accordion-group li.out h3 {
+      opacity: 0;
+    }
+
+    .accordion-group li h3 {
+      opacity: 1;
+      transition: all 300ms ease-in-out;
+      transform: rotate(90deg);
+      width: 2.5rem;
+      padding: 0;
+      margin: 10rem 0;
+    }
+  }
+
+
+  /* 施工消息 */
+
+  .accordion-photo{
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+  }
+
+  .card{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      border: #AEA83E 1px solid;
+      border-radius: 5%;
+      font-size: 18px;
+  }
+  .card-title{
+      padding: 1rem;
+  }
+
+  .item-content{
+      padding: 20px;
+  }

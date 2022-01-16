@@ -32,17 +32,21 @@ class FrontController extends Controller
     {
         $attraction = Attraction::find($id);
 
-        $categories = Attraction:: where('category_id',$attraction->category_id)->get();
+        $categories = Attraction::where('category_id', $attraction->category_id)->get();
 
-        $attractionImgs = AttractionImage::where('attraction_id',$id)->get();
-        
-       
-        return view('front.attraction.content',compact('attraction','categories','attractionImgs'));
+        $attractionImgs = AttractionImage::where('attraction_id', $id)->get();
+
+
+        return view('front.attraction.content', compact('attraction', 'categories', 'attractionImgs'));
     }
 
 
-    function store()
+    public function store()
     {
         return view('front.store.store');
+    }
+    public function news()
+    {
+        return view('front.news.index');
     }
 }
