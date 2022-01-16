@@ -37,7 +37,7 @@
 <section id="middle">
     <div class="row title-1">
         <div class="attraction-title">
-            <h2>后里馬場</h2>
+            <h2>{{$attraction->name}}</h2>
             <p class="description-text">網美拍照地</p>
         </div>
 
@@ -45,13 +45,13 @@
     <div class="container">
         <div class="row ">
             <div class="col-5">
-                <div class="attraction-main-img"></div>
+                <div class="attraction-main-img" style="background-image: url({{Storage::url($attraction->image_url)}})"></div>
             </div>
             <div class="col-7 right">
                 <div class="other ">
                     <div class="row ">
                         <div class="attraction-main-title">
-                            <h3>后里馬場</h3>
+                            <h3>{{$attraction->name}}</h3>
                             <button type="button" class="btn btn-secondary mark-btn">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                     class="bi bi-bookmark-star-fill" viewBox="0 0 16 16">
@@ -62,15 +62,18 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-4">
-                            <div class="attraction-other-img"></div>
-                        </div>
-                        <div class="col-4">
-                            <div class="attraction-other-img"></div>
-                        </div>
-                        <div class="col-4">
-                            <div class="attraction-other-img"></div>
-                        </div>
+                    @foreach ($attractionImgs as $index => $attractionImg)
+
+                    @if ( $index < 3)
+
+                            <div class="col-4">
+                                <div class="attraction-other-img" style="background-image: url('{{Storage::url($attractionImg->image_url)}}')"></div>
+                            </div>
+                    @endif
+                    
+                    @endforeach
+
+
                     </div>
                 </div>
             </div>
@@ -80,45 +83,14 @@
         <div class="row">
             <div class="col-5 ">
                 <div class="news-title">
-                    <h2>后里馬場相關報導</h2>
-                    <h3>后里馬場</h3>
+                    <h2>{{$attraction->name}}相關報導</h2>
+                    <h3>{{$attraction->name}}</h3>
                 </div>
             </div>
             <div class="col-7 ">
                 <div class="row">
                     <div class="news-content">
-                        后豐鐵馬道過去是臺鐵的舊山線，亦即停用或廢棄的鐵道，如今改建成自行車道，全長約4.5公里，路段看似短卻有非常多樣化的景觀。
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi blanditiis hic, laudantium,
-                        amet
-                        quaerat
-                        rem quos itaque vitae minima delectus dolorum et veniam dolores fugit error repellendus iste
-                        suscipit?
-                        Ut
-                        nisi excepturi nam nobis quos corrupti maiores beatae officiis quia adipisci itaque dolorum
-                        assumenda,
-                        tenetur corporis sunt magni, aspernatur a cupiditate quas unde. Itaque tempore suscipit
-                        excepturi a quia
-                        soluta eveniet sed, repudiandae doloribus reiciendis quaerat perferendis eligendi optio animi
-                        perspiciatis
-                        dicta maiores veritatis, veniam odio porro impedit adipisci laudantium dolore! Aliquam error,
-                        aliquid
-                        iusto, similique nisi dolorum dolorem quia consectetur neque labore cumque qui ea dolore
-                        reiciendis
-                        eveniet culpa magnam necessitatibus repellendus. Rem, odio culpa. Harum, iusto unde qui earum
-                        veniam
-                        numquam quasi velit explicabo maiores, molestiae neque veritatis sapiente nam magnam placeat!
-                        Quod,
-                        quibusdam dignissimos dolorum laudantium tempora veritatis cupiditate, aut saepe dolore dolores
-                        consectetur facere, repellendus delectus commodi harum nemo nostrum hic enim dolorem! Saepe,
-                        ipsum modi?
-                        Harum quas consectetur voluptate ducimus at cupiditate ad magnam vero porro, eos exercitationem
-                        quisquam
-                        alias, aliquam dicta quasi quibusdam sint culpa voluptatibus modi dolorem omnis. Eos perferendis
-                        nobis
-                        corporis alias soluta inventore in, suscipit quia possimus. Voluptate minus veritatis dolor
-                        magnam
-                        veniam
-                        non, corporis ipsa odio ipsam porro illo omnis?
+                            {{$attraction->content}}
                     </div>
                 </div>
             </div>
@@ -132,13 +104,11 @@
             <div class="other-attractions">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">Slide 1</div>
-                        <div class="swiper-slide">Slide 2</div>
-                        <div class="swiper-slide">Slide 3</div>
-                        <div class="swiper-slide">Slide 4</div>
-                        <div class="swiper-slide">Slide 5</div>
-                        <div class="swiper-slide">Slide 6</div>
-                        <div class="swiper-slide">Slide 7</div>
+                        @foreach ($categories as $category)
+                            <div class="swiper-slide"  style="background-image: url('{{Storage::url($category->image_url)}}')"></div>
+                        @endforeach
+
+
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
