@@ -56,7 +56,7 @@ class FrontController extends Controller
     {
         $stores = Store::find($id);
         $souvenirs = Store::where('category_id', 3)->get();
-        $storeImgs = StoreImage::where('store_id', $id)->get();
+        $storeImgs = StoreImage::where('store_id', $id)->limit(3)->get();
         return view('front.store.content',compact('stores','souvenirs','storeImgs'));
     }
     public function news()
