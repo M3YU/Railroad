@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use App\Models\Store;
 use App\Models\Attraction;
 use App\Models\StoreImage;
@@ -60,7 +61,9 @@ class FrontController extends Controller
     }
     public function news()
     {
-        return view('front.news.index');
+        $news = News::with('NewsCategory')->where('category_id', 2)->orderBy('date', 'desc')->limit(3)->get();
+        $carRentalInfos = News::with('NewsCategory')->where('category_id', 3)->orderBy('date', 'desc')->limit(3)->get();
+        return view('front.news.index', compact('news', 'carRentalInfos'));
     }
     public function teams()
     {
