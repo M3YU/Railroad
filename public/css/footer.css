@@ -8,7 +8,7 @@
 
  footer {
    width: 100vw;
-   height: 22.55vw;
+   height: 25.55vw;
    background-color: #4E5643;
    position: absolute;
    z-index: -1;
@@ -20,7 +20,7 @@
    height: 41.667vw;
    background-color: white;
    clip-path: ellipse(73.698vw 20.833vw at 50% 50%);
-   top: -160%;
+   top: -137%;
  }
 
 
@@ -70,4 +70,13 @@
 
  .footer-menu-title .footer-menu-item:last-child {
    margin-bottom: 0;
+ }
+
+ .copyright {
+   color: #86817c;
+   left: 50%;
+   bottom: 10%;
+   position: absolute;
+   font-size: 0.7vw;
+   transform: translate(-50%);
  }

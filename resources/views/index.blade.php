@@ -15,7 +15,20 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
   <link rel="stylesheet" href="{{asset('css/index.css')}}">
+  <style>
+    .copyright {
+      color: #86817c;
+      left: 50%;
+      bottom: 10%;
+      position: absolute;
+      font-size: 0.7vw;
+      transform: translate(-50%);
+    }
 
+    footer {
+      height: 25.55vw;
+    }
+  </style>
 </head>
 
 <body>
@@ -283,6 +296,8 @@
         </div>
         <div class="footer-news"></div>
       </div>
+
+      <div class="copyright">Copyright © 2021 僅供大數據平台開發職訓班教學使用</div>
     </footer>
   </main>
 
@@ -305,6 +320,7 @@
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script src="{{asset('js/navbar.js')}}"></script>
   <script src="{{asset('js/index.js')}}"></script>
+  <script src="{{asset('js/copyright.js')}}"></script>
 </body>
 
 </html>
