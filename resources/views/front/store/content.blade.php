@@ -42,7 +42,7 @@
           </button>
         </div>
         @foreach ($storeImgs as $index => $storeImg)
-              @if ($index<=3)
+              @if ($index<3)
                 <div class="col-12 col-sm-12 col-md-12 col-lg-3 mb-3 mb-sm-3 mb-md-3 store-sub-img" 
                 style="background-image: url({{Storage::url($storeImg->image_url)}})"></div>
               @endif
@@ -200,6 +200,7 @@
           <div class="img" style="background-image: url({{Storage::url($souvenir->image_url)}})"></div>
           <figcaption>
             <i class="ion-upload"></i>
+            <a href="{{route('stores.content',['id' =>$souvenir->id])}}"></a> 
             <h4>{{$souvenir->name}}</h4> 
             <h2>{{$souvenir->subtitle}}</h2>
           </figcaption>
