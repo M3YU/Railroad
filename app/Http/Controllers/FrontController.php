@@ -21,7 +21,9 @@ class FrontController extends Controller
 
     public function index()
     {
-        return view('index');
+        $imgs = AttractionImage::inRandomOrder()->take(9)->get();
+
+        return view('index', compact('imgs'));
     }
 
     public function attraction()

@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
   <link rel="stylesheet" href="{{asset('css/index.css')}}">
+
 </head>
 
 <body>
@@ -106,17 +107,17 @@
     </nav>
 
     <section id="top">
-      <div class="logo"><img src="./img/index/LOGO.png" alt=""></div>
+      <div class="logo"><img src="{{asset('img/index/LOGO.png')}}" alt=""></div>
       <div class="slogan slogan-first">坐車太快，徒步太慢，</div>
       <div class="slogan slogan-end">騎車才不會錯過美麗的風景。</div>
       <div class="sub-slogan sub-slogan-first">自由</div>
       <div class="sub-slogan sub-slogan-middle">的心</div>
-      <embed class="sub-slogan-mask" src="/img/index/標題用.png" type="">
+      <embed class="sub-slogan-mask" src="{{asset('img/index/標題用.png')}}" type="">
       <div class="sub-slogan sub-slogan-end">和一輛車就夠了。</div>
       <div class="bike-img"></div>
-      <embed class="bike-mask" src="/img/index/縮小版.png" type="">
-      <div class="banner"><img src="./img/index/06-www.leeleelin.com-SteelBridge-5.jpg" alt=""></div>
-      <embed class="banner-mask" src="/img/index/nav用.png" type="">
+      <embed class="bike-mask" src="{{asset('img/index/縮小版.png')}}" type="">
+      <div class="banner"><img src="{{asset('img/index/06-www.leeleelin.com-SteelBridge-5.jpg')}}" alt=""></div>
+      <embed class="banner-mask" src="{{asset('img/index/nav用.png')}}" type="">
 
 
 
@@ -124,7 +125,7 @@
 
     <section id="middle">
       <div class="bike-moving"></div>
-      <embed class="middle-background" src="/img/index/首頁背景.png" type="">
+      <embed class="middle-background" src="{{asset('img/index/首頁背景.png')}}" type="">
       <div id="visual" class="column d-flex">
 
         <div class="gorgeousness-img left left-1" data-aos="fade-right"></div>
@@ -215,11 +216,11 @@
     </section>
 
     <section id="bottom">
-      <embed class="photo-wall-mask" src="/img/index/照片牆用-1.png" type="">
+      <embed class="photo-wall-mask" src="{{asset('img/index/照片牆用-1.png')}}" type="">
       <div id="photo" class="photo-wall">
 
         <div class="photo-wall-title">相片牆</div>
-        <embed class="photo-wall-title-mask" src="/img/index/照片牆用-2.png" type="">
+        <embed class="photo-wall-title-mask" src="{{asset('img/index/照片牆用-2.png')}}" type="">
         <ul class="photo-wall-categories">
           <li class="photo-wall-category">All</li>
           <li class="photo-wall-category">Animation</li>
@@ -229,19 +230,16 @@
         </ul>
 
         <div class="photos">
-          <div class="photo"></div>
-          <div class="photo"></div>
-          <div class="photo"></div>
-          <div class="photo"></div>
-          <div class="photo"></div>
-          <div class="photo"></div>
-          <div class="photo"></div>
-          <div class="photo"></div>
-          <div class="photo"></div>
+          @foreach ($imgs as $img)
+          <div class="photo" style="background-image: url({{Storage::url($img->image_url)}});">
+          </div>
+          @endforeach
+
+
         </div>
       </div>
-      <embed class="footer-mask" src="/img/index/footer用-總和.png" type="">
-      <embed class="grass" src="/img/index/footer草叢.png" type="">
+      <embed class="footer-mask" src="{{asset('img/index/footer用-總和.png')}}" type="">
+      <embed class="grass" src="{{asset('img/index/footer草叢.png')}}" type="">
       <a href="">
         <div class="billboard"></div>
       </a>
