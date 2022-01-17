@@ -125,7 +125,7 @@ class StoreController extends Controller
             'content' => $request->content,
             'phone' => $request->phone,
             'address' => $request->address,
-            'category_id' => 1,
+            'category_id' => $request->category_id,
             'distance' => $request->distance,
             'direction' => $request->direction,
         ]);
@@ -169,8 +169,9 @@ class StoreController extends Controller
         return redirect()->route('stores.index');
     }
 
-    public function imageDelete(Request $request)
+    public function storeImagesDelete(Request $request)
     {
+        
         // 找出對應的其他圖片
         $storeImage = StoreImage::find($request->id);
         // 將圖片檔案刪除

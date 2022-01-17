@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('css')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.css" rel="stylesheet">
 
 @endsection
 
@@ -8,14 +9,14 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href=>首頁</a></li>
-            <li class="breadcrumb-item"><a href=>產品管理</a></li>
+            <li class="breadcrumb-item"><a href=>商店管理</a></li>
             <li class="breadcrumb-item active" aria-current="page">新增產品</li>
         </ol>
     </nav>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <h2 class="card-header pt-3 pb-2">產品 - 新增</h2>
+                <h2 class="card-header pt-3 pb-2">商店 - 新增</h2>
 
                 <div class="card-body">
                     <form method="POST" action="{{route('stores.store')}}" enctype="multipart/form-data">
@@ -65,31 +66,31 @@
                             <label for="content" class="col-sm-2 col-form-label">描述<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="content" id="content" rows="5" required></textarea>
+                                <textarea class="form-control" name="content" id="store-content" rows="5" required></textarea>
                             </div>
                         </div>
                         <div class="form-group row py-2">
                             <label for="distance" class="col-sm-2 col-form-label">距離<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="distance" id="distance" rows="5"
-                                    required></textarea>
+                                <input class="form-control" name="distance" id="distance" rows="5"
+                                    required>
                             </div>
                         </div>
                         <div class="form-group row py-2">
                             <label for="direction" class="col-sm-2 col-form-label">方向<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="direction" id="direction" rows="5"
-                                    required></textarea>
+                                <input class="form-control" name="direction" id="direction" rows="5"
+                                    required>
                             </div>
                         </div>
                         <div class="form-group row py-2">
                             <label for="address" class="col-sm-2 col-form-label">地址<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="address" id="address" rows="5"
-                                    required></textarea>
+                                <input class="form-control" name="address" id="address" rows="5"
+                                    required>
                             </div>
                         </div>
                         <div class="form-group row py-2">
@@ -106,5 +107,12 @@
 @endsection
 
 @section('js')
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+  $('#store-content').summernote();
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.js"></script>
 @endsection

@@ -91,7 +91,7 @@
                                 @foreach ($attraction->attractionImage as $attractionImage)
                                 <div class="img"
                                     style="background-image: url({{Storage::url($attractionImage->image_url)}})">
-                                    <div class="delete-btn" data-id="{{$attractionImage->id}} "></div>
+                                    <div class="delete-btn" data-id="{{$attractionImage->id}} ">x</div>
                                 </div>
                                 @endforeach
                             </div>
