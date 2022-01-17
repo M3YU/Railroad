@@ -31,22 +31,22 @@ window.addEventListener('scroll', function () {
 
 function active(index) {
   reorganize();
-  circles[index].style.backgroundColor = '#5d591e';
-  titles[index].style.color = '#5d591e';
+  circles[index].style.backgroundColor = '#000000';
+  titles[index].style.color = '#000000';
   if (index !== 4) {
-    lines[index].style.backgroundColor = '#5d591e';
+    lines[index].style.backgroundColor = '#000000';
   }
 }
 
 function reorganize() {
   circles.forEach(function (circle) {
-    circle.style.backgroundColor = '#AEA83E'
+    circle.style.backgroundColor = '#AFAFAF'
   })
   lines.forEach(function (line) {
-    line.style.backgroundColor = '#AEA83E'
+    line.style.backgroundColor = '#AFAFAF'
   })
   titles.forEach(function (title) {
-    title.style.color = '#AEA83E'
+    title.style.color = '#AFAFAF'
   })
 }
 //腳踏車橫向js 

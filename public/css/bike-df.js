@@ -30,8 +30,8 @@ function start(){
     }, 700);
     main.style.minHeight = '11000px';
 }
-bikewayVeiw1();
-hfBikeway();
+// bikewayVeiw1();
+// hfBikeway();
 
 //東豐
 function start2(){
@@ -63,7 +63,7 @@ function skip(){
     dfBikeway();
 }
 //有需要修改就打開
-// skip();
+skip();
 
 //后豐頁面的結構
 function bikewayVeiw1(){
@@ -435,7 +435,7 @@ function hfBikeway(){
             infoElemet.classList.add('open')
             attractionName.textContent = '揪騎后豐';
             attractionDescription.innerHTML = `<a class="index-link" href="/index.html">前往首頁</a>
-                                                <a class="df-link" href="/bike-df.html">還沒滑夠?</a>`;
+                                                <a href="javascript:scroll(0,0)"  onclick ="start2()">滑不夠?</a>`;
         } else if (kNum > 4.8) {
             deleteText();
         } else if (kNum > 4.3) {

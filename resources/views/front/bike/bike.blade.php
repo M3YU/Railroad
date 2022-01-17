@@ -1,41 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>形象頁</title>
+    <title>揪騎后豐-東豐</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{asset('css/biking.css')}}">
+    <link rel="stylesheet" href="/css/bike.css">
     <style>
-        button {
+        button{
             position: relative;
             z-index: 22;
-            width: 300px;
-            height: 300px;
+            width: 850px;
+            height: 850px;
+            top: 5%;
+            left: 5%;
             border: none;
-            color: #fff;
-            font-size: 2.3rem;
-            font-weight: 900;
             background-color: transparent;
-            transition: .1s;
-            background-image: url('/img/biking/banner-back.png');
+            transition: 0.1s;
+            background-image: url('/img/biking/LOGO.png');
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
+            cursor: pointer;
         }
-
-        button:hover {
+        button:hover{
             color: #fa0;
         }
-
-        button.none {
+        button.none{
             display: none;
         }
-
-        .loading-veiw {
+        .loading-veiw{
             position: fixed;
             z-index: 20;
             background-color: rgb(29, 28, 28);
@@ -44,37 +41,32 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: .8s;
+            transition: 0.5s;
             background-image: url('/img/biking/start.jpg');
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
         }
-
-        .loading-veiw.none {
+        .loading-veiw.none{
             opacity: 0;
             z-index: -5;
         }
-
-        .loader {
+        .loader{
             position: fixed;
             z-index: 10;
             top: calc(50%-50px);
-            left: calc(50%-50px);
+            left: calc(50%-50px) ;
             width: 100px;
             height: 100px;
             border: 5px #ccc solid;
-            border-bottom: 5px solid #3498bd;
+            border-bottom: 5px solid #86817c;
             border-radius: 50px;
-            animation: loading 1s linear infinite;
+            animation: loading  1s linear infinite;
         }
-
-        .loader.none {
+        .loader.none{
             display: none;
-            background-image: url("/");
         }
-
-        .loader::before {
+        .loader::before{
             content: '';
             position: fixed;
             top: 10px;
@@ -82,12 +74,11 @@
             right: 10px;
             bottom: 10px;
             border: 5px #ccc solid;
-            border-bottom: 5px solid #e74c3c;
+            border-bottom: 5px solid #4e5643;
             border-radius: 50px;
             animation: loading2 .4s linear infinite;
         }
-
-        .loader::after {
+        .loader::after{
             content: '';
             position: fixed;
             top: 22px;
@@ -95,55 +86,51 @@
             right: 22px;
             bottom: 22px;
             border: 5px #ccc solid;
-            border-bottom: 5px solid #21cc71;
+            border-bottom: 5px solid #aea83e;
             border-radius: 50px;
-            animation: loading 1s linear infinite;
-
+            animation: loading  1s linear infinite;
+            
         }
-
+        
         @keyframes loading {
-            0% {
+            0%{
                 transform: rotate(0deg);
             }
-
-            100% {
+            100%{
                 transform: rotate(360deg);
             }
         }
-
         @keyframes loading2 {
-            0% {
+            0%{
                 transform: rotate(0deg);
             }
-
-            100% {
+            100%{
                 transform: rotate(-360deg);
             }
         }
+        
     </style>
 </head>
 
 <body>
-
+    
     <div class="loading-veiw">
-        <button onclick="start()">后豐鐵馬道</button>
-        <button onclick="notYet()">東豐鐵馬道</button>
-
+        <button  onclick ="start()"></button>
+        
+        
         <div class="loader none"></div>
     </div>
-
+    
     <main>
-        <div class="skip-btn">
-            <i onclick="" class="fas fa-play"></i>
-        </div>
+        
         <section class="veiw">
-
-
+            
+            
         </section>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="{{asset('js/bike.js')}}"></script>
+    <script src="/js/bike-df.js"></script>
 
 </body>
 

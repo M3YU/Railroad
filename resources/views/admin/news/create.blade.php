@@ -44,7 +44,7 @@
                         <div class="form-group row py-2">
                             <label for="img" class="col-sm-2 col-form-label">圖片</label>
                             <div class="col-sm-10">
-                                <input type="file" class="form-control" id="img" name="image_url" required>
+                                <input type="file" class="form-control" id="img" name="image_url" >
                             </div>
                         </div>
                         <div class="form-group row py-2">

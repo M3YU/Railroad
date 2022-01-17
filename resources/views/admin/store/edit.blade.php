@@ -72,6 +72,14 @@
                             </div>
                         </div>
                         <div class="form-group row py-2">
+                            <label for="subtitle" class="col-sm-2 col-form-label">英文名稱<span
+                                    class="text-danger">*</span></label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="subtitle" name="subtitle" value="{{$store->subtitle}}"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group row py-2">
                             <label for="phone" class="col-sm-2 col-form-label">電話<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">

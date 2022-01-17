@@ -82,7 +82,7 @@
           <figcaption>
             <i class="ion-upload"></i>
             <h4>{{$souvenir->name}}</h4>
-            <h2>McKenzie</h2>
+            <h2>{{$souvenir->subtitle}}</h2>
           </figcaption>
           <!-- <a href="#"></a> -->
         </figure>
