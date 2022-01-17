@@ -13,25 +13,9 @@ function notYet(){
     alert('籌備中，敬請期待!!')
 
 }
+window.onload = start2();
 
 
-//畫面初始
-function start(){
-    
-    loadCircle.classList.remove('none')
-    
-    btnElements.forEach(function(btn){
-        btn.classList.add('none');
-    })
-    setTimeout(function () {
-        loadingVeiw.classList.add('none');
-        mainVeiw.classList.remove('loaded');
-        
-    }, 700);
-    main.style.minHeight = '11000px';
-}
-// bikewayVeiw1();
-// hfBikeway();
 
 //東豐
 function start2(){
@@ -42,7 +26,7 @@ function start2(){
     setTimeout(function () {
         loadingVeiw.classList.add('none');
         mainVeiw.classList.remove('loaded');
-    }, 700);
+    }, 1000);
     main.style.minHeight = '25500px';
     bikewayVeiw2();
     dfBikeway();
@@ -63,116 +47,15 @@ function skip(){
     dfBikeway();
 }
 //有需要修改就打開
-skip();
+// skip();
 
-//后豐頁面的結構
-function bikewayVeiw1(){
-    mainVeiw.innerHTML =`
-        <div class="scroll-tip">
-            <div class="mouse"></div>
-            <h3>請滾動滑鼠滾輪</h3>
-        </div>
-        <div class="background"></div>
-        <div id="road" class="road">
-            <div class="line"></div>
-            <div class="shadow"></div>
-        </div>
-        <div class="camera">
-            <!-- 選單 -->
-            <div class="menu">
-                <div class="toggle"></div>
-                <!-- 調整li裡面的--i可以選擇位置 -->
-                <li style="--i:3;">
-                    <a href="/attraction.html"><ion-icon name="map-outline"></ion-icon></a>
-                </li>
-                <li style="--i:4;">
-                    <a href="/group.html"><ion-icon name="bicycle"></ion-icon></a>
-                </li>
-                <li style="--i:5;">
-                    <a href="/store.html"><ion-icon name="bag-handle-outline"></ion-icon></a>
-                </li>
-                <li style="--i:6;">
-                    <a href="/index.html"><ion-icon name="reader-outline"></ion-icon></a>
-                </li>
-            </div>
-            <div class="space">
-                <div class="box1">
-                    <div class="face1"></div>
-                    <div class="face2"></div>
-                    <div class="face3"></div>
-                    <div class="face4"></div>
-                </div>
-                <div class="box2">
-                    <div class="face1"></div>
-                    <div class="face2"></div>
-                    <div class="face3"></div>
-                    <div class="face4"></div>
-                </div>
-            </div>
-        </div>
-        <div class="bike"></div>
-        <div class="cloud cloud-1"></div>
-        <div class="cloud cloud-2"></div>
-        <div class="cloud cloud-3"></div>
-        <div class="cloud cloud-4"></div>
-        <div class="tree tree-1"></div>
-        <div class="tree tree-2"></div>
-        <div class="tree tree-3"></div>
-        <div class="tree tree-4"></div>
-        <div class="tree tree-5"></div>
-        <div class="tree tree-6"></div>
-        <div class="tree tree-7"></div>
-        <div class="tree tree-8"></div>
-        <div class="tree tree-9"></div>
-        <div class="streetLight streetLight-1"></div>
-        <div class="streetLight streetLight-2"></div>
-        <div class="streetLight streetLight-3"></div>
-        <div class="streetLight streetLight-4"></div>
-        <div class="grass grass-1 g-left"></div>
-        <div class="grass grass-2 g-left"></div>
-        <div class="grass grass-3 g-right"></div>
-        <div class="grass grass-4 g-right"></div>
-        <div class="grass grass-5 g-right"></div>
-        <div class="grass grass-6 g-center"></div>
-        <div class="grass grass-7 g-center"></div>
-        <div class="brige"></div>
-        <div class="marker marker-1"></div>
-        <div class="marker marker-2"></div>
-        <div class="marker marker-3"></div>
-        <div class="marker marker-4"></div>
-        <div class="marker marker-5"></div>
-        <div class="building building-1"></div>
-        <div class="building building-2"></div>
-        <div class="building building-3"></div>
-        <div class="building building-4"></div>
-        <div class="building building-5"></div>
 
-        <div class="info">
-            <div class="info-title"></div>
-            <div class="info-description"></div>
-        </div>
-        <div id="p1" class="KM km-1">
-            <h3 class="km-number">0.55K</h3>
-        </div>
-        <div class="KM km-2">
-            <h3 class="km-number">1.1K</h3>
-        </div>
-        <div class="KM km-3">
-            <h3 class="km-number">1.5K</h3>
-        </div>
-        <div class="KM km-4">
-            <h3 class="km-number">2.9K</h3>
-        </div>
-        <div class="KM km-5">
-            <h3 class="km-number">4.3K</h3>
-        </div>`;
-}
 //東豐頁面的結構
 function bikewayVeiw2(){
     mainVeiw.innerHTML =`
         <div class="scroll-tip">
             <div class="mouse"></div>
-            <h3>請滾動滑鼠滾輪</h3>
+            <h3>歡迎來到東豐</h3>
         </div>
         <div class="background df"></div>
         <div id="road" class="road">
@@ -252,11 +135,26 @@ function bikewayVeiw2(){
         <div class="marker marker-d-12"></div>
 
 
-        <div class="building building-1"></div>
-        <div class="building building-2"></div>
-        <div class="building building-3"></div>
-        <div class="building building-4"></div>
-        <div class="building building-5"></div>
+        <div class="building building-1 df"></div>
+        <div class="building building-2 df"></div>
+        <div class="building building-3 df"></div>
+        <div class="building building-4 df">
+            <h5>石岡</h5>
+            <h6>豐原 <i class="fas fa-arrows-alt-h"></i> 東勢</h6>
+            <h5>0蛋月台</h5>
+        </div>
+        <div class="building building-5 df"></div>
+        <div class="building building-6 df"></div>
+        <div class="building building-7 df"></div>
+        <div class="building building-8 df"></div>
+        <div class="building building-9 df"></div>
+        <div class="building building-10 df"></div>
+        <div class="building building-11 df"></div>
+        <div class="building building-12 df">
+            <h5>東勢客家園區</h5>
+            <h6>DongShi Hakka</h6>
+            <h6>Cultural Park</h6>
+        </div>
 
         <div class="info">
             <div class="info-title"></div>
@@ -356,7 +254,7 @@ let attractionText =[
         '豐榮水利之碑於昭和14年(1939年)設置，碑文記載葫蘆墩圳開設始末，為當時水利工程開發的歷史見證，碑體曾於921地震中毀損，由文化局進行修復完成。',
         '橫跨大甲溪的水壩，提供台中市農業、民生及工業用水主要水源區。不論遠看或近看皆是壯觀與宏偉，水壩上游攔水成為一個大湖，每當豐水時節，兩岸青山綠水，相連環抱，甚是迷人，下游則礫石成堆風光秀麗。',
         '劇變發生在921大地震，因為石岡車站正好位於斷層上，所以原有的月台和路軌都被拉扯擠壓，嚴重扭曲變形，甚至還產生了將近5公尺高的地勢落差。',
-        '日治大正年間，日人為管理臺灣稻米農作產銷，於各地設置信用組合，二戰後才改為農會組織。農業曾是早期民生、經濟的主要命脈，稻米生產更是石岡的農產主力，當時的碾米穀倉工廠極具重要地位。',
+        '據說「0蛋月台」的名稱源自於「零擔月台」，因為早期石岡地區的農產品會以零擔貨運（註）的方式，從這個月台送上火車運往豐原、台中販售，所以採用這個有趣的諧音。',
         '情人木橋位於食水嵙溪上，長40公尺寬3.5公尺的木橋，全橋沒有橋墩支撐，台灣第一次引進木橋建設技術，可防七級以上強震，更是遠東地區跨距最長的景觀木橋。夜間燈火點亮，就如浪漫的七夕情人橋。',
         '東勢線的梅子站設於一處彎道上，大致上位於梅子社區地圖上的中心位置，現在這段自行車道有一處遮棚可供休息，而真正的車站位置是在其東邊。',
         '梅子鐵橋是跨越大甲溪連接石岡區與東勢區的橋梁，作為東豐自行車綠廊豐原端與后豐鐵馬道相接，且為大東勢地區重要的觀光據點。每當遊客騎到梅子鐵橋時，大多會停駐片刻，欣賞大甲溪溪畔風光，或是拍照留念。',
@@ -371,111 +269,8 @@ function deleteText(){
     infoElemet.classList.remove('open');
 }
 
-//后豐
-function hfBikeway(){
-    //橫向捲軸
-    window.addEventListener('scroll', function () {
-        let yValue = window.scrollY;
-        let kNum = (yValue * 0.0005).toFixed(2);
-        scrollTip.style.transform = `translateY(${yValue * 1}px)`;
-        scrollTip.style.opacity = 1 -(yValue * 0.005);
-    
-        //腳踏車
-        setTimeout(function () {
-            bikeElement.style.animation =`animateBiking 1s steps(8)  running`;
-        }, 100);
-    
-        bikeElement.style.animation='';
-        //背景
-        backgroundElement.style.transform = `translateX(${-yValue}px)`;
-        //馬路中線
-        lineElement.style.left = yValue % 10 * - 50 + 'px';
-        //雲
-        cloudElemets.forEach(function (cloudElemet) {
-            cloudElemet.style.transform = `translateX(${yValue % 2300 * - 1}px)`;
-        })
-        //樹
-        treeElemets.forEach(function (treeElemet) {
-            treeElemet.style.transform = `translateX(${yValue % 5000 * -2}px)`;
-        })
-        //山
-        mountainElemets.forEach(function (mountainElemet) {
-            mountainElemet.style.transform = `translateX(${yValue % 6000 * - 1}px)`;
-        })
-        //草叢1
-        grassElemets1.forEach(function (grassElemet1) {
-        //                                           多遠出現一次       經過的速度
-            grassElemet1.style.transform = `translateX(${yValue % 1000 * - 3}px)`;
-        })
-        //草叢2
-        grassElemets2.forEach(function (grassElemet2) {
-            grassElemet2.style.transform = `translateX(${yValue % 2000 * - 3}px)`;
-        })
-        //草叢3
-        grassElemets3.forEach(function (grassElemet3) {
-            grassElemet3.style.transform = `translateX(${yValue % 5000 * - 3}px)`;
-        })
-        //鐵橋
-        brigeElement.style.transform = `translateX(${-yValue}px)`;
-        //景點
-        mapPoints.forEach(function (mapPoint) {
-            mapPoint.style.transform = `translateX(${- yValue}px)`;
-        })
-        //路牌
-        kmShowers.forEach(function (kmShower) {
-            kmShower.style.transform = `translateX(${- yValue}px)`;
-        })
-        buildingElements.forEach(function (buildingElement) {
-            buildingElement.style.transform = `translateX(${- yValue}px)`;
-        })
 
-   
-
-        if (kNum > 5) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '揪騎后豐';
-            attractionDescription.innerHTML = `<a class="index-link" href="/index.html">前往首頁</a>
-                                                <a href="javascript:scroll(0,0)"  onclick ="start2()">滑不夠?</a>`;
-        } else if (kNum > 4.8) {
-            deleteText();
-        } else if (kNum > 4.3) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '后里馬場';
-            attractionDescription.textContent = attractionText[4];
-        } else if (kNum > 3.6) {
-            deleteText();
-        } else if (kNum > 2.9) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '夫妻樹';
-            attractionDescription.textContent = attractionText[3];
-        } else if (kNum > 2.5) {
-            deleteText();
-        } else if (kNum > 2) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '九號隧道';
-            attractionDescription.textContent = attractionText[2];
-            bikeElement.style.transform = `translateY(-60px)`;
-        } else if (kNum > 1.6) {
-            deleteText();
-        } else if (kNum > 1) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '大甲溪花樑鋼橋';
-            attractionDescription.textContent = attractionText[1];
-        } else if (kNum > 0.8) {
-            deleteText();
-        } else if (kNum > 0.4) {
-            bikeElement.style.transform = `translateY(0px)`;
-            infoElemet.classList.add('open');
-            infoElemet.style.backgroundImage ='url("")'
-            attractionName.textContent = '榮町雜貨店';
-            attractionDescription.textContent = attractionText[0];
-        } else if (kNum <= 0.4) {
-            bikeElement.style.transform = `translateY(-60px)`;
-            deleteText();
-        }
-    });
-}
-
+//東豐段
 function dfBikeway(){
 
     //橫向捲軸
@@ -533,10 +328,7 @@ function dfBikeway(){
         buildingElements.forEach(function (buildingElement) {
             buildingElement.style.transform = `translateX(${- yValue}px)`;
         })
-    
-       
-       
-    
+        //替換說明文字
         if (kNum > 12) {
             infoElemet.classList.add('open')
             attractionName.textContent = '揪騎后豐';
@@ -575,34 +367,40 @@ function dfBikeway(){
             deleteText();
         }else if (kNum > 4.2) {
             infoElemet.classList.add('open')
-            attractionName.textContent = '石岡穀倉';
+            attractionName.textContent = '0蛋月台';
             attractionDescription.textContent = attractionText[5][6];
+            bikeElement.style.transform = `translateY(-60px) rotate(0deg)`;
         } else if (kNum > 4.1) {
             deleteText();
-        } else if (kNum > 3.8) {
+            bikeElement.style.transform = `translateY(0px) rotate(-30deg)`;
+        }else if (kNum > 3.9){
+            bikeElement.style.transform = `translateY(70px) rotate(0deg)`;
+        }else if (kNum > 3.8) {
             infoElemet.classList.add('open')
             attractionName.textContent = '石岡斷層月台';
             attractionDescription.textContent = attractionText[5][5];
+            bikeElement.style.transform = `translateY(70px) rotate(30deg)`;
         } else if (kNum > 3.3) {
             deleteText();
+            bikeElement.style.transform = `translateY(0px) rotate(0deg)`
         } else if (kNum > 2.9) {
             infoElemet.classList.add('open')
             attractionName.textContent = '石岡水壩';
             attractionDescription.textContent = attractionText[5][4];
             bikeElement.style.transform = `translateY(-60px)`;
-        } else if (kNum > 2.7) {
+        } else if (kNum > 2.45) {
             deleteText();
-        } else if (kNum > 2.3) {
+        } else if (kNum > 2.25) {
             infoElemet.classList.add('open')
             attractionName.textContent = '榮豐水利碑';
             attractionDescription.textContent = attractionText[5][3];
-        }else if (kNum > 2.2) {
+        }else if (kNum > 2) {
             deleteText();
         } else if (kNum > 1.8) {
             infoElemet.classList.add('open')
             attractionName.textContent = '親水公園';
             attractionDescription.textContent = attractionText[5][2];
-        }else if (kNum > 1.5) {
+        }else if (kNum > 1.4) {
             deleteText();
         } else if (kNum > 1.1) {
             infoElemet.classList.add('open')
@@ -611,13 +409,13 @@ function dfBikeway(){
         } else if (kNum > 0.8) {
             deleteText();
         } else if (kNum > 0.4) {
-            bikeElement.style.transform = `translateY(0px)`;
+            bikeElement.style.transform = `translateY(0px) rotate(0deg)`;
             infoElemet.classList.add('open');
             infoElemet.style.backgroundImage ='url("")'
             attractionName.textContent = '朴口車站';
             attractionDescription.textContent = attractionText[5][0];
         } else if (kNum <= 0.4) {
-            bikeElement.style.transform = `translateY(-60px)`;
+            bikeElement.style.transform = `translateY(-60px) rotate(-20deg)`;
             deleteText();
         }
        

@@ -86,18 +86,5 @@ class ContactController extends Controller
 
 
 
-    public function contact(Request $request)
-    {
-    
-        $contact = Contact::create([
-            'name' => $request->name,
-            'phone' => $request->phone,
-            'email' => $request->email,
-            'content' => $request->content
-        ]);
-        $email = 'foraswell@gmail.com';
-        Mail::to($email)->send(new ContactNotify($contact));
-        
-        return redirect()->route('contact.index');
-     }
+
 }

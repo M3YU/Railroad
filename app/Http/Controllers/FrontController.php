@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use App\Models\Store;
+use App\models\Contact;
 use App\Models\Attraction;
 use App\Models\StoreImage;
+use App\Mail\ContactNotify;
 use Illuminate\Http\Request;
 use App\Models\AttractionImage;
+use Illuminate\Support\Facades\Mail;
 
 class FrontController extends Controller
 {
@@ -71,8 +74,27 @@ class FrontController extends Controller
     }
     public function service()
     {
-        return view('front.service.index');
-    }
+       return view('front.service.index');
+
+     }
+
+     public function contact(Request $request)
+     
+     {
+         
+        $contact = contact::create([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'content' => $request->content
+        ]);
+        
+        $email = 'foraswell@gmail.com';
+        Mail::to($email)->send(new ContactNotify($contact));
+        
+        return redirect()->route('services');
+       
+     }
 
     public function member()
     {
