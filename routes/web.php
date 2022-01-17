@@ -36,7 +36,9 @@ Route::get('/news', [FrontController::class, 'news'])->name('news');
 //沿途景點
 Route::get('/attractions', [FrontController::class, 'attraction'])->name('attractions');
 
-Route::get('/attractions/{id}', [FrontController::class, 'attractionContent'])->name('attractions-content');
+Route::get('/attractions/suit', [FrontController::class, 'attractionSuit'])->name('attractions.suit');
+
+Route::get('/attractions/{id}', [FrontController::class, 'attractionContent'])->name('attractions.content');
 
 Route::get('/members', [FrontController::class, 'member'])->name('members');
 

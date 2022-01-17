@@ -31,6 +31,16 @@ class FrontController extends Controller
     {
         return view('front.attraction.attraction');
     }
+
+
+
+    public function attractionSuit(Request $request)
+    {
+        $suits = Attraction::where('category_id', $request->category_id)->get();
+        return view('front.attraction.suit', compact('suits'));
+    }
+
+
     public function attractionContent($id)
     {
         $attraction = Attraction::find($id);
