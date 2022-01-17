@@ -35,7 +35,7 @@
             position: absolute;
             z-index: 1;
             right: 0%;
-            top: -11.8%;
+            top: -6.8%;
             width: 36%;
         }
     </style>
@@ -177,7 +177,7 @@
 
             </div>
 
-
+            <div class="copyright">Copyright © 2021 僅供大數據平台開發職訓班教學使用</div>
         </footer>
     </main>
 
@@ -200,6 +200,7 @@
     <!-- swiper js -->
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="{{asset('js/navbar.js')}}"></script>
+    <script src="{{asset('js/copyright.js')}}"></script>
     @yield('js')
 </body>
 
