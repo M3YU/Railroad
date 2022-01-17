@@ -4,6 +4,7 @@
 
 
 @section('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="{{asset('css/news.css')}}">
 <style>
 
@@ -81,57 +82,29 @@
       </div>
       <h3 class="subtitle">Construction news</h3>
     </div>
+    @foreach ($news as $item)
     <div class="row d-flex">
-      <div class="col-2"></div>
+      <div class="col-2">
+      </div>
       <div class="col-3">
         <div class="card mb-3">
           <div class="card-title">
-            <h5>2022/01/01</h5>
+            <h5>{{$item->date}}</h5>
+          </div>
+          <div class="card-title">
+            <h5>{{$item->title}}</h5>
           </div>
         </div>
       </div>
       <div class="col-6">
         <div class="card mb-3">
           <div class="card-body">
-            <p>國豐路三段151k施工</p>
+            <p><i class="fas fa-truck-pickup me-3"></i>{{$item->content}}</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="row d-flex">
-      <div class="col-2"></div>
-      <div class="col-3">
-        <div class="card mb-3">
-          <div class="card-title">
-            <h5>2021/12/31</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="card mb-3">
-          <div class="card-body">
-            <p>國豐路三段與台三線因跨年活動全線暫停車輛進入</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row d-flex">
-      <div class="col-2"></div>
-      <div class="col-3">
-        <div class="card mb-3">
-          <div class="card-title">
-            <h5>2021/12/06</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="card mb-3">
-          <div class="card-body">
-            <p>國豐路三段999k施工</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    @endforeach
   </section>
 
   <!-- 租車優惠 -->
@@ -145,54 +118,30 @@
     <div class="row">
       <div class="col-2"></div>
       <!-- 左方圖片 -->
-      <div class="col-4  ">
-        <img class="accordion-photo" src="{{asset('/img/news/租車-02.jpg')}}">
+      <div class="col-4">
+        @foreach ($carRentalInfos as $carRentalInfo)
+        <img class="accordion-photo" src="{{Storage::url($carRentalInfo->image_url)}}" alt="{{'photo-'.$carRentalInfo->id}}" @if ($loop->index > 0) style="display:none;" @endif>
+        @endforeach
       </div>
       <!-- 手風琴 -->
       <div class="col-4 item-content">
         <div class="accordion" id="accordionExample">
+          @foreach ($carRentalInfos as $carRentalInfo)
           <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                鐵馬哥租車
+            <h2 class="accordion-header" id="{{'heading-'.$carRentalInfo->id}}">
+              <button class="accordion-button @if ($loop->index > 0) collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#{{'collapse-'.$carRentalInfo->id}}"
+                aria-expanded="@if ($loop->index == 0) true @else false @endif" aria-controls="{{'collapse-'.$carRentalInfo->id}}">
+                {{$carRentalInfo->title}}
               </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            <div id="{{'collapse-'.$carRentalInfo->id}}" class="accordion-collapse collapse @if ($loop->index == 0) show @endif" aria-labelledby="{{'heading-'.$carRentalInfo->id}}"
               data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <strong>現在租車享免費停車優惠
+                <strong>{{$carRentalInfo->content}}</strong>
               </div>
             </div>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                輕鬆租車
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>租車即可有烤肉套餐85折優惠
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                天天租車
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <strong>現在租車享免費停車優惠
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
@@ -214,5 +163,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 <script src="{{asset('js/news.js')}}"></script>
 @endsection

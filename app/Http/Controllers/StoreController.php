@@ -49,11 +49,12 @@ class StoreController extends Controller
         // 建立商店
         $store = Store::create([
             'name' => $request->name,
+            'subtitle' => $request->subtitle,
             'image_url' => $path,
             'content' => $request->content,
             'phone' => $request->phone,
             'address' => $request->address,
-            'category_id' => 1,
+            'category_id' => $request->category_id,
             'distance' => $request->distance,
             'direction' => $request->direction,
         ]);
@@ -121,6 +122,7 @@ class StoreController extends Controller
         // 更新沿途風景
         $store->update([
             'name' => $request->name,
+            'subtitle' => $request->subtitle,
             'image_url' => $path,
             'content' => $request->content,
             'phone' => $request->phone,

@@ -3,6 +3,8 @@
 @section('title', '商店')
 
 @section('css')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="{{asset('css/store-content.css')}}">
 @endsection
 
@@ -25,37 +27,39 @@
   <section class="store">
     <div class="row mb-5">
       <div class="col d-flex align-items-baseline title">
-        <h1>3Q芋圓</h1>
+        <h1>{{$stores->name}}</h1>
       </div>
-      <h3 class="subtitle">Taro ball</h3>
+      <h3 class="subtitle">{{$stores->subtitle}}</h3>
     </div>
     <div class="row row-cols-2 justify-content-center mb-5">
-      <div class="col-5 me-4 store-img"></div>
-      <div class="col-7 row row-cols-3 justify-content-lg-between justify-content-md-center align-content-end">
+      <div class="col-5 me-4 store-img" style="background-image: url('{{Storage::url($stores->image_url)}}')"></div>
+      <div class="col-7 row row-cols-3 justify-content-lg-evenly justify-content-md-center align-content-end">
         <div class="col-8 col-sm-7 col-md-5 col-lg-4 mb-xl-5 my-3 store-title">
           <div class="store-title-border"></div>
-          <h2>3Q芋圓</h2>
+          <h2>{{$stores->name}}</h2>
         </div>
         <div class="col-4 col-sm-3 col-md-2 col-lg-8 add-cart align-self-end mb-5">
           <button class="btn btn-secondary" aria-label="Mute">
-            <i class="bi bi-bookmark-star-fill "></i>
+            <i class="bi bi-bookmark-star-fill"></i>
           </button>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-3 mb-3 mb-sm-3 mb-md-3 store-sub-img"></div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-3 mb-3 mb-sm-3 mb-md-3 store-sub-img"></div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-3 mb-3 mb-sm-3 mb-md-3 store-sub-img"></div>
+        @foreach ($storeImgs as $index => $storeImg)
+              @if ($index<3)
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3 mb-3 mb-sm-3 mb-md-3 store-sub-img" 
+                style="background-image: url({{Storage::url($storeImg->image_url)}})"></div>
+              @endif
+        @endforeach
+
       </div>
     </div>
     <div class="row row-cols-2 justify-content-center my-5 pt-5">
       <div class="col-5 ps-5 news-title">
-        <h2>3Q芋圓相關報導文章</h2>
+        <h2>{{$stores->name}}相關報導文章</h2>
         <div class="news-title-border"></div>
       </div>
       <div class="col-7 px-4 news-content">
         <p class="news-content-p">
-          前往了東關路七段的「3Q芋圓」想要吃個冰冰涼涼的芋圓消暑解渴一下～牆壁上有一面黑板上頭有寫著店內的品項，有芋圓冰、芋圓嫩仙草，也有熱的品項像是紅豆湯之類，每份都是40大洋。如果想吃冰多一點的就點芋圓冰，冰少一點的就是芋圓嫩仙草。
-          <br>店內的芋圓、番薯圓、嫩仙草都是自己做的，仙草吃起來有甘甜微苦的韻味，冰冰涼涼又滑又嫩的口感，非常好吃。
-          芋圓是使用大甲芋頭製作，咀嚼起來很Q，番薯圓則是使用大肚山的番薯，吃起來香氣也很明顯。店內的芋頭熬煮的非常的綿密細緻，幾乎已經成了芋頭泥的情況，很香甜，也算是比較特別的一點，喜歡吃蜜芋頭的捧油可以點來試試看～整間店的用料都很用心實在，看網路上的評價也都很好，大夥如果來東勢玩，天氣熱可以來「3Q芋圓」吃個冰冰涼涼的芋圓唷～
+          {!!$stores->content!!}
         </p>
       </div>
     </div>
@@ -183,54 +187,32 @@
       <div class="col d-flex align-items-baseline title">
         <h1>帶伴手禮</h1>
       </div>
-      <h3 class="subtitle">我是文字</h3>
+      {{-- <h3 class="subtitle">{{$categories->}}</h3> --}}
     </div>
+
+   
+
+
     <div class="row d-flex justify-content-evenly flex-wrap pt-5">
+
+
+      @foreach ($souvenirs as $souvenir)
       <div class="col px-0">
         <figure class="goods">
-          <div class="img"></div>
+          <div class="img" style="background-image: url({{Storage::url($souvenir->image_url)}})"></div>
           <figcaption>
             <i class="ion-upload"></i>
-            <h4>Inverness</h4>
-            <h2>McKenzie</h2>
+            <a href="{{route('stores.content',['id' =>$souvenir->id])}}"></a> 
+            <h4>{{$souvenir->name}}</h4> 
+            <h2>{{$souvenir->subtitle}}</h2>
           </figcaption>
           <!-- <a href="#"></a> -->
         </figure>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos ex vero quis. Quia
-          ad sed veritatis dicta! Nulla non explicabo cumque vel numquam adipisci ex quasi minima,
-          in porro iste.
+        <p>
+          {!!$souvenir->content!!}
         </p>
       </div>
-      <div class="col px-0">
-        <figure class="goods">
-          <div class="img"></div>
-          <figcaption>
-            <i class="ion-upload"></i>
-            <h4>Inverness</h4>
-            <h2>McKenzie</h2>
-          </figcaption>
-          <!-- <a href="#"></a> -->
-        </figure>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos ex vero quis. Quia
-          ad sed veritatis dicta! Nulla non explicabo cumque vel numquam adipisci ex quasi minima,
-          in porro iste.
-        </p>
-      </div>
-      <div class="col px-0">
-        <figure class="goods">
-          <div class="img"></div>
-          <figcaption>
-            <i class="ion-upload"></i>
-            <h4>Inverness</h4>
-            <h2>McKenzie</h2>
-          </figcaption>
-          <!-- <a href="#"></a> -->
-        </figure>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos ex vero quis. Quia
-          ad sed veritatis dicta! Nulla non explicabo cumque vel numquam adipisci ex quasi minima,
-          in porro iste.
-        </p>
-      </div>
+    @endforeach
     </div>
   </section>
 </div>
@@ -246,4 +228,5 @@
 @endsection
 
 @section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 @endsection
