@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Store;
 use App\Models\Attraction;
 use Illuminate\Http\Request;
 use App\Models\AttractionImage;
@@ -45,7 +46,9 @@ class FrontController extends Controller
 
     public function store()
     {
-        return view('front.store.index');
+        $foods = Store::where('category_id', 1)->get();
+        $souvenirs = Store::where('category_id', 3)->get();
+        return view('front.store.index', compact('foods', 'souvenirs'));
     }
     public function storeContent($id)
     {

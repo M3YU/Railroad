@@ -34,33 +34,13 @@
       <div class="col">
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
+            @foreach ($foods as $food)
             <div class="swiper-slide">
-              <div class="img"></div>
+              <a href="{{route('stores.content',['id' => $food->id])}}">
+                <div class="img" style="background-image: url({{Storage::url($food->image_url)}})"></div>
+              </a>
             </div>
-            <div class="swiper-slide">
-              <div class="img"></div>
-            </div>
-            <div class="swiper-slide">
-              <div class="img"></div>
-            </div>
-            <div class="swiper-slide">
-              <div class="img"></div>
-            </div>
-            <div class="swiper-slide">
-              <div class="img"></div>
-            </div>
-            <div class="swiper-slide">
-              <div class="img"></div>
-            </div>
-            <div class="swiper-slide">
-              <div class="img"></div>
-            </div>
-            <div class="swiper-slide">
-              <div class="img"></div>
-            </div>
-            <div class="swiper-slide">
-              <div class="img"></div>
-            </div>
+            @endforeach
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -95,94 +75,21 @@
       <h3 class="subtitle">Souvenirs Recommended</h3>
     </div>
     <div class="row d-flex justify-content-evenly flex-wrap pt-5">
+      @foreach ($souvenirs as $souvenir)
       <div class="col px-0">
         <figure class="goods">
-          <div class="img"></div>
+          <div class="img" style="background-image: url({{Storage::url($souvenir->image_url)}})"></div>
           <figcaption>
             <i class="ion-upload"></i>
-            <h4>石山丘</h4>
+            <h4>{{$souvenir->name}}</h4>
             <h2>McKenzie</h2>
           </figcaption>
           <!-- <a href="#"></a> -->
         </figure>
-        <p>石岡超人氣神級吐司之稱，沒預約還吃不到，招牌紅寶石是用花蓮紅粟米及四種起司來製作，口感Q彈好吃，非常真材實料
-        </p>
+        {!!$souvenir->content!!}
+
       </div>
-      <div class="col px-0">
-        <figure class="goods">
-          <div class="img"></div>
-          <figcaption>
-            <i class="ion-upload"></i>
-            <h4>Inverness</h4>
-            <h2>McKenzie</h2>
-          </figcaption>
-          <!-- <a href="#"></a> -->
-        </figure>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos ex vero quis. Quia
-          ad sed veritatis dicta! Nulla non explicabo cumque vel numquam adipisci ex quasi minima,
-          in porro iste.
-        </p>
-      </div>
-      <div class="col px-0">
-        <figure class="goods">
-          <div class="img"></div>
-          <figcaption>
-            <i class="ion-upload"></i>
-            <h4>Inverness</h4>
-            <h2>McKenzie</h2>
-          </figcaption>
-          <!-- <a href="#"></a> -->
-        </figure>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos ex vero quis. Quia
-          ad sed veritatis dicta! Nulla non explicabo cumque vel numquam adipisci ex quasi minima,
-          in porro iste.
-        </p>
-      </div>
-      <div class="col px-0">
-        <figure class="goods">
-          <div class="img"></div>
-          <figcaption>
-            <i class="ion-upload"></i>
-            <h4>Inverness</h4>
-            <h2>McKenzie</h2>
-          </figcaption>
-          <!-- <a href="#"></a> -->
-        </figure>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos ex vero quis. Quia
-          ad sed veritatis dicta! Nulla non explicabo cumque vel numquam adipisci ex quasi minima,
-          in porro iste.
-        </p>
-      </div>
-      <div class="col px-0">
-        <figure class="goods">
-          <div class="img"></div>
-          <figcaption>
-            <i class="ion-upload"></i>
-            <h4>Inverness</h4>
-            <h2>McKenzie</h2>
-          </figcaption>
-          <!-- <a href="#"></a> -->
-        </figure>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos ex vero quis. Quia
-          ad sed veritatis dicta! Nulla non explicabo cumque vel numquam adipisci ex quasi minima,
-          in porro iste.
-        </p>
-      </div>
-      <div class="col px-0">
-        <figure class="goods">
-          <div class="img"></div>
-          <figcaption>
-            <i class="ion-upload"></i>
-            <h4>Inverness</h4>
-            <h2>McKenzie</h2>
-          </figcaption>
-          <!-- <a href="#"></a> -->
-        </figure>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos ex vero quis. Quia
-          ad sed veritatis dicta! Nulla non explicabo cumque vel numquam adipisci ex quasi minima,
-          in porro iste.
-        </p>
-      </div>
+      @endforeach
     </div>
   </section>
 </div>

@@ -12,6 +12,10 @@
         background-position: bottom;
     }
 
+    .swiper-slide {
+        background-position: center;
+    }
+
     footer {
         margin-top: 3.5vw;
     }
