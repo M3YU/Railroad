@@ -81,7 +81,8 @@
           <div class="img" style="background-image: url({{Storage::url($souvenir->image_url)}})"></div>
           <figcaption>
             <i class="ion-upload"></i>
-            <h4>{{$souvenir->name}}</h4>
+            <a href="{{route('stores.content',['id' =>$souvenir->id])}}"></a> 
+           <h4>{{$souvenir->name}}</h4>
             <h2>{{$souvenir->subtitle}}</h2>
           </figcaption>
           <!-- <a href="#"></a> -->
