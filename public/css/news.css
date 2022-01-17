@@ -249,14 +249,38 @@
       justify-content: center;
       align-items: center;
       flex-direction: row;
+      min-height: 61px;
       border: #AEA83E 1px solid;
       border-radius: 5%;
       font-size: 18px;
   }
   .card-title{
       padding: 1rem;
+      margin-bottom: 0;
+      position: relative;
+  }
+
+  .card .card-title h5 {
+    margin-bottom: 0;
+  }
+
+  .card .card-title:first-child::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 1.25rem);
+    right: 0;
+    height: 40px;
+    border-right: 1px solid #000;
+  }
+
+  .card .card-body p {
+    margin-bottom: 0;
   }
 
   .item-content{
       padding: 20px;
+  }
+
+  .accordion-body {
+    font-size: 0.8rem;
   }
