@@ -25,9 +25,9 @@ use App\Http\Controllers\AttractionCategoryController;
 
 
 //形象頁
-Route::get('bike', [FrontController::class, 'bike'])->name('bike.Page');
+Route::get('bikeHf', [FrontController::class, 'bikeHf'])->name('bike.Page-Hf');
 
-
+Route::get('bikeDf', [FrontController::class, 'bikeDf'])->name('bike.Page-Df');
 
 // //首頁
 Route::get('/', [FrontController::class, 'index'])->name('index');

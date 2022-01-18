@@ -20,9 +20,14 @@ class FrontController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function bike()
+    public function bikeHf()
     {
-        return view('front.bike.bike');
+        return view('front.bike.bike-hf');
+    }
+
+    public function bikeDf()
+    {
+        return view('front.bike.bike-df');
     }
 
     public function index()
