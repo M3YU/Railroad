@@ -12,7 +12,7 @@
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
 }
 
 body .container {
@@ -21,7 +21,7 @@ body .container {
   width: 18.229vw;
   height: 26.042vw;
   background-color: #ffffff;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0.521vw 1.5625vw;
+  -moz-box-shadow: rgba(199, 26, 26, 0.1) 0 0.521vw 1.5625vw;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0.521vw 1.5625vw;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0.521vw 1.5625vw;
   top: 7%;
@@ -120,7 +120,7 @@ body .container .content label {
   user-select: none;
 }
 
-<<<<<<< HEAD body .container .content label:not([for="remember"]) {
+body .container .content label:not([for="remember"]) {
   display: none;
 }
 
@@ -249,7 +249,7 @@ body .container .content .submit-wrap {
   width: 100%;
 }
 
-<<<<<<< HEAD body .container .content .submit-wrap a {
+body .container .content .submit-wrap a {
   font-size: 0.625vw;
   display: block;
   margin-top: 1.042vw;
@@ -258,7 +258,7 @@ body .container .content .submit-wrap {
   color: #999999;
 }
 
-<<<<<<< HEAD body .container .content .submit-wrap a:hover {
+body .container .content .submit-wrap a:hover {
   text-decoration: underline;
 }
 
@@ -343,7 +343,6 @@ body .container .content .signup-cont {
 
 .white-background {
   position: absolute;
-  background-color: white;
   width: 100vw;
   height: 25vw;
   top: 186%;
@@ -370,10 +369,19 @@ body .container .content .signup-cont {
 
 #bottom .self-trip>.title {
   position: absolute;
-  font-size: 1.944vw;
+  font-size: 2vw;
   margin-left: 11vw;
   margin-top: 3vw;
+}
 
+#bottom .self-trip>.title::after {
+  content: '';
+  width: calc(438px / 2);
+  height: 2px;
+  border-bottom: 2px solid #000000;
+  position: absolute;
+  top: 2.3vw;
+  left: 8vw;
 }
 
 #bottom .self-trip>.subtitle {
@@ -458,7 +466,7 @@ body .container .content .signup-cont {
 
 #bottom .self-trip .trip-carousel .swiper-slide {
 
-  background-color: rgb(254, 255, 255);
+  background-color: none;
 }
 
 #bottom .self-trip .trip-carousel .swiper {
@@ -485,7 +493,9 @@ body .container .content .signup-cont {
 #bottom .self-trip .trip-carousel .swiper .swiper-slide .swiper-content {
   width: 100%;
   height: 4.844vw;
-  background-color: #aaaaaa;
+  background-color: #4e5643;
+  color: rgb(255, 255, 255);
+  padding: 5px;
 }
 
 #bottom .self-trip .trip-carousel .swiper .swiper-slide .swiper-title {
@@ -539,4 +549,7 @@ footer {
   z-index: 1;
   bottom: 48%;
   left: 0;
+}
+.grass{
+  top: -2.8vw;
 }
