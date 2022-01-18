@@ -55,7 +55,7 @@
                     <div class="row ">
                         <div class="attraction-main-title">
                             <h3>{{$attraction->name}}</h3>
-                            <button type="button" class="btn btn-secondary mark-btn add-cart">
+                            <button type="button" class="btn btn-secondary mark-btn add-cart" data-id="{{$attraction->id}}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bookmark-star-fill" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zM8.16 4.1a.178.178 0 0 0-.32 0l-.634 1.285a.178.178 0 0 1-.134.098l-1.42.206a.178.178 0 0 0-.098.303L6.58 6.993c.042.041.061.1.051.158L6.39 8.565a.178.178 0 0 0 .258.187l1.27-.668a.178.178 0 0 1 .165 0l1.27.668a.178.178 0 0 0 .257-.187L9.368 7.15a.178.178 0 0 1 .05-.158l1.028-1.001a.178.178 0 0 0-.098-.303l-1.42-.206a.178.178 0 0 1-.134-.098L8.16 4.1z" />
                                 </svg>
@@ -124,5 +124,34 @@
 
 @section('js')
 <script src="{{asset('js/attraction-content.js')}}"></script>
+<script>
+    const addCartElement = document.querySelector('.add-cart');
 
+    addCartElement.addEventListener('click', function() {
+        sendData(this, 'attractions');
+    });
+
+    function sendData(Element, type) {
+      let productId = Element.getAttribute('data-id');
+      let qty = 1;
+      let url = '{{ route("journey-cart.add") }}';
+      let formData = new FormData();
+
+      formData.append('_token', '{{csrf_token()}}');
+      formData.append('id', productId);
+      formData.append('type', type);
+      formData.append('qty', qty);
+
+      fetch(url, {
+          'method': 'post',
+          'body': formData
+      }).then(function(response) {
+          return response.text();
+      }).then(function(data) {
+          if (data == 'Success') {
+              alert('加入成功');
+          }
+      });
+    }
+</script>
 @endsection

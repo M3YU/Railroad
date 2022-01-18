@@ -11,6 +11,7 @@ use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\NewsCategoryController;
 use App\Http\Controllers\StoreCategoryController;
 use App\Http\Controllers\AttractionCategoryController;
+use App\Http\Controllers\JourneyCartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +70,18 @@ Route::post('services-contact', [FrontController::class, 'contact'])->name('cont
 // });
 
 // //行程(未定義)
-// Route::resource('/journey', Controller::class);
+Route::prefix('journey-cart')->group(function () {
+    Route::post('/add', [JourneyCartController::class, 'add'])->name('journey-cart.add');
+    // Route::post('/update', [JourneyCartController::class, 'update'])->name('journey-cart.update');
+    // Route::post('/delete', [JourneyCartController::class, 'delete'])->name('journey-cart.delete');
+
+    // Route::get('step01', [JourneyCartController::class, 'step01'])->name('journey-cart.step01');
+    // Route::get('step01', [JourneyCartController::class, 'step01Store'])->name('journey-cart.step01-store');
+    // Route::get('step02/{order_no}', [JourneyCartController::class, 'step02'])->name('journey-cart.step02');
+
+    Route::get('/clear', [JourneyCartController::class, 'clear'])->name('journey-cart.clear');
+    Route::get('/content', [JourneyCartController::class, 'content'])->name('journey-cart.content');
+});
 
 
 

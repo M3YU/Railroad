@@ -210,9 +210,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 <script>
     const addCartElement = document.querySelector('.add-cart');
+
     addCartElement.addEventListener('click', function() {
-      let productId = this.getAttribute('data-id');
-      let type = 'stores';
+      sendData(this, 'stores');
+    });
+
+    function sendData(Element, type) {
+      let productId = Element.getAttribute('data-id');
       let qty = 1;
       let url = '{{ route("journey-cart.add") }}';
       let formData = new FormData();
@@ -232,6 +236,6 @@
               alert('加入成功');
           }
       });
-    });
+    }
 </script>
 @endsection
