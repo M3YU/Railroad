@@ -253,7 +253,7 @@
       </div>
       <embed class="footer-mask" src="{{asset('img/index/footer用-總和.png')}}" type="">
       <embed class="grass" src="{{asset('img/index/footer草叢.png')}}" type="">
-      <a href="">
+      <a href="{{route('bike.Page-Hf')}}">
         <div class="billboard"></div>
       </a>
     </section>
