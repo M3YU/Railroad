@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Store;
 use App\Models\Attraction;
 use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
 use function PHPUnit\Framework\isEmpty;
 
 class JourneyCartController extends Controller
@@ -50,6 +51,35 @@ class JourneyCartController extends Controller
     public function delete(Request $request) {
         \Cart::remove($request->id);
         return 'Success';
+    }
+
+    public function step01Store(Request $request)
+    {
+        $items = \Cart::getContent();
+        $spots = ['spots' => []];
+
+        foreach ($items as $key => $item) {
+            $type = (Str::substr($item->id, 0, 1) == '1') ? 'attractions' : 'stores';
+            $category = (string)Str::of(Str::substr($item->id, 1, 2))->ltrim('0');
+            $id = (string)Str::of(Str::substr($item->id, 3, 3))->ltrim('0');
+
+            $spots['spots'][$key] = [
+                'type' => $type,
+                'category' => $category,
+                'id' => $id
+            ];
+        }
+
+        Order::create([
+            'user_id' => 1, //未確認會員邏輯，暫寫1
+            'spots' => $spots,
+            'name' => $request->name
+        ]);
+
+        \Cart::clear();
+        return redirect()->route('members');
+
+        // return view('front.member.index');
     }
 
     public function clear() {

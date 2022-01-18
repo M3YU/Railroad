@@ -71,7 +71,7 @@ function bikewayVeiw2(){
                     <a class="map"><ion-icon name="map-outline"></ion-icon></a>
                 </li>
                 <li style="--i:4;">
-                    <aclass="bicycle"><ion-icon name="bicycle"></ion-icon></a>
+                    <a class="bicycle"><ion-icon name="bicycle"></ion-icon></a>
                 </li>
                 <li style="--i:5;">
                     <a class="bag"><ion-icon name="bag-handle-outline"></ion-icon></a>
@@ -332,7 +332,7 @@ function dfBikeway(){
         if (kNum > 12) {
             infoElemet.classList.add('open')
             attractionName.textContent = '揪騎后豐';
-            attractionDescription.innerHTML = `<a class="index-link">前往首頁</a>`;
+            attractionDescription.innerHTML = `<a class="index-link" href="https://110-10-nchu-bikeway.dev-hub.io/">前往首頁</a>`;
         } else if (kNum > 11.9) {
             deleteText();
         } else if (kNum > 11.6) {

@@ -112,7 +112,16 @@
 
     <div id="carousel" class="trip-carousel">
       <div class="carousel-mask"></div>
-      <div><input type="text" name="" id=""></div>
+      <form class="row row-cols-lg-auto g-3 mx-auto pt-4" action="{{ route('journey-cart.step01-store') }}" method="POST">
+        @csrf
+        <div class="col-12">
+          <label class="visually-hidden" for="orders-name">行程標題</label>
+          <input type="text" class="form-control" id="orders-name" name="name" placeholder="請輸入自訂行程標題">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary" id="submit-btn">儲存行程</button>
+        </div>
+      </form>
       <div class="swiper">
         <div class="swiper-wrapper">
           @foreach ($items as $item)
@@ -126,43 +135,6 @@
             <div class="swiper-content">{{$item->attributes->content}}</div>
           </div>
           @endforeach
-
-
-          {{-- <div class="swiper-slide">
-            <div class="swiper-image"></div>
-            <div class="swiper-title">Title</div>
-            <div class="swiper-content"></div>
-          </div>
-          <div class="swiper-slide">
-            <div class="swiper-image"></div>
-            <div class="swiper-title">Title</div>
-            <div class="swiper-content"></div>
-          </div>
-          <div class="swiper-slide">
-            <div class="swiper-image"></div>
-            <div class="swiper-title">Title</div>
-            <div class="swiper-content"></div>
-          </div>
-          <div class="swiper-slide">
-            <div class="swiper-image"></div>
-            <div class="swiper-title">Title</div>
-            <div class="swiper-content"></div>
-          </div>
-          <div class="swiper-slide">
-            <div class="swiper-image"></div>
-            <div class="swiper-title">Title</div>
-            <div class="swiper-content"></div>
-          </div>
-          <div class="swiper-slide">
-            <div class="swiper-image"></div>
-            <div class="swiper-title">Title</div>
-            <div class="swiper-content"></div>
-          </div>
-          <div class="swiper-slide">
-            <div class="swiper-image"></div>
-            <div class="swiper-title">Title</div>
-            <div class="swiper-content"></div>
-          </div> --}}
         </div>
       </div>
     </div>
@@ -188,46 +160,48 @@
 <script src="{{asset('js/member.js')}}"></script>
 <script>
   const deleteElements = document.querySelectorAll('.delete-btn');
+  const saveElement = document.querySelector('#submit-btn');
+
   deleteElements.forEach(deleteElement => {
-        deleteElement.addEventListener('click', function() {
-            Swal.fire({
-                title: '是否刪除該景點或店家？',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: '是',
-                cancelButtonText: '否'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    const productElement = this.parentElement.parentElement;
-                    let productId = this.getAttribute('data-id');
-                    let url = '{{ route("journey-cart.delete") }}';
-                    let formData = new FormData();
+    deleteElement.addEventListener('click', function() {
+      Swal.fire({
+        title: '是否刪除該景點或店家？',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '刪除',
+        cancelButtonText: '取消'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const productElement = this.parentElement.parentElement;
+          let productId = this.getAttribute('data-id');
+          let url = '{{ route("journey-cart.delete") }}';
+          let formData = new FormData();
 
-                    formData.append('_token', '{{csrf_token()}}');
-                    formData.append('id', productId);
+          formData.append('_token', '{{csrf_token()}}');
+          formData.append('id', productId);
 
-                    fetch(url, {
-                        'method': 'post',
-                        'body': formData
-                    }).then(function(response) {
-                        return response.text();
-                    }).then(function(data) {
-                        if (data == 'Success') {
-                            productElement.remove();
-                            Swal.fire({
-                                position: 'top',
-                                icon: 'success',
-                                title: '刪除成功！',
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                        }
-                    });
-                }
-            });
-        });
+          fetch(url, {
+            'method': 'post',
+            'body': formData
+          }).then(function(response) {
+            return response.text();
+          }).then(function(data) {
+            if (data == 'Success') {
+              productElement.remove();
+              Swal.fire({
+                position: 'top',
+                icon: 'success',
+                title: '刪除成功！',
+                showConfirmButton: false,
+                timer: 1500
+              });
+            }
+          });
+        }
+      });
     });
+  });
 </script>
 @endsection

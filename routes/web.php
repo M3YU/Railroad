@@ -75,8 +75,8 @@ Route::prefix('journey-cart')->group(function () {
     // Route::post('/update', [JourneyCartController::class, 'update'])->name('journey-cart.update');
     Route::post('/delete', [JourneyCartController::class, 'delete'])->name('journey-cart.delete');
 
-    Route::get('step01', [JourneyCartController::class, 'step01'])->name('journey-cart.step01');
-    // Route::get('step01', [JourneyCartController::class, 'step01Store'])->name('journey-cart.step01-store');
+    // Route::get('step01', [JourneyCartController::class, 'step01'])->name('journey-cart.step01');
+    Route::post('step01', [JourneyCartController::class, 'step01Store'])->name('journey-cart.step01-store');
     // Route::get('step02/{order_no}', [JourneyCartController::class, 'step02'])->name('journey-cart.step02');
 
     Route::get('/clear', [JourneyCartController::class, 'clear'])->name('journey-cart.clear');
