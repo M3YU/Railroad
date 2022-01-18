@@ -33,6 +33,15 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
   <embed class="banner-mask" src="{{asset('img/top/banner-mask.png')}}" type="">
 </section>
 
+<section id="top">
+  <div class="title">服務中心________________</div>
+  <embed class="title-mask" src="{{asset('img/index/banner點綴.png')}}" type="">
+  <div class="slogan">騎車才不會錯過美麗的風景。</div>
+  <div class="banner"></div>
+  <embed class="banner-mask" src="{{asset('img/top/banner-mask.png')}}" type="">
+</section>
+
+
 
 <section id="middle">
   <div class="middle-background" style="background-image: url({{asset('img/service/06-travel.taichung.gov.tw-SteelBridge-3.jpg')}})">
