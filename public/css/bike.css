@@ -507,7 +507,7 @@ main .veiw .road::after {
 main .veiw .camera {
   position: absolute;
   z-index: 10;
-  top: 40%;
+  top: 20%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -1469,7 +1469,52 @@ main .veiw .building-9.df {
   right: -12700px;
   bottom: -200px;
 }
+main .veiw .building-11.df {
+  width: 1500px;
+  height: 1500px;
+  background-color: transparent;
+  border: 50px #fa0 solid;
+  border-radius: 50%;
+  z-index: 8;
+  right: -20500px;
+  bottom: -800px;
+  overflow: hidden;
+}
 
+main .veiw .building-11.df::before {
+  content: '';
+  position: absolute;
+  z-index: 8;
+  width: 30px;
+  height: 900px;
+  background-color: #fff;
+  left: 80px;
+  bottom: 60%;
+  -webkit-box-shadow: 100px 0 0 0 #fff,
+ 300px 0 0 0 #fff,
+ 500px 0 0 0 #fff,
+ 700px 0 0 0 #fff,
+ 900px 0 0 0 #fff,
+ 1100px 0 0 0 #fff  ,
+ 1300px 0 0 0 #fff;
+          box-shadow: 100px 0 0 0 #fff,
+ 300px 0 0 0 #fff,
+ 500px 0 0 0 #fff,
+ 700px 0 0 0 #fff,
+ 900px 0 0 0 #fff,
+ 1100px 0 0 0 #fff  ,
+ 1300px 0 0 0 #fff;
+}
+
+main .veiw .building-11.df::after {
+  content: '';
+  position: absolute;
+  z-index: 9;
+  width: 1400px;
+  height: 200px;
+  background: #fa0;
+  bottom: 50%;
+}
 main .veiw .building-12.df {
   padding: 20px;
   background-image: none;
