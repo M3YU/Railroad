@@ -26,9 +26,7 @@
             background-repeat: no-repeat;
             cursor: pointer;
         }
-        button:hover{
-            color: #fa0;
-        }
+        
         button.none{
             display: none;
         }
