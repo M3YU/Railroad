@@ -4,6 +4,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/member.css')}}">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 @endsection
 
 @section('main')
@@ -12,10 +13,10 @@
   <div class="title">揪成會員________________</div>
   <embed class="title-mask" src="{{asset('img/index/banner點綴.png')}}" type="">
   <div class="slogan">騎車才不會錯過美麗的風景。</div>
-  <div class="banner" style="background-image: url('{{asset('img/member/11-www.17travel.tw-ForestPark-1.jpg')}}')">
+  <div class="banner" style="background-image: url('{{asset('img/member/32-travel.taichung.jpg')}}')">
   </div>
   <embed class="banner-mask" src="{{asset('img/top/banner-mask.png')}}" type="">
-  <div class="banner-photo">
+  <div class="banner-photo" @guest @else style="background-image:none" @endguest>
   </div>
 
   <!-- 背景有一段空白處 用白色去填 -->
@@ -29,7 +30,7 @@
     <div class="row main active" id="main">
       <section class="login">
         <article class="half">
-          <h1>Azure</h1>
+          <h1>揪成會員</h1>
           <div class="tabs">
             <span class="tab signin active"><a href="#signin">Sign in</a></span>
             <span class="tab signup"><a href="#signup">Sign up</a></span>
@@ -88,23 +89,23 @@
   <!-- 自訂行程  要看的話把 style="display: none;" 移至登入表單-->
 
   <div class="self-trip">
-    <div class="title">自訂行程_____________</div>
+    <div class="title">自訂行程</div>
     <embed class="title-mask" src="{{asset('img/member/標題用.png')}}" type="">
-    <div class="subtitle">我是文字</div>
+    <div class="subtitle">Customize your itinerary</div>
 
     <div class="trip-navbar">
-      <div class="trip-nav"></div>
-      <div class="trip-nav"></div>
-      <div class="trip-nav"></div>
-      <div class="trip-nav"></div>
-      <div class="trip-nav"></div>
+      <div class="trip-nav"><i class="fas fa-car fa-2x"></i></div>
+      <div class="trip-nav"><i class="fas fa-clock fa-2x"></i></div>
+      <div class="trip-nav"><i class="fas fa-clipboard-list fa-2x"></i></div>
+      <div class="trip-nav"><i class="fas fa-utensils fa-2x"></i></div>
+      <div class="trip-nav"><i class="fas fa-store-alt fa-2x"></i></div>
     </div>
     <div class="nav-title">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>5</span>
+      <h4>集合地</h4>
+      <h4>時間</h4>
+      <h4>行程</h4>
+      <h4>飲食</h4>
+      <h4>租車行</h4>
     </div>
     
 

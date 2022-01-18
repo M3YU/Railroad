@@ -68,16 +68,16 @@ function bikewayVeiw2(){
                 <div class="toggle"></div>
                 <!-- 調整li裡面的--i可以選擇位置 -->
                 <li style="--i:3;">
-                    <a href="/attraction.html"><ion-icon name="map-outline"></ion-icon></a>
+                    <a class="map"><ion-icon name="map-outline"></ion-icon></a>
                 </li>
                 <li style="--i:4;">
-                    <a href="/group.html"><ion-icon name="bicycle"></ion-icon></a>
+                    <aclass="bicycle"><ion-icon name="bicycle"></ion-icon></a>
                 </li>
                 <li style="--i:5;">
-                    <a href="/store.html"><ion-icon name="bag-handle-outline"></ion-icon></a>
+                    <a class="bag"><ion-icon name="bag-handle-outline"></ion-icon></a>
                 </li>
                 <li style="--i:6;">
-                    <a href="/index.html"><ion-icon name="reader-outline"></ion-icon></a>
+                    <a class="reader"><ion-icon name="reader-outline"></ion-icon></a>
                 </li>
             </div>
             <div class="space">
@@ -332,7 +332,7 @@ function dfBikeway(){
         if (kNum > 12) {
             infoElemet.classList.add('open')
             attractionName.textContent = '揪騎后豐';
-            attractionDescription.innerHTML = `<a class="index-link" href="{{route('index')}}">前往首頁</a>`;
+            attractionDescription.innerHTML = `<a class="index-link">前往首頁</a>`;
         } else if (kNum > 11.9) {
             deleteText();
         } else if (kNum > 11.6) {
