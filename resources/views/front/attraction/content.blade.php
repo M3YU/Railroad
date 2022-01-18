@@ -33,8 +33,7 @@
     <div class="title" style="background-image: none">揪一起騎________________</div>
     <embed class="title-mask" src="{{asset('img/index/banner點綴.png')}}" type="">
     <div class="slogan">騎車才不會錯過美麗的風景。</div>
-    <div class="banner"
-        style="background-image: url('{{asset('img/attraction/27-travel.taichung.gov.tw-LoverBridge-2.jpg')}}')"></div>
+    <div class="banner" style="background-image: url('{{asset('img/attraction/27-travel.taichung.gov.tw-LoverBridge-2.jpg')}}')"></div>
     <embed class="banner-mask" src="{{asset('img/top/banner-mask.png')}}" type="">
 </section>
 
@@ -49,35 +48,28 @@
     <div class="container">
         <div class="row ">
             <div class="col-5">
-                <div class="attraction-main-img"
-                    style="background-image: url({{Storage::url($attraction->image_url)}})"></div>
+                <div class="attraction-main-img" style="background-image: url({{Storage::url($attraction->image_url)}})"></div>
             </div>
             <div class="col-7 right">
                 <div class="other ">
                     <div class="row ">
                         <div class="attraction-main-title">
                             <h3>{{$attraction->name}}</h3>
-                            <button type="button" class="btn btn-secondary mark-btn">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                    class="bi bi-bookmark-star-fill" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zM8.16 4.1a.178.178 0 0 0-.32 0l-.634 1.285a.178.178 0 0 1-.134.098l-1.42.206a.178.178 0 0 0-.098.303L6.58 6.993c.042.041.061.1.051.158L6.39 8.565a.178.178 0 0 0 .258.187l1.27-.668a.178.178 0 0 1 .165 0l1.27.668a.178.178 0 0 0 .257-.187L9.368 7.15a.178.178 0 0 1 .05-.158l1.028-1.001a.178.178 0 0 0-.098-.303l-1.42-.206a.178.178 0 0 1-.134-.098L8.16 4.1z" />
+                            <button type="button" class="btn btn-secondary mark-btn add-cart">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bookmark-star-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zM8.16 4.1a.178.178 0 0 0-.32 0l-.634 1.285a.178.178 0 0 1-.134.098l-1.42.206a.178.178 0 0 0-.098.303L6.58 6.993c.042.041.061.1.051.158L6.39 8.565a.178.178 0 0 0 .258.187l1.27-.668a.178.178 0 0 1 .165 0l1.27.668a.178.178 0 0 0 .257-.187L9.368 7.15a.178.178 0 0 1 .05-.158l1.028-1.001a.178.178 0 0 0-.098-.303l-1.42-.206a.178.178 0 0 1-.134-.098L8.16 4.1z" />
                                 </svg>
                             </button>
                         </div>
                     </div>
                     <div class="row">
                         @foreach ($attractionImgs as $index => $attractionImg)
-
                             @if ( $index < 3) <div class="col-4">
                                 <div class="attraction-other-img"
                                     style="background-image: url('{{Storage::url($attractionImg->image_url)}}')"></div>
                                 </div>
                             @endif
-
                         @endforeach
-
-
                 </div>
             </div>
         </div>
@@ -109,8 +101,7 @@
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         @foreach ($categories as $category)
-                        <div class="swiper-slide"
-                            style="background-image: url('{{Storage::url($category->image_url)}}')"></div>
+                        <div class="swiper-slide" style="background-image: url('{{Storage::url($category->image_url)}}')"></div>
                         @endforeach
 
 
@@ -132,7 +123,6 @@
 @endsection
 
 @section('js')
-
 <script src="{{asset('js/attraction-content.js')}}"></script>
 
 @endsection

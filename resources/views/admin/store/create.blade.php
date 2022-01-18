@@ -25,7 +25,7 @@
                             <label for="category" class="col-sm-2 col-form-label">類別<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="store_category_id" id="category">
+                                <select class="form-control" name="category_id" id="category">
                                     <option value="" hidden>請選擇類別</option>
                                     @foreach ($storeCategories as $storeCategory)
                                     <option value="{{$storeCategory->id}}">{{$storeCategory->name}}</option>
@@ -41,8 +41,8 @@
                             </div>
                         </div>
                         <div class="form-group row py-2">
-                            <label for="subtitle" class="col-sm-2 col-form-label"><span
-                                    class="text-danger">英文名稱</span></label>
+                            <label for="subtitle" class="col-sm-2 col-form-label">英文名稱<span
+                                    class="text-danger">*</span></label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="subtitle" name="subtitle" required>
                             </div>

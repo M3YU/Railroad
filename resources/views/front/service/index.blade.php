@@ -43,7 +43,7 @@
     }
 
     #middle .middle-background {
-        clip-path: ellipse(100% 100% at 50% -22%);
+        clip-path: ellipse(120% 100% at 50% -30%);
         top: -44%;
         height: 75.458vw;
     }
@@ -69,8 +69,7 @@
     <div class="col d-flex align-items-baseline title">
         <h1>基本資訊</h1>
     </div>
-    <embed class="title-mask" src="/img/service/標題用.png" type="">
-    <h3 class="subtitle">Information</h3>
+    <embed class="title-mask" src="{{asset('/img/service/標題用.png')}}" type="">
     <div class="content">
         　　早期獨特建構的鐵馬隧道，能盡情享受，鑽隧道與欣賞過橋梁的沿途風景，還有最具挑戰的髮夾彎，車道在此有 180 度的 U
         自行大彎，以及一段長長的下坡，就像是坐雲霄飛車一樣，迎面而來的風，把所有煩惱都給吹走，讓心情整個輕快起來，最後的重頭戲就是和火車競速，這會是從未經歷過的經驗。
@@ -86,7 +85,7 @@
         <div class="col d-flex align-items-baseline title">
             <h1>交通資訊</h1>
         </div>
-        <embed class="title-mask" src="/img/service/標題用.png" type="">
+        <embed class="title-mask" src="{{asset('/img/service/標題用.png')}}" type="">
         <h3 class="subtitle">Transportation</h3>
 
         <div class="card-group">
@@ -114,7 +113,7 @@
         </div>
     </div>
     <div class="title">聯絡我們</div>
-    <embed class="title-mask" src="/img/service/banner點綴.png" type="">
+    <embed class="title-mask" src="{{asset('/img/service/banner點綴.png')}}" type="">
 
     <div class="pen-title">
         <div class="container">
@@ -160,8 +159,8 @@
 @endsection
 
 @section('footer')
-<embed class="footer-mask" src="./img/index/footer用-總和.png" type="">
-<embed class="grass" src="./img/index/footer草叢.png" type="">
+<embed class="footer-mask" src="{{asset('./img/index/footer用-總和.png')}}" type="">
+<embed class="grass" src="{{asset('./img/index/footer草叢.png')}}" type="">
 
 
 @endsection

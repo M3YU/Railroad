@@ -25,7 +25,9 @@ use App\Http\Controllers\AttractionCategoryController;
 
 
 //形象頁
-Route::get('bike', [FrontController::class, 'bike'])->name('bike.Page');
+Route::get('bikeHf', [FrontController::class, 'bikeHf'])->name('bike.Page-Hf');
+
+Route::get('bikeDf', [FrontController::class, 'bikeDf'])->name('bike.Page-Df');
 
 // //首頁
 Route::get('/', [FrontController::class, 'index'])->name('index');
@@ -107,7 +109,7 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
 
     Route::resource('/stores', StoreController::class);
     Route::resource('/store_categories', StoreCategoryController::class);
-    Route::delete('/store_image', [StoreController::class, 'storesimageDelete'])->name('stores.image-delete');
+    Route::delete('/store_image', [StoreController::class, 'storeImagesDelete'])->name('stores.image-delete');
     Route::resource('/news_categories', NewsCategoryController::class);
 
     Route::prefix('/news')->group(function () {
