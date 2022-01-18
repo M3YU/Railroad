@@ -3,12 +3,14 @@
 @section('title', '商店')
 
 @section('css')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="{{asset('css/store-content.css')}}">
 @endsection
 
 @section('main')
 <section id="top">
-  <div class="title">鄰近商店________________</div>
+  <div class="title" style="background-image: none;">鄰近商店________________</div>
   <embed class="title-mask" src="{{asset('img/index/banner點綴.png')}}" type="">
   <div class="slogan">騎車才不會錯過美麗的風景。</div>
   <div class="banner" style="background-image: url('{{asset('img/store/21-chevigal.com-mountain-02.jpg')}}')">
@@ -31,14 +33,14 @@
     </div>
     <div class="row row-cols-2 justify-content-center mb-5">
       <div class="col-5 me-4 store-img" style="background-image: url('{{Storage::url($stores->image_url)}}')"></div>
-      <div class="col-7 row row-cols-3 justify-content-lg-between justify-content-md-center align-content-end">
+      <div class="col-7 row row-cols-3 justify-content-lg-evenly justify-content-md-center align-content-end">
         <div class="col-8 col-sm-7 col-md-5 col-lg-4 mb-xl-5 my-3 store-title">
           <div class="store-title-border"></div>
           <h2>{{$stores->name}}</h2>
         </div>
         <div class="col-4 col-sm-3 col-md-2 col-lg-8 add-cart align-self-end mb-5">
           <button class="btn btn-secondary" aria-label="Mute">
-            <i class="bi bi-bookmark-star-fill "></i>
+            <i class="bi bi-bookmark-star-fill"></i>
           </button>
         </div>
         @foreach ($storeImgs as $index => $storeImg)
@@ -226,4 +228,5 @@
 @endsection
 
 @section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 @endsection

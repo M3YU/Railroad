@@ -21,6 +21,11 @@
         bottom: 47%;
         z-index: 1;
     }
+
+    a {
+        text-decoration: none;
+        color: #ffffff;
+    }
 </style>
 @endsection
 
@@ -141,26 +146,36 @@
         </div>
         <div class="row d-flex">
             <div class="col-xl-4 row-cols-md-1 px-0 theme">
+
                 <div class="col package">
                     <div class="couple"></div>
-                    <div class="theme-name">Couple</div>
+                    <div class="theme-name"><a href="{{route('attractions.suit'," category_id=3")}}">Couple </a></div>
                 </div>
+
             </div>
             <div class="col-xl-8 col-md-12 row-cols-md-2 d-flex flex-wrap px-0 theme">
+
                 <div class="col package">
                     <div class="nature"></div>
-                    <div class="theme-name">Nature</div>
+                    <div class="theme-name"><a href="{{route('attractions.suit'," category_id=1")}}">Nature</a></div>
                 </div>
+
                 <div
                     class="col-xl-6 col-md-12 col-12 row-cols-xl-2 row-cols-1 d-flex flex-xl-nowrap flex-wrap px-0 theme">
+
                     <div class="col package">
                         <div class="friend"></div>
-                        <div class="theme-name">Friend</div>
+                        <div class="theme-name"><a href="{{route('attractions.suit'," category_id=2")}}">Friend</a>
+                        </div>
                     </div>
+
+
                     <div class="col package">
                         <div class="family"></div>
-                        <div class="theme-name">Family</div>
+                        <div class="theme-name"><a href="{{route('attractions.suit'," category_id=5")}}">Family</a>
+                        </div>
                     </div>
+
                 </div>
             </div>
             <div class="col-xl-4 d-flex flex-xl-nowrap px-0">
@@ -169,10 +184,12 @@
                 </div>
             </div>
             <div class="col-xl-8 d-flex flex-xl-nowrap px-0 theme">
+
                 <div class="col package">
                     <div class="history"></div>
-                    <div class="theme-name">History</div>
+                    <div class="theme-name"> <a href="{{route('attractions.suit'," category_id=4")}}">History </a></div>
                 </div>
+
             </div>
         </div>
     </section>

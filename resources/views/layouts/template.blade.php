@@ -173,7 +173,7 @@
                     <div class="footer-menu-item">聯絡我們</div>
                 </div>
 
-                <div class="footer-news"></div>
+                <div class="footer-icon" style="background-image: url({{asset('img/index/LOGO-icon.png')}})"></div>
 
             </div>
 
@@ -201,6 +201,15 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="{{asset('js/navbar.js')}}"></script>
     <script src="{{asset('js/copyright.js')}}"></script>
+    <script>
+        let icon = document.querySelector('.footer-icon')
+        icon.addEventListener('mouseenter',function(){
+          icon.style.backgroundImage = 'url({{asset('img/index/老闆.jpg')}})'
+        })
+        icon.addEventListener('mouseleave',function(){
+        icon.style.backgroundImage = 'url({{asset('img/index/LOGO-icon.png')}})'
+        })
+    </script>
     @yield('js')
 </body>
 

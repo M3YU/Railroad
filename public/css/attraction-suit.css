@@ -1,0 +1,252 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOkCnqEu92Fr1MmgVxIIzc.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc9.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxP.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format("truetype");
+}
+
+.title {
+  width: 100%;
+  height: 100%;
+  min-width: 438px;
+  min-height: 95px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: url("/img/attraction/標題用.png");
+}
+
+.title h1 {
+  padding-left: 24px;
+  padding-top: 32px;
+  font-size: 2rem;
+}
+
+.title:after {
+  content: '';
+  width: calc(438px / 2);
+  height: 2px;
+  border-bottom: 2px solid #000000;
+}
+
+.subtitle {
+  padding-left: 9%;
+  font-size: 1.5rem;
+}
+
+.focus .suit.row {
+  margin-right: 8%;
+  margin-left: 8%;
+  margin-bottom: 20%;
+}
+
+.focus .suit.row .sp-img {
+  min-width: 550px;
+  min-height: 550px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("/img/attraction/03-sheep17go.com-RongTing-3.JPG");
+}
+
+.focus .suit.row .sp-img:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -10px;
+  width: 105%;
+  height: 105%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("/img/attraction/splatter-3.jpg");
+  mix-blend-mode: screen;
+}
+
+.focus .suit.row .col {
+  position: relative;
+  min-height: 440px;
+}
+
+.focus .suit.row .col .sp-text {
+  width: 550px;
+  height: 440px;
+  padding: 45px;
+  position: absolute;
+  top: 15%;
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 2%;
+  -webkit-box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  /* detail button */
+}
+
+.focus .suit.row .col .sp-text .ribbon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 150px;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.focus .suit.row .col .sp-text .ribbon:before {
+  content: 'Special';
+  position: absolute;
+  width: 150%;
+  height: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  color: #ffffff;
+  background-color: #AEA83E;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transform: rotate(45deg) translateY(-20px);
+  transform: rotate(45deg) translateY(-20px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.focus .suit.row .col .sp-text .ribbon:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #000311;
+  -webkit-box-shadow: 140px 140px #000311;
+  box-shadow: 140px 140px #000311;
+  z-index: 0;
+}
+
+.focus .suit.row .col .sp-text h1 {
+  padding-left: 10px;
+  color: #3F4042;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: url("/img/attraction/sp-text-title-1.png");
+}
+
+.focus .suit.row .col .sp-text h4 {
+  padding-left: 40px;
+  color: #ffffff;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: url("/img/attraction/sp-text-subtitle-1.png");
+}
+
+.focus .suit.row .col .sp-text p {
+  text-align: justify;
+  line-height: 1.8rem;
+  color: #3F4042;
+}
+
+.focus .suit.row .col .sp-text .hashtag {
+  width: calc(100% - 45px*2);
+  position: absolute;
+  bottom: 45px;
+}
+
+.focus .suit.row .col .sp-text .hashtag span {
+  padding-right: 10px;
+  color: #AEA83E;
+}
+
+.focus .suit.row .col .sp-text .button-55 {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  background-color: #ffffff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  -webkit-transition: all 235ms ease-in-out;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+.focus .suit.row .col .sp-text .button-55:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  -webkit-transform: translate3d(0, 2px, 0);
+  transform: translate3d(0, 2px, 0);
+}
+
+.focus .suit.row .col .sp-text .button-55:focus {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+}
+
+/*# sourceMappingURL=attraction copy.css.map */

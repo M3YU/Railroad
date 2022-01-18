@@ -116,31 +116,31 @@
                 <div class="card">
                     <h1 class="title" >聯絡我們</h1>
                     <form method="POST" action="{{route('contact.mail')}}">
-                      @csrf
-                        <div class="input-container">
-                            <input type="text" id="name"  required="required" name="name"/>
-                            <label for="name" >姓名</label>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="input-container">
-                            <input type="text" id="phone" name="phone" required="required" />
-                            <label for="phone" >電話</label>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="input-container">
-                            <input type="text" id="email" name="email" required="required" />
-                            <label for="email" >電子信箱</label>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="input-container">
-                            <input type="#{type}" id="content" name="content" required="required" />
-                            <label for="content" >意見回饋</label>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="button-container">
-                            <button type="submit"><span>傳送</span></button>
-                        </div>
-                    </form>
+                        @csrf
+                          <div class="input-container">
+                              <input type="text" id="name"  required="required" name="name"/>
+                              <label for="name" >姓名</label>
+                              <div class="bar"></div>
+                          </div>
+                          <div class="input-container">
+                              <input type="text" id="phone" name="phone" required="required" />
+                              <label for="phone" >電話</label>
+                              <div class="bar"></div>
+                          </div>
+                          <div class="input-container">
+                              <input type="text" id="email" name="email" required="required" />
+                              <label for="email" >電子信箱</label>
+                              <div class="bar"></div>
+                          </div>
+                          <div class="input-container">
+                              <input type="#{type}" id="content" name="content" required="required" />
+                              <label for="content" >意見回饋</label>
+                              <div class="bar"></div>
+                          </div>
+                          <div class="button-container">
+                              <button type="submit"><span>傳送</span></button>
+                          </div>
+                      </form>
                 </div>
                 <div class="card alt">
                     <div class="toggle">

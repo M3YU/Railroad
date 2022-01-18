@@ -36,6 +36,16 @@ class FrontController extends Controller
     {
         return view('front.attraction.attraction');
     }
+
+
+
+    public function attractionSuit(Request $request)
+    {
+        $suits = Attraction::where('category_id', $request->category_id)->get();
+        return view('front.attraction.suit', compact('suits'));
+    }
+
+
     public function attractionContent($id)
     {
         $attraction = Attraction::find($id);
@@ -59,7 +69,7 @@ class FrontController extends Controller
     {
         $stores = Store::find($id);
         $souvenirs = Store::where('category_id', 3)->get();
-        $storeImgs = StoreImage::where('store_id', $id)->get();
+        $storeImgs = StoreImage::where('store_id', $id)->limit(3)->get();
         return view('front.store.content',compact('stores','souvenirs','storeImgs'));
     }
     public function news()
