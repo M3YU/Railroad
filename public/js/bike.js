@@ -46,7 +46,7 @@ function skip(){
 
 }
 //有需要修改就打開
-skip();
+// skip();
 
 //后豐頁面的結構
 function bikewayVeiw1(){
