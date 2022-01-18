@@ -132,7 +132,16 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="/js/bike-df.js"></script>
     <script>
+        let mapLink = document.querySelector('.map');
+        let bicycleLink = document.querySelector('.bicycle');
+        let bagink = document.querySelector('.bag');
+        let readerLink = document.querySelector('.reader');
         let indexLink = document.querySelector('.index-link');
+
+        mapLink.href  = `{{route('attractions')}}`;
+        bicycleLink.href  = `{{route('teams')}}`;
+        bagink.href = `{{route('stores')}}`;
+        readerLink.href = `{{route('index')}}`;
         
         indexLink.href = `{{route('index')}}`;
        
