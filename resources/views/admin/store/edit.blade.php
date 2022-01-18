@@ -122,20 +122,20 @@
                         </div>
                                                  
                         <div class="form-group row py-2">
-                            <label for="distance" class="col-sm-2 col-form-label">距離<span
-                                    class="text-danger">*</span></label>
-                            <div class="col-sm-10">
-                                <input class="form-control" name="distance" id="distance" rows="5"
-                                    required value="{{$store->distance}}">
-                            </div>
-                        </div>
-
-                        <div class="form-group row py-2">
                             <label for="content" class="col-sm-2 col-form-label">描述<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
                                 <textarea class="form-control" name="content" id="store-content" rows="5"
                                     required>{{$store->content}}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row py-2">
+                            <label for="distance" class="col-sm-2 col-form-label">距離<span
+                                    class="text-danger">*</span></label>
+                            <div class="col-sm-10">
+                                <input class="form-control" name="distance" id="distance" rows="5"
+                                    required value="{{$store->distance}}">
                             </div>
                         </div>
 
