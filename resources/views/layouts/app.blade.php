@@ -147,7 +147,8 @@
         <div id="front-desk-page" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header" style="color: red">前台頁面:</h6>
-            <a class="collapse-item" href="{{route('bike.Page')}}">形象頁</a>
+            <a class="collapse-item" href="{{route('bike.Page-Hf')}}">形象頁-Hf</a>
+            <a class="collapse-item" href="{{route('bike.Page-Df')}}">形象頁-Df</a>
             <a class="collapse-item" href="{{route('index')}}">前台首頁</a>
             <a class="collapse-item" href="{{route('news')}}">最新消息</a>
             <a class="collapse-item" href="{{route('attractions')}}">景點</a>
