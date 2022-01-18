@@ -116,7 +116,8 @@
         @csrf
         <div class="col-12">
           <label class="visually-hidden" for="orders-name">行程標題</label>
-          <input type="text" class="form-control" id="orders-name" name="name" placeholder="請輸入自訂行程標題">
+          <input type="text" class="form-control" id="orders-name" name="name" placeholder="請輸入自訂行程標題" required>
+          <h6 class="text-center text-warning mt-1"><i class="fas fa-exclamation-triangle fx-2x"></i> 請先加入景點及店家！</h6>
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary" id="submit-btn">儲存行程</button>
