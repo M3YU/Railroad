@@ -107,7 +107,7 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
 
     Route::resource('/stores', StoreController::class);
     Route::resource('/store_categories', StoreCategoryController::class);
-    Route::delete('/store_image', [StoreController::class, 'storesimageDelete'])->name('stores.image-delete');
+    Route::delete('/store_image', [StoreController::class, 'storeImagesDelete'])->name('stores.image-delete');
     Route::resource('/news_categories', NewsCategoryController::class);
 
     Route::prefix('/news')->group(function () {
