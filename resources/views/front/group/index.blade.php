@@ -62,28 +62,33 @@
         </div>
       </a>
     </div>
-    <form class="team-form inactive">
+    <form class="team-form inactive" action="{{route('teams.store')}}" method="POST">
+      @csrf
       <div class="form-check timing">
         <label for="half-time" class="team-time">半日遊</label>
-        <input id="half-time" name="timing" type="radio" value="半日遊" hidden>
+        <input id="half-time" name="timing" type="radio" value="1" hidden>
         <label for="all-time" class="team-time">全日遊</label>
-        <input type="radio" name="timing" id="all-time" value="全日遊" hidden>
+        <input type="radio" name="timing" id="all-time" value="2" hidden>
       </div>
       <div class="form-check category">
         <label for="history" class="team-category">歷史行</label>
-        <input id="history" name="category" type="radio" value="歷史行" hidden>
+        <input id="history" name="category" type="radio" value="1" hidden>
         <label for="food" class="team-category">美食行</label>
-        <input id="food" name="category" type="radio" value="美食行" hidden>
+        <input id="food" name="category" type="radio" value="2" hidden>
         <label for="fitness" class="team-category">健身行</label>
-        <input id="fitness" name="category" type="radio" value="健身行" hidden>
+        <input id="fitness" name="category" type="radio" value="3" hidden>
         <label for="family" class="team-category">親子行</label>
-        <input id="family" name="category" type="radio" value="親子行" hidden>
+        <input id="family" name="category" type="radio" value="4" hidden>
         <label for="friend" class="team-category">交友行</label>
-        <input id="friend" name="category" type="radio" value="交友行" hidden>
+        <input id="friend" name="category" type="radio" value="5" hidden>
       </div>
       <div class="form-check name">
         <label for="name" class="team-name">團名 :</label>
         <input id="name" name="name" type="text" placeholder="請輸入您想要的團名">
+      </div>
+      <div class="form-check name">
+        <label for="name" class="team-name">時間 :</label>
+        <input id="date" name="date" type="date">
       </div>
       <div class="form-check content">
         <label for="content" class="team-content">行程內容 :</label>

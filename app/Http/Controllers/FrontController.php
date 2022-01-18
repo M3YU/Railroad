@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Models\Team;
 use App\Models\Store;
 use App\models\Contact;
 use App\Models\Attraction;
@@ -10,6 +11,7 @@ use App\Models\StoreImage;
 use App\Mail\ContactNotify;
 use Illuminate\Http\Request;
 use App\Models\AttractionImage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class FrontController extends Controller
@@ -70,7 +72,7 @@ class FrontController extends Controller
         $stores = Store::find($id);
         $souvenirs = Store::where('category_id', 3)->get();
         $storeImgs = StoreImage::where('store_id', $id)->limit(3)->get();
-        return view('front.store.content',compact('stores','souvenirs','storeImgs'));
+        return view('front.store.content', compact('stores', 'souvenirs', 'storeImgs'));
     }
     public function news()
     {
@@ -80,31 +82,43 @@ class FrontController extends Controller
     }
     public function teams()
     {
-        return view('front.group.index');
+        $teams = Team::get();
+        return view('front.group.index', compact('teams'));
+    }
+    public function teamStore(Request $request)
+    {
+
+        Team::create([
+            'name' => $request->name,
+            'date' => $request->date,
+            'user_id' => Auth::user()->id,
+            'content' => $request->content,
+            'category_id' => $request->category,
+            'timing' => $request->timing,
+        ]);
+        return redirect()->route('teams');
     }
     public function service()
     {
-       return view('front.service.index');
+        return view('front.service.index');
+    }
 
-     }
+    public function contact(Request $request)
 
-     public function contact(Request $request)
-     
-     {
-         
+    {
+
         $contact = contact::create([
             'name' => $request->name,
             'phone' => $request->phone,
             'email' => $request->email,
             'content' => $request->content
         ]);
-        
+
         $email = 'foraswell@gmail.com';
         Mail::to($email)->send(new ContactNotify($contact));
-        
+
         return redirect()->route('services');
-       
-     }
+    }
 
     public function member()
     {

@@ -49,6 +49,8 @@ Route::get('/stores/{id}', [FrontController::class, 'storeContent'])->name('stor
 
 //揪一起騎
 Route::get('/teams', [FrontController::class, 'teams'])->name('teams');
+
+Route::post('/teams', [FrontController::class, 'teamStore'])->name('teams.store');
 //服務中心
 Route::get('/services', [FrontController::class, 'service'])->name('services');
 Route::post('services-contact', [FrontController::class, 'contact'])->name('contact.mail');

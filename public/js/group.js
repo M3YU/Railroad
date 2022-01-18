@@ -7,7 +7,6 @@ let teamWall = document.querySelector('.team-wall')
 titles.forEach((title) => {
   title.addEventListener('click', function () {
     console.log(this);
-    console.log(index);
     if (title.innerText == '在線行程') {
       floatTitle.style.left = '1%'
       floatTitle.innerText = '在線行程'

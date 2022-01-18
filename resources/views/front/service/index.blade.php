@@ -10,6 +10,7 @@
 <style>
     footer {
         margin-top: 21.5vw;
+        bottom: -100%
     }
 
     .footer-mask {

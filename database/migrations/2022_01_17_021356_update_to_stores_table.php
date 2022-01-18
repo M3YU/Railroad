@@ -26,7 +26,7 @@ class UpdateToStoresTable extends Migration
     public function down()
     {
         Schema::table('stores', function (Blueprint $table) {
-            //
+            $table->dropColumn('subtitle');
         });
     }
 }
