@@ -10,7 +10,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href=>首頁</a></li>
             <li class="breadcrumb-item"><a href=>商店管理</a></li>
-            <li class="breadcrumb-item active" aria-current="page">新增產品</li>
+            <li class="breadcrumb-item active" aria-current="page">新增商店</li>
         </ol>
     </nav>
     <div class="row justify-content-center">
@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <div class="form-group row py-2">
-                            <label for="distance" class="col-sm-2 col-form-label">距離<span
+                            <label for="distance" class="col-sm-2 col-form-label">距離(公里)<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
                                 <input class="form-control" name="distance" id="distance" rows="5"

@@ -8,14 +8,14 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{asset('/admin')}}">首頁</a></li>
-            <li class="breadcrumb-item"><a href="{{route('attraction_categories.index')}}">產品類別管理</a></li>
+            <li class="breadcrumb-item"><a href="{{route('attraction_categories.index')}}">景點類別管理</a></li>
             <li class="breadcrumb-item active" aria-current="page">編輯類別</li>
         </ol>
     </nav>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <h2 class="card-header pt-3 pb-2">產品類別 - 編輯</h2>
+                <h2 class="card-header pt-3 pb-2">景點類別 - 編輯</h2>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('attraction_categories.update',['attraction_category'=>$attractionCategory->id]) }}">

@@ -1155,6 +1155,7 @@ main .veiw .info .info-description .index-link {
   overflow: hidden;
   -webkit-animation: textAnimate 5s steps(4) infinite;
           animation: textAnimate 5s steps(4) infinite;
+          cursor: pointer;
 }
 
 @-webkit-keyframes textAnimate {
@@ -1184,6 +1185,7 @@ main .veiw .info .info-description .df-link {
   left: 50%;
   bottom: 12%;
   display: block;
+  cursor: pointer;
 }
 
 main .veiw .info.open {
@@ -1323,6 +1325,7 @@ main .veiw .building {
 main .veiw .building-1 {
   background-image: url("/img/biking/商店-02.png");
   right: -600px;
+  bottom: 60px;
 }
 
 main .veiw .building-1.df {
@@ -1334,6 +1337,7 @@ main .veiw .building-1.df {
 main .veiw .building-2 {
   background-image: url("/img/biking/商店-01.png");
   right: -600px;
+  bottom: 60px;
 }
 
 main .veiw .building-2.df {
@@ -1368,8 +1372,12 @@ main .veiw .building-3.df::before {
   position: absolute;
   width: 80px;
   height: 5px;
-  -webkit-box-shadow: 0 10px 0 0  #333, 0 20px 0 0  #333, 0 30px 0 0  #333;
-          box-shadow: 0 10px 0 0  #333, 0 20px 0 0  #333, 0 30px 0 0  #333;
+  -webkit-box-shadow: 0 10px 0 0  #333,
+ 0 20px 0 0  #333,
+ 0 30px 0 0  #333;
+          box-shadow: 0 10px 0 0  #333,
+ 0 20px 0 0  #333,
+ 0 30px 0 0  #333;
 }
 
 main .veiw .building-3.df::after {

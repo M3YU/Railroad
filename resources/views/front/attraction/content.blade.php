@@ -4,6 +4,7 @@
 
 @section('css')
 <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.6/sweetalert2.css">
 <link rel="stylesheet" href="{{asset('css/top.css')}}">
 <link rel="stylesheet" href="{{asset('css/attraction-content.css')}}">
 <style>
@@ -103,8 +104,6 @@
                         @foreach ($categories as $category)
                         <div class="swiper-slide" style="background-image: url('{{Storage::url($category->image_url)}}')"></div>
                         @endforeach
-
-
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -123,6 +122,7 @@
 @endsection
 
 @section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.6/sweetalert2.min.js"></script>
 <script src="{{asset('js/attraction-content.js')}}"></script>
 <script>
     const addCartElement = document.querySelector('.add-cart');
@@ -149,7 +149,13 @@
           return response.text();
       }).then(function(data) {
           if (data == 'Success') {
-              alert('加入成功');
+            Swal.fire({
+                position: 'top',
+                icon: 'success',
+                title: '加入成功！',
+                showConfirmButton: false,
+                timer: 1500
+            });
           }
       });
     }

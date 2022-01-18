@@ -5,6 +5,7 @@
 @section('css')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.6/sweetalert2.css">
 <link rel="stylesheet" href="{{asset('css/store-content.css')}}">
 @endsection
 
@@ -208,6 +209,7 @@
 
 @section('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.6/sweetalert2.min.js"></script>
 <script>
     const addCartElement = document.querySelector('.add-cart');
 
@@ -233,7 +235,13 @@
           return response.text();
       }).then(function(data) {
           if (data == 'Success') {
-              alert('加入成功');
+            Swal.fire({
+                position: 'top',
+                icon: 'success',
+                title: '加入成功！',
+                showConfirmButton: false,
+                timer: 1500
+            });
           }
       });
     }

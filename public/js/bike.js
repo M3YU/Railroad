@@ -46,7 +46,7 @@ function skip(){
 
 }
 //有需要修改就打開
-skip();
+// skip();
 
 //后豐頁面的結構
 function bikewayVeiw1(){
@@ -283,8 +283,8 @@ function hfBikeway(){
         if (kNum > 5) {
             infoElemet.classList.add('open')
             attractionName.textContent = '揪騎后豐';
-            attractionDescription.innerHTML = `<a class="index-link" >前往首頁</a>
-                                                <a class="df-link" >還沒滑夠?</a>`;
+            attractionDescription.innerHTML = `<a class="index-link" href="https://110-10-nchu-bikeway.dev-hub.io/" >前往首頁</a>
+                                                <a class="df-link" href="https://110-10-nchu-bikeway.dev-hub.io/bikeDf" >還沒滑夠?</a>`;
         } else if (kNum > 4.8) {
             deleteText();
         } else if (kNum > 4.3) {

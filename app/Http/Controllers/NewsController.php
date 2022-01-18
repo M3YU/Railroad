@@ -25,7 +25,10 @@ class NewsController extends Controller
     {
         if ($request->hasFile('image_url')) {
             $path = Storage::put('/news', $request->image_url);
+        } else {
+            $path = '';
         }
+
         News::create([
             'category_id' => $request->category_id,
             'title' => $request->title,
