@@ -95,7 +95,7 @@ class StoreCategoryController extends Controller
             return redirect()
             ->route('store_categories.index')
             ->with([
-                'message'=>$storeCategory->name.'類別尚有'.$storeCategory->Stores->count().'個產品，無法刪除。',
+                'message'=>$storeCategory->name.'類別尚有'.$storeCategory->Stores->count().'個商店，無法刪除。',
                 'color'=>'alert-danger'
             ]);
         }
