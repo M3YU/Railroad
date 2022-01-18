@@ -1155,6 +1155,7 @@ main .veiw .info .info-description .index-link {
   overflow: hidden;
   -webkit-animation: textAnimate 5s steps(4) infinite;
           animation: textAnimate 5s steps(4) infinite;
+          cursor: pointer;
 }
 
 @-webkit-keyframes textAnimate {
@@ -1184,6 +1185,7 @@ main .veiw .info .info-description .df-link {
   left: 50%;
   bottom: 12%;
   display: block;
+  cursor: pointer;
 }
 
 main .veiw .info.open {
