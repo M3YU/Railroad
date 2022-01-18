@@ -71,7 +71,7 @@ function bikewayVeiw2(){
                     <a class="map"><ion-icon name="map-outline"></ion-icon></a>
                 </li>
                 <li style="--i:4;">
-                    <aclass="bicycle"><ion-icon name="bicycle"></ion-icon></a>
+                    <a class="bicycle"><ion-icon name="bicycle"></ion-icon></a>
                 </li>
                 <li style="--i:5;">
                     <a class="bag"><ion-icon name="bag-handle-outline"></ion-icon></a>
