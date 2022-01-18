@@ -342,13 +342,14 @@ function dfBikeway(){
             attractionDescription.textContent = attractionText[5][11];
         } else if (kNum > 10.2) {
             deleteText();
-            bikeElement.style.transform = `translateY(-80px) rotate(0deg)`;
+            bikeElement.style.transform = `translateY(0px) rotate(0deg)`;
         }else if (kNum > 9.8) {
-            bikeElement.style.transform = `translateY(-80px) rotate(-20deg)`;
+            bikeElement.style.transform = `translateY(10px) rotate(-20deg)`;
             infoElemet.classList.add('open');
             attractionName.textContent = '鯉魚伯公公園';
             attractionDescription.textContent = attractionText[5][10];
         } else if (kNum > 7.8) {
+            bikeElement.style.transform = `translateY(0px)  rotate(0deg)`;
             deleteText();
         }else if (kNum > 7.4) {
             infoElemet.classList.add('open');
