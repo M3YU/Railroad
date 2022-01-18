@@ -106,6 +106,8 @@
       <span>4</span>
       <span>5</span>
     </div>
+    
+
     <div id="carousel" class="trip-carousel">
       <div class="carousel-mask"></div>
       <div class="swiper">

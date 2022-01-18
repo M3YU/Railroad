@@ -69,13 +69,13 @@
                     <div class="row">
                         @foreach ($attractionImgs as $index => $attractionImg)
 
-                        @if ( $index < 3) <div class="col-4">
-                            <div class="attraction-other-img"
-                                style="background-image: url('{{Storage::url($attractionImg->image_url)}}')"></div>
-                    </div>
-                    @endif
+                            @if ( $index < 3) <div class="col-4">
+                                <div class="attraction-other-img"
+                                    style="background-image: url('{{Storage::url($attractionImg->image_url)}}')"></div>
+                                </div>
+                            @endif
 
-                    @endforeach
+                        @endforeach
 
 
                 </div>

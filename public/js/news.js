@@ -32,27 +32,17 @@
 }.call(this));
 
 
-let photos = document.querySelectorAll('.accordion-photo')
+let photo = document.querySelector('.accordion-photo')
 let btns = document.querySelectorAll('.accordion-button')
 
 btns.forEach((btn, index) => {
   btn.addEventListener('click', function () {
     if (index === 0) {
-      displayPhoto(index);
+      photo.src = '/img/news/租車-02.jpg'
     } else if (index === 1) {
-      displayPhoto(index);
+      photo.src = '/img/news/租車-02.jpg'
     } else {
-      displayPhoto(index);
+      photo.src = '/img/news/租車-02.jpg'
     }
   })
 });
-
-function displayPhoto(btnIndex) {
-  photos.forEach((photo, index) => {
-    if (index === btnIndex) {
-      photo.style.display = 'block';
-    } else {
-      photo.style.display = 'none';
-    }
-  });
-}

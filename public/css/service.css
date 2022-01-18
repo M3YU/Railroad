@@ -40,6 +40,7 @@ body {
 }
 
 .middle-background {
+  background-image: url(/img/service/06-travel.taichung.gov.tw-SteelBridge-3.jpg);
   clip-path: ellipse(97.643vw 43.867vw at 50% -10%);
   background-color: #86817c;
   background-position: center;
@@ -104,6 +105,7 @@ body {
   position: absolute;
   top: 19vw;
   right: 14vw;
+  background-image: url('/img/service/LOGO-腳踏車.png');
   display: block;
   background-size: cover;
   z-index: 1;
@@ -317,9 +319,6 @@ body {
   bottom: -2%;
 }
 
-.footer-curve{
-  background-color: #b1aea9;
-}
 
 /* 表單 */
 
@@ -351,6 +350,41 @@ body {
   text-decoration: none;
 }
 
+/* Scroll To Bottom */
+#codepen, #portfolio {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #363636;
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: 0.3s ease;
+  color: #ffffff;
+  text-align: center;
+}
+#codepen i, #portfolio i {
+  line-height: 56px;
+}
+#codepen:hover, #portfolio:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* CodePen */
+#portfolio {
+  bottom: 96px;
+  right: 36px;
+  background: #f0f4ca;
+  width: 44px;
+  height: 44px;
+  -webkit-animation: buttonFadeInUp 1s ease;
+  animation: buttonFadeInUp 1s ease;
+}
+#portfolio i {
+  line-height: 44px;
+}
+
 /* Container */
 .container {
   position: relative;
@@ -365,6 +399,50 @@ body {
 .container.active .card:nth-child(2) {
   background: #fafafa;
   margin: 0 10px;
+}
+.container.active .card.alt {
+  top: 20px;
+  right: 0;
+  width: 100%;
+  min-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  padding: 60px 0 40px;
+  overflow: hidden;
+}
+.container.active .card.alt .toggle {
+  position: absolute;
+  top: 40px;
+  right: -70px;
+  box-shadow: none;
+  transform: scale(10);
+  transition: transform 0.3s ease;
+}
+.container.active .card.alt .toggle:before {
+  content: "";
+}
+.container.active .card.alt .title,
+.container.active .card.alt .input-container,
+.container.active .card.alt .button-container {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s ease;
+}
+.container.active .card.alt .title {
+  transition-delay: 0.3s;
+}
+.container.active .card.alt .input-container {
+  transition-delay: 0.4s;
+}
+.container.active .card.alt .input-container:nth-child(2) {
+  transition-delay: 0.5s;
+}
+.container.active .card.alt .input-container:nth-child(3) {
+  transition-delay: 0.6s;
+}
+.container.active .card.alt .button-container {
+  transition-delay: 0.7s;
 }
 
 /* Card */
@@ -414,6 +492,17 @@ h5{
   font-size: 24px;
   font-weight: 400;
 }
+.card .input-container input:focus ~ label {
+  color: #9d9d9d;
+  transform: translate(-12%, -50%) scale(0.75);
+}
+.card .input-container input:focus ~ .bar:before, .card .input-container input:focus ~ .bar:after {
+  width: 50%;
+}
+.card .input-container input:valid ~ label {
+  color: #9d9d9d;
+  transform: translate(-12%, -50%) scale(0.75);
+}
 .card .input-container label {
   position: absolute;
   top: 0;
@@ -440,7 +529,16 @@ h5{
   height: 2px;
   transition: 0.2s ease;
 }
-
+.card .input-container .bar:before {
+  left: 50%;
+}
+.card .input-container .bar:after {
+  right: 50%;
+}
+.card .button-container {
+  margin: 0 60px;
+  text-align: center;
+}
 .card .button-container button {
   outline: 0;
   cursor: pointer;
@@ -531,4 +629,40 @@ h5{
   line-height: 140px;
   text-align: center;
   cursor: pointer;
+}
+.card.alt .title,
+.card.alt .input-container,
+.card.alt .button-container {
+  left: 100px;
+  opacity: 0;
+  visibility: hidden;
+}
+.card.alt .title {
+  position: relative;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.card.alt .title .close {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 60px;
+  display: inline;
+  color: #ffffff;
+  font-size: 58px;
+  font-weight: 400;
+}
+
+/* Keyframes */
+@-webkit-keyframes buttonFadeInUp {
+  0% {
+    bottom: 30px;
+    opacity: 0;
+  }
+}
+@keyframes buttonFadeInUp {
+  0% {
+    bottom: 30px;
+    opacity: 0;
+  }
 }
