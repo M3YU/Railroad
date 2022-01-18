@@ -174,7 +174,7 @@ body .container .content input.submit {
   width: 100%;
   height: 2.1875vw;
   cursor: pointer;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   letter-spacing: 0.104vw;
   text-transform: uppercase;
   color: #263238;
@@ -550,6 +550,13 @@ footer {
   bottom: 48%;
   left: 0;
 }
+
 .grass{
   top: -2.8vw;
+}
+
+.delete-div {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
