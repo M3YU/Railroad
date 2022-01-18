@@ -47,6 +47,11 @@ class JourneyCartController extends Controller
         return 'Success';
     }
 
+    public function delete(Request $request) {
+        \Cart::remove($request->id);
+        return 'Success';
+    }
+
     public function clear() {
         \Cart::clear();
         return 'clear Success';

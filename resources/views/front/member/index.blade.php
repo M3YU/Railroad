@@ -4,8 +4,8 @@
 
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.6/sweetalert2.css">
 <link rel="stylesheet" href="{{asset('css/member.css')}}">
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 @endsection
 
 @section('main')
@@ -118,7 +118,7 @@
           @foreach ($items as $item)
           <div class="swiper-slide">
             <div class="delete-div">
-              <button type="button" class="btn btn-danger btn-sm rounded-circle shadow-sm mr-2 px-1 py-0 delete-btn">
+              <button type="button" class="btn btn-danger btn-sm rounded-circle shadow-sm mr-2 px-1 py-0 delete-btn" data-id="{{$item->id}}">
               <i class="fas fa-times"></i></button>
             </div>
             <div class="swiper-image" style="background-image: url('{{Storage::url($item->attributes->image_url)}}')"></div>
@@ -183,6 +183,7 @@
 
 @section('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.6/sweetalert2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 <script src="{{asset('js/member.js')}}"></script>
 <script>
@@ -199,10 +200,9 @@
                 cancelButtonText: '否'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    const priceElement = this.parentElement.previousElementSibling.querySelector('.item-total');
-                    const productElement = this.parentElement.parentElement.parentElement;
-                    let productId = priceElement.getAttribute('data-id');
-                    let url = '{{ route("shopping-cart.delete") }}';
+                    const productElement = this.parentElement.parentElement;
+                    let productId = this.getAttribute('data-id');
+                    let url = '{{ route("journey-cart.delete") }}';
                     let formData = new FormData();
 
                     formData.append('_token', '{{csrf_token()}}');
@@ -216,8 +216,13 @@
                     }).then(function(data) {
                         if (data == 'Success') {
                             productElement.remove();
-                            orderTotalCalc();
-                            Swal.fire('刪除成功！');
+                            Swal.fire({
+                                position: 'top',
+                                icon: 'success',
+                                title: '刪除成功！',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
                         }
                     });
                 }
