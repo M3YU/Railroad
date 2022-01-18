@@ -130,6 +130,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <div class="collapse-divider"></div>
             <h6 class="collapse-header" style="color: red">類別:</h6>
+            <a class="collapse-item" href="{{route('news_categories.index')}}">消息類別</a>
             <a class="collapse-item" href="{{route('store_categories.index')}}">商店類別</a>
             <a class="collapse-item" href="{{route('attraction_categories.index')}}">景點類別</a>
           </div>
@@ -146,10 +147,12 @@
         <div id="front-desk-page" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header" style="color: red">前台頁面:</h6>
-            <a class="collapse-item" href="{{route('stores')}}">商店</a>
-            <a class="collapse-item" href="{{route('attractions')}}">景點</a>
             <a class="collapse-item" href="{{route('bike.Page')}}">形象頁</a>
+            <a class="collapse-item" href="{{route('index')}}">前台首頁</a>
             <a class="collapse-item" href="{{route('news')}}">最新消息</a>
+            <a class="collapse-item" href="{{route('attractions')}}">景點</a>
+            <a class="collapse-item" href="{{route('stores')}}">商店</a>
+            <a class="collapse-item" href="{{route('teams')}}">揪團</a>
             <a class="collapse-item" href="{{route('services')}}">服務頁面</a>
 
           </div>

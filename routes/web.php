@@ -27,6 +27,8 @@ use App\Http\Controllers\AttractionCategoryController;
 //形象頁
 Route::get('bike', [FrontController::class, 'bike'])->name('bike.Page');
 
+
+
 // //首頁
 Route::get('/', [FrontController::class, 'index'])->name('index');
 
