@@ -118,15 +118,12 @@
     </ul>
 
     <div class="photos">
-      <div class="photo"></div>
-      <div class="photo"></div>
-      <div class="photo"></div>
-      <div class="photo"></div>
-      <div class="photo"></div>
-      <div class="photo"></div>
-      <div class="photo"></div>
-      <div class="photo"></div>
-      <div class="photo"></div>
+      @foreach ($imgs as $img)
+      <div class="photo" style="background-image: url({{Storage::url($img->image_url)}});">
+      </div>
+      @endforeach
+
+
     </div>
 
   </div>

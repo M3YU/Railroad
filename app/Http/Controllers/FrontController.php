@@ -88,7 +88,8 @@ class FrontController extends Controller
     public function teams()
     {
         $teams = Team::get();
-        return view('front.group.index', compact('teams'));
+        $imgs = AttractionImage::inRandomOrder()->take(9)->get();
+        return view('front.group.index',compact('teams','imgs'));
     }
     public function teamStore(Request $request)
     {
