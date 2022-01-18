@@ -376,9 +376,9 @@ body .container .content .signup-cont {
 
 #bottom .self-trip>.title::after {
   content: '';
-  width: calc(438px / 2);
+  width: calc(300px / 2);
   height: 2px;
-  border-bottom: 2px solid #000000;
+  border-bottom: 1px solid #000000;
   position: absolute;
   top: 2.3vw;
   left: 8vw;
