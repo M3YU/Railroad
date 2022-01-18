@@ -296,3 +296,7 @@
   .inactive {
     display: none;
   }
+
+  .grass{
+    top: -2.8vw;
+  }
