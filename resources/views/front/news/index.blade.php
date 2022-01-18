@@ -17,7 +17,7 @@
   <div class="title" style="background-image: none;">最新消息________________</div>
   <embed class="title-mask" src="{{asset('img/index/banner點綴.png')}}" type="">
   <div class="slogan">騎車才不會錯過美麗的風景。</div>
-  <div class="banner" style="background-image: url('{{asset('img/news/11-www.17travel.tw-ForestPark-1.jpg')}}')"></div>
+  <div class="banner" style="background-image: url('{{asset('img/news/31-yutzu4.jpg')}}')"></div>
   <embed class="banner-mask" src="{{asset('img/top/banner-mask.png')}}" type="">
 </section>
 <div class="container">
