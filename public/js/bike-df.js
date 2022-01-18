@@ -336,37 +336,40 @@ function dfBikeway(){
         } else if (kNum > 11.9) {
             deleteText();
         } else if (kNum > 11.6) {
-            infoElemet.classList.add('open')
+            bikeElement.style.transform = `translateY(0px)`;
+            infoElemet.classList.add('open');
             attractionName.textContent = '東勢客家園區';
             attractionDescription.textContent = attractionText[5][11];
         } else if (kNum > 10.2) {
             deleteText();
+            bikeElement.style.transform = `translateY(-80px) rotate(0deg)`;
         }else if (kNum > 9.8) {
-            infoElemet.classList.add('open')
+            bikeElement.style.transform = `translateY(-80px) rotate(-20deg)`;
+            infoElemet.classList.add('open');
             attractionName.textContent = '鯉魚伯公公園';
             attractionDescription.textContent = attractionText[5][10];
         } else if (kNum > 7.8) {
             deleteText();
         }else if (kNum > 7.4) {
-            infoElemet.classList.add('open')
+            infoElemet.classList.add('open');
             attractionName.textContent = '梅子鐵橋';
             attractionDescription.textContent = attractionText[5][9];
         } else if (kNum > 7) {
             deleteText();
         }else if (kNum > 6.6) {
-            infoElemet.classList.add('open')
+            infoElemet.classList.add('open');
             attractionName.textContent = '梅子車站';
             attractionDescription.textContent = attractionText[5][8];
         } else if (kNum > 5.8) {
             deleteText();
         }else if (kNum > 5.4) {
-            infoElemet.classList.add('open')
+            infoElemet.classList.add('open');
             attractionName.textContent = '情人木橋';
             attractionDescription.textContent = attractionText[5][7];
         } else if (kNum > 4.6) {
             deleteText();
         }else if (kNum > 4.2) {
-            infoElemet.classList.add('open')
+            infoElemet.classList.add('open');
             attractionName.textContent = '0蛋月台';
             attractionDescription.textContent = attractionText[5][6];
             bikeElement.style.transform = `translateY(-60px) rotate(0deg)`;
@@ -376,7 +379,7 @@ function dfBikeway(){
         }else if (kNum > 3.9){
             bikeElement.style.transform = `translateY(70px) rotate(0deg)`;
         }else if (kNum > 3.8) {
-            infoElemet.classList.add('open')
+            infoElemet.classList.add('open');
             attractionName.textContent = '石岡斷層月台';
             attractionDescription.textContent = attractionText[5][5];
             bikeElement.style.transform = `translateY(70px) rotate(30deg)`;
@@ -384,20 +387,20 @@ function dfBikeway(){
             deleteText();
             bikeElement.style.transform = `translateY(0px) rotate(0deg)`
         } else if (kNum > 2.9) {
-            infoElemet.classList.add('open')
+            infoElemet.classList.add('open');
             attractionName.textContent = '石岡水壩';
             attractionDescription.textContent = attractionText[5][4];
             bikeElement.style.transform = `translateY(-60px)`;
         } else if (kNum > 2.45) {
             deleteText();
         } else if (kNum > 2.25) {
-            infoElemet.classList.add('open')
+            infoElemet.classList.add('open');
             attractionName.textContent = '榮豐水利碑';
             attractionDescription.textContent = attractionText[5][3];
         }else if (kNum > 2) {
             deleteText();
         } else if (kNum > 1.8) {
-            infoElemet.classList.add('open')
+            infoElemet.classList.add('open');
             attractionName.textContent = '親水公園';
             attractionDescription.textContent = attractionText[5][2];
         }else if (kNum > 1.4) {
@@ -411,7 +414,6 @@ function dfBikeway(){
         } else if (kNum > 0.4) {
             bikeElement.style.transform = `translateY(0px) rotate(0deg)`;
             infoElemet.classList.add('open');
-            infoElemet.style.backgroundImage ='url("")'
             attractionName.textContent = '朴口車站';
             attractionDescription.textContent = attractionText[5][0];
         } else if (kNum <= 0.4) {
