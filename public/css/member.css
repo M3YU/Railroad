@@ -397,6 +397,7 @@ body .container .content .signup-cont {
   height: 3.906vw;
   display: flex;
   justify-content: space-between;
+  align-self: center;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
@@ -407,7 +408,11 @@ body .container .content .signup-cont {
   width: 3.906vw;
   height: 3.906vw;
   clip-path: circle(50% at 50% 50%);
-  background-color: #aaa;
+  background-color: #f0f4ca;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4e5643;
 }
 
 #bottom .self-trip .nav-title {
@@ -420,16 +425,19 @@ body .container .content .signup-cont {
   margin-top: 13.073vw;
 }
 
-#bottom .self-trip .nav-title span {
+#bottom .self-trip .nav-title h4 {
   width: 3.906vw;
   text-align: center;
+  color: #4e5643;
+  font-size: 24px;
+  margin-top: 10px;
 }
 
 #bottom .self-trip .trip-carousel {
   position: absolute;
   width: 62.5vw;
   height: 31.25vw;
-  background-color: #cccccc;
+  background-color: #f0f4ca;
   left: 50%;
   transform: translate(-50%);
   margin-top: 18.073vw;
@@ -441,7 +449,7 @@ body .container .content .signup-cont {
   width: 2.604vw;
   height: 2.604vw;
   clip-path: polygon(0% 100%, 100% 99%, 100% 94%, 99% 88%, 99% 87%, 97% 79%, 96% 78%, 93% 74%, 91% 69%, 89% 62%, 89% 60%, 85% 56%, 82% 52%, 79% 48%, 75% 46%, 71% 40%, 69% 37%, 67% 34%, 63% 29%, 59% 26%, 54% 22%, 49% 19%, 48% 18%, 43% 16%, 39% 15%, 33% 13%, 27% 13%, 27% 13%, 25% 14%, 26% 17%, 28% 19%, 31% 20%, 34% 21%, 42% 27%, 43% 28%, 45% 30%, 46% 35%, 47% 38%, 47% 41%, 46% 46%, 45% 52%, 44% 56%, 43% 59%, 43% 62%, 42% 70%, 39% 74%, 35% 79%, 33% 84%, 30% 86%, 26% 92%, 23% 95%, 16% 98%, 12% 99%, 5% 100%, 1% 100%);
-  background-color: #cccccc;
+  background-color: #f0f4ca;
   position: absolute;
   top: -7%;
   left: 50%;

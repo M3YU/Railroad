@@ -4,6 +4,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/member.css')}}">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 @endsection
 
 @section('main')
@@ -93,18 +94,18 @@
     <div class="subtitle">我是文字</div>
 
     <div class="trip-navbar">
-      <div class="trip-nav"></div>
-      <div class="trip-nav"></div>
-      <div class="trip-nav"></div>
-      <div class="trip-nav"></div>
-      <div class="trip-nav"></div>
+      <div class="trip-nav"><i class="fas fa-car fa-2x"></i></div>
+      <div class="trip-nav"><i class="fas fa-clock fa-2x"></i></div>
+      <div class="trip-nav"><i class="fas fa-clipboard-list fa-2x"></i></div>
+      <div class="trip-nav"><i class="fas fa-utensils fa-2x"></i></div>
+      <div class="trip-nav"><i class="fas fa-store-alt fa-2x"></i></div>
     </div>
     <div class="nav-title">
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>5</span>
+      <h4>集合地</h4>
+      <h4>時間</h4>
+      <h4>行程</h4>
+      <h4>飲食</h4>
+      <h4>租車行</h4>
     </div>
     
 
