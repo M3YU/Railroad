@@ -1103,7 +1103,7 @@ main .veiw .streetLight-4 {
 
 main .veiw .brige {
   position: absolute;
-  bottom: -45%;
+  bottom: -50%;
   right: -3000px;
   z-index: 7;
   width: 1640px;
