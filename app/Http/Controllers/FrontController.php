@@ -74,10 +74,10 @@ class FrontController extends Controller
     }
     public function storeContent($id)
     {
-        $stores = Store::find($id);
+        $store = Store::find($id);
         $souvenirs = Store::where('category_id', 3)->get();
         $storeImgs = StoreImage::where('store_id', $id)->limit(3)->get();
-        return view('front.store.content', compact('stores', 'souvenirs', 'storeImgs'));
+        return view('front.store.content',compact('store','souvenirs','storeImgs'));
     }
     public function news()
     {
@@ -127,6 +127,7 @@ class FrontController extends Controller
 
     public function member()
     {
-        return view('front.member.index');
+        $items = \Cart::getContent()->sortBy('id');
+        return view('front.member.index', compact('items'));
     }
 }
