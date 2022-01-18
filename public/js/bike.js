@@ -283,8 +283,8 @@ function hfBikeway(){
         if (kNum > 5) {
             infoElemet.classList.add('open')
             attractionName.textContent = '揪騎后豐';
-            attractionDescription.innerHTML = `<a class="index-link" href="{{route('index')}}">前往首頁</a>
-                                                <a class="df-link" href="{{route('bike.Page-Df')}}">還沒滑夠?</a>`;
+            attractionDescription.innerHTML = `<a class="index-link" >前往首頁</a>
+                                                <a class="df-link" >還沒滑夠?</a>`;
         } else if (kNum > 4.8) {
             deleteText();
         } else if (kNum > 4.3) {

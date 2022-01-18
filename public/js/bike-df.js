@@ -332,7 +332,7 @@ function dfBikeway(){
         if (kNum > 12) {
             infoElemet.classList.add('open')
             attractionName.textContent = '揪騎后豐';
-            attractionDescription.innerHTML = `<a class="index-link" href="{{route('index')}}">前往首頁</a>`;
+            attractionDescription.innerHTML = `<a class="index-link">前往首頁</a>`;
         } else if (kNum > 11.9) {
             deleteText();
         } else if (kNum > 11.6) {
