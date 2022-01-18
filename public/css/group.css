@@ -1,302 +1,299 @@
 * {
-    box-sizing: border-box;
-    max-width: 100%;
-  }
+  box-sizing: border-box;
+  max-width: 100%;
+}
 
-  /* 下面這四個是避免用 100vw 的時候 下方出現滾輪軸的方法 */
+/* 下面這四個是避免用 100vw 的時候 下方出現滾輪軸的方法 */
 
-  /* 這邊的vw 都是原本的 px/1920 */
+/* 這邊的vw 都是原本的 px/1920 */
 
-  html {
-    overflow-y: scroll;
-  }
+html {
+  overflow-y: scroll;
+}
 
-  :root {
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
+:root {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 
-  :root body {
-    position: absolute;
-  }
+:root body {
+  position: absolute;
+}
 
-  body {
-    width: 100vw;
+body {
+  width: 100vw;
 
-  }
-
-
+}
 
 
+#middle {
+  width: 100vw;
+  height: 44.167vw;
+  position: relative;
+}
 
-  #middle {
-    width: 100vw;
-    height: 44.167vw;
-    position: relative;
-  }
+#middle .team-wall {
+  margin-top: 10.05vw;
+  width: 43.333vw;
+  height: 26.3vw;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  background-color: white;
+  border-radius: 10px;
+}
 
-  #middle .team-wall {
-    margin-top: 10.05vw;
-    width: 43.333vw;
-    height: 26.3vw;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1;
-    background-color: white;
-    border-radius: 10px;
-  }
+#middle .team-wall .titles {
+  font-size: 0.729vw;
+  width: 42.188vw;
+  height: 2.083vw;
+  background-color: #F4F4F4;
+  display: flex;
+}
 
-  #middle .team-wall .titles {
-    font-size: 0.729vw;
-    width: 42.188vw;
-    height: 2.083vw;
-    background-color: #F4F4F4;
-    display: flex;
-  }
+#middle .team-wall .titles .title {
+  width: 33%;
+  height: 100%;
+  text-align: center;
+  line-height: 2.083vw;
+}
 
-  #middle .team-wall .titles .title {
-    width: 33%;
-    height: 100%;
-    text-align: center;
-    line-height: 2.083vw;
-  }
+.float-title {
+  width: calc(43.188vw / 3);
+  background-color: #3B7556;
+  height: 2.483vw;
+  border-radius: 10px;
+  box-shadow: 2px 4px 12px -1px rgb(0 0 0 / 60%);
+  position: absolute;
+  left: 1%;
+  top: -0.5%;
+  text-align: center;
+  line-height: 2.483vw;
+  color: #ffffff;
+  transition: left 0.5s;
+  font-size: 20px;
+}
 
-  .float-title {
-    width: calc(43.188vw / 3);
-    background-color: #3B7556;
-    height: 2.483vw;
-    border-radius: 10px;
-    box-shadow: 2px 4px 12px -1px rgb(0 0 0 / 60%);
-    position: absolute;
-    left: 1%;
-    top: -0.5%;
-    text-align: center;
-    line-height: 2.483vw;
-    color: #ffffff;
-    transition: left 0.5s;
-    font-size: 20px;
-  }
+.teams,
+.team-form {
+  margin-top: 3.333vw;
+  width: 37.5vw;
+}
 
-  .teams,
-  .team-form {
-    margin-top: 3.333vw;
-    width: 37.5vw;
-  }
+.teams a {
+  text-decoration: none;
+}
 
-  .teams a {
-    text-decoration: none;
-  }
+.team {
+  width: 100%;
+  height: 2.24vw;
+  border-bottom: 1px solid #3C7657;
+  color: #3C7657;
+  margin-bottom: 2.4vw;
+  font-size: 1.04vw;
+  display: flex;
+  text-align: center;
+}
 
-  .team {
-    width: 100%;
-    height: 2.24vw;
-    border-bottom: 1px solid #3C7657;
-    color: #3C7657;
-    margin-bottom: 2.4vw;
-    font-size: 1.04vw;
-    display: flex;
-    text-align: center;
-  }
+.team .team-summary {
+  font-size: 0.9375vw;
+  text-align: center;
+  line-height: 2.24vw;
+}
 
-  .team .team-summary {
-    font-size: 0.9375vw;
-    text-align: center;
-    line-height: 2.24vw;
-  }
+.team .team-category,
+.team .team-time {
+  width: 3.541vw;
+  height: 1.615vw;
+  border-radius: 0.52vw;
+  color: #E4FFD7;
+  margin-top: 0.4vw;
 
-  .team .team-category,
-  .team .team-time {
-    width: 3.541vw;
-    height: 1.615vw;
-    border-radius: 0.52vw;
-    color: #E4FFD7;
-    margin-top: 0.4vw;
+}
 
-  }
+.team .team-time {
+  margin-left: 0.3125vw;
+  margin-right: 0.9375vw;
+  background-color: #3B7556;
+}
 
-  .team .team-time {
-    margin-left: 0.3125vw;
-    margin-right: 0.9375vw;
-    background-color: #3B7556;
-  }
+.team .team-category {
+  margin-right: 4.0625vw;
+  background-color: #71603B;
+}
 
-  .team .team-category {
-    margin-right: 4.0625vw;
-    background-color: #71603B;
-  }
+.team-wall .team-form .form-check {
+  display: flex;
 
-  .team-wall .team-form .form-check {
-    display: flex;
+}
 
-  }
+.team-wall .team-form .form-check .team-time,
+.team-wall .team-form .form-check .team-category {
+  border-radius: 0.52vw;
+  width: 3.541vw;
+  height: 1.615vw;
+  margin-right: 2.031vw;
+  color: #ffffff;
+  font-size: 1.04vw;
+  text-align: center;
+}
 
-  .team-wall .team-form .form-check .team-time,
-  .team-wall .team-form .form-check .team-category {
-    border-radius: 0.52vw;
-    width: 3.541vw;
-    height: 1.615vw;
-    margin-right: 2.031vw;
-    color: #ffffff;
-    font-size: 1.04vw;
-    text-align: center;
-  }
+.team-wall .team-form .form-check.category {
+  margin-top: 1.146vw;
+  padding-bottom: 0.833vw;
+  border-bottom: 1px solid #3C7657;
+}
 
-  .team-wall .team-form .form-check.category {
-    margin-top: 1.146vw;
-    padding-bottom: 0.833vw;
-    border-bottom: 1px solid #3C7657;
-  }
+.team-wall .team-form .form-check .team-time {
+  background-color: #3B7556;
+}
 
-  .team-wall .team-form .form-check .team-time {
-    background-color: #3B7556;
-  }
+.team-wall .team-form .form-check .team-category {
+  background-color: #71603B;
+}
 
-  .team-wall .team-form .form-check .team-category {
-    background-color: #71603B;
-  }
+.team-wall .team-form .form-check.name,
+.team-wall .team-form .form-check.content {
+  flex-direction: column;
+  color: #3B7556;
+  margin-top: 3.125vw;
+}
 
-  .team-wall .team-form .form-check.name,
-  .team-wall .team-form .form-check.content {
-    flex-direction: column;
-    color: #3B7556;
-    margin-top: 3.125vw;
-  }
+.team-wall .team-form .form-check.name label,
+.team-wall .team-form .form-check.content label {
+  margin-bottom: 0.781vw;
+}
 
-  .team-wall .team-form .form-check.name label,
-  .team-wall .team-form .form-check.content label {
-    margin-bottom: 0.781vw;
-  }
+.team-wall .team-form .form-check input {
+  height: 2.5vw;
+  font-size: 18px;
+}
 
-  .team-wall .team-form .form-check input{
-    height: 2.5vw;
-    font-size: 18px;
-  }
+.team-wall .team-form .form-check input,
+.team-wall .team-form .form-check textarea {
+  border-radius: 0.52vw;
+  border: #3B7556 solid 1px;
+}
 
-  .team-wall .team-form .form-check input,
-  .team-wall .team-form .form-check textarea {
-    border-radius: 0.52vw;
-    border: #3B7556 solid 1px;
-  }
+.team-wall .team-form .form-check textarea {
+  height: 27vw
+}
 
-  .team-wall .team-form .form-check textarea {
-    height: 27vw
-  }
+.team-wall .team-form .submit {
+  width: 7.917vw;
+  height: 2.917vw;
+  border-radius: 0.52vw;
+  background-color: #3B7556;
+  color: #E4FFD7;
+  font-size: 1.354vw;
+  position: absolute;
+  right: 7%;
+  bottom: 3%;
 
-  .team-wall .team-form .submit {
-    width: 7.917vw;
-    height: 2.917vw;
-    border-radius: 0.52vw;
-    background-color: #3B7556;
-    color: #E4FFD7;
-    font-size: 1.354vw;
-    position: absolute;
-    right: 7%;
-    bottom: 3%;
+}
 
-  }
+#bottom {
+  width: 100vw;
+  height: 61.198vw;
+  position: relative;
 
-  #bottom {
-    width: 100vw;
-    height: 61.198vw;
-    position: relative;
+}
 
-  }
+.photo-wall {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  justify-content: end;
+}
 
-  .photo-wall {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1;
-    justify-content: end;
-  }
+.photo-wall-background {
+  width: 100%;
+  height: 100%;
+  background-color: #86817c;
+  clip-path: ellipse(86.328vw 27.865vw at 50% 50%);
+  position: absolute;
+}
 
-  .photo-wall-background {
-    width: 100%;
-    height: 100%;
-    background-color: #86817c;
-    clip-path: ellipse(86.328vw 27.865vw at 50% 50%);
-    position: absolute;
-  }
+.photo-wall-mask {
+  width: 100vw;
+  height: 7.864vw;
+  position: absolute;
+  z-index: -1;
+  top: 2%;
 
-  .photo-wall-mask {
-    width: 100vw;
-    height: 7.864vw;
-    position: absolute;
-    z-index: -1;
-    top: 2%;
+}
 
-  }
+.photo-wall-title {
+  font-size: 1.66vw;
+}
 
-  .photo-wall-title {
-    font-size: 1.66vw;
-  }
+.photo-wall-title-mask {
+  width: 14.375vw;
+  height: 2.1875vw;
+  position: absolute;
+  z-index: -1;
+  top: 10.5%;
+  transform: rotate(180deg);
+}
 
-  .photo-wall-title-mask {
-    width: 14.375vw;
-    height: 2.1875vw;
-    position: absolute;
-    z-index: -1;
-    top: 10.5%;
-    transform: rotate(180deg);
-  }
+.photo-wall-categories {
+  list-style: none;
+  font-size: 0.664vw;
+  width: 20.885vw;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.865vw;
+  margin-bottom: 2.865vw;
+}
 
-  .photo-wall-categories {
-    list-style: none;
-    font-size: 0.664vw;
-    width: 20.885vw;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2.865vw;
-    margin-bottom: 2.865vw;
-  }
+.photo-wall-category:nth-child(1) {
+  position: relative;
+}
 
-  .photo-wall-category:nth-child(1) {
-    position: relative;
-  }
+.photo-wall-category:nth-child(1)::after {
+  content: '';
+  background-color: #aea83e;
+  width: 2.102vw;
+  height: 0.249vw;
+  position: absolute;
+  bottom: -0.47vw;
+  left: 50%;
+  transform: translate(-50%);
+}
 
-  .photo-wall-category:nth-child(1)::after {
-    content: '';
-    background-color: #aea83e;
-    width: 2.102vw;
-    height: 0.249vw;
-    position: absolute;
-    bottom: -0.47vw;
-    left: 50%;
-    transform: translate(-50%);
-  }
+.photos {
+  width: 32.76vw;
+  height: 32.76vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  margin-bottom: 12.8vw;
+}
 
-  .photos {
-    width: 32.76vw;
-    height: 32.76vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
-    margin-bottom: 12.8vw;
-  }
-
-  .photo {
-    width: 10.52vw;
-    height: 10.52vw;
-    background-image: url('https://placeholder.pics/svg/202x202');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
+.photo {
+  width: 10.52vw;
+  height: 10.52vw;
+  background-image: url('https://placeholder.pics/svg/202x202');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
 
 
-  .inactive {
-    display: none;
-  }
+.inactive {
+  display: none;
+}
 
-  .grass{
-    top: -2.8vw;
-  }
+.grass {
+  top: -2.8vw;
+}

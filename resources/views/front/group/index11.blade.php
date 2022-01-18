@@ -6,13 +6,7 @@
 @section('css')
 <link rel="stylesheet" href="{{asset('css/group.css')}}">
 <style>
-  .team-summary:hover {
-    color: #121d05;
-  }
 
-  input[type="radio"]:checked+span {
-    color: #b1e086;
-  }
 </style>
 
 @section('main')
@@ -118,12 +112,15 @@ use App\Models\Team;
     </ul>
 
     <div class="photos">
-      @foreach ($imgs as $img)
-      <div class="photo" style="background-image: url({{Storage::url($img->image_url)}});">
-      </div>
-      @endforeach
-
-
+      <div class="photo"></div>
+      <div class="photo"></div>
+      <div class="photo"></div>
+      <div class="photo"></div>
+      <div class="photo"></div>
+      <div class="photo"></div>
+      <div class="photo"></div>
+      <div class="photo"></div>
+      <div class="photo"></div>
     </div>
 
   </div>
@@ -140,6 +137,7 @@ use App\Models\Team;
 
 @section('js')
 <script src="{{asset('js/group.js')}}"></script>
+
 <script>
   var swiper = new Swiper(".mySwiper", {
         slidesPerView: 4,
@@ -152,4 +150,5 @@ use App\Models\Team;
         },
       });
 </script>
+
 @endsection
