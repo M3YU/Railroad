@@ -24,6 +24,7 @@
 
         footer {
             margin-top: 21.5vw;
+            height: 25.55vw;
         }
 
         .footer-mask {
@@ -37,6 +38,19 @@
             right: 0%;
             top: -6.8%;
             width: 36%;
+        }
+
+        .copyright {
+            color: #86817c;
+            left: 50%;
+            bottom: 10%;
+            position: absolute;
+            font-size: 0.7vw;
+            transform: translate(-50%);
+        }
+
+        footer .footer-curve {
+            top: -137.5%;
         }
     </style>
     @yield('css')

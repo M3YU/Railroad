@@ -5,6 +5,9 @@
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/group.css')}}">
+<style>
+
+</style>
 
 @section('main')
 
