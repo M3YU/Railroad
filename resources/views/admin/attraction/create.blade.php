@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         <div class="form-group row py-2">
-                            <label for="distance" class="col-sm-2 col-form-label">距離<span
+                            <label for="distance" class="col-sm-2 col-form-label">距離(公里)<span
                                     class="text-danger">*</span></label>
                             <div class="col-sm-10">
                                 <textarea class="form-control" name="distance" id="distance" rows="5"
