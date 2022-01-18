@@ -41,11 +41,12 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-
+       
         // 判斷主要圖片有沒有上傳
         if ($request->hasFile('image_url')) {
             $path = Storage::put('/store', $request->image_url);
         }
+
         // 建立商店
         $store = Store::create([
             'name' => $request->name,
@@ -56,9 +57,9 @@ class StoreController extends Controller
             'address' => $request->address,
             'category_id' => $request->category_id,
             'distance' => $request->distance,
-            'direction' => $request->direction,
+            'direction' => $request->direction,           
         ]);
-
+        
         // 儲存其他圖片，利用迴圈讀出檔案
         if ($request->hasFile('image_urls')) {
             foreach ($request->image_urls as $image_url) {
