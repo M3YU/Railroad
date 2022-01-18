@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
-                <h2 class="card-header lh-1 pt-3 pb-2">產品類別管理</h2>
+                <h2 class="card-header lh-1 pt-3 pb-2">景點類別管理</h2>
                 <div class="form-group pt-4 px-3 m-0">
                     <a href="{{route('attraction_categories.create')}}" class="btn btn-success">新增類別</a>
                 </div>

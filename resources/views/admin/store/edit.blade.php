@@ -38,14 +38,14 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="">首頁</a></li>
-            <li class="breadcrumb-item"><a href="">產品管理</a></li>
-            <li class="breadcrumb-item active" aria-current="page">編輯產品</li>
+            <li class="breadcrumb-item"><a href="">商店管理</a></li>
+            <li class="breadcrumb-item active" aria-current="page">編輯商店</li>
         </ol>
     </nav>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <h2 class="card-header pt-3 pb-2">產品 - 編輯</h2>
+                <h2 class="card-header pt-3 pb-2">商店 - 編輯</h2>
 
                 <div class="card-body">
                     <form method="POST" action="{{route('stores.update',['store'=>$store->id])}}"
