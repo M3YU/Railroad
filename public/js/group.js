@@ -4,22 +4,22 @@ let photoWall = document.querySelector('.photo-wall');
 let teams = document.querySelector('.teams');
 let teamForm = document.querySelector('.team-form');
 let teamWall = document.querySelector('.team-wall')
-titles.forEach((title, index) => {
+titles.forEach((title) => {
   title.addEventListener('click', function () {
     console.log(this);
     console.log(index);
-    if (index === 0) {
+    if (title.innerText == '在線行程') {
       floatTitle.style.left = '1%'
       floatTitle.innerText = '在線行程'
-      active(index);
-    } else if (index === 1) {
+      active(0);
+    } else if (title.innerText == '建立行程') {
       floatTitle.style.left = '34%'
       floatTitle.innerText = '建立行程'
-      active(index);
+      active(1);
     } else {
       floatTitle.style.left = '66%'
       floatTitle.innerText = '行程細節'
-      active(index);
+      active(2);
     }
   })
 });

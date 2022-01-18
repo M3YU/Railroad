@@ -148,9 +148,10 @@
             <h6 class="collapse-header" style="color: red">前台頁面:</h6>
             <a class="collapse-item" href="{{route('stores')}}">商店</a>
             <a class="collapse-item" href="{{route('attractions')}}">景點</a>
-            <a class="collapse-item" href="{{route('news')}}">最新消息</a>
             <a class="collapse-item" href="{{route('bike.Page')}}">形象頁</a>
-            <a class="collapse-item" href="{{route('contact.index')}}">聯絡我們</a>
+            <a class="collapse-item" href="{{route('news')}}">最新消息</a>
+            <a class="collapse-item" href="{{route('services')}}">服務頁面</a>
+
           </div>
         </div>
       </li>

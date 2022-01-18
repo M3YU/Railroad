@@ -30,40 +30,23 @@ function start(){
     }, 700);
     main.style.minHeight = '11000px';
 }
+
 bikewayVeiw1();
 hfBikeway();
 
-//東豐
-function start2(){
-    loadCircle.classList.remove('none')
-    btnElements.forEach(function(btn){
-        btn.classList.add('none');
-    })
-    setTimeout(function () {
-        loadingVeiw.classList.add('none');
-        mainVeiw.classList.remove('loaded');
-    }, 700);
-    main.style.minHeight = '25500px';
-    bikewayVeiw2();
-    dfBikeway();
-    
-}
 ///省略動畫用
 function skip(){
     loadCircle.classList.remove('none');
     loadingVeiw.classList.add('none');
     mainVeiw.classList.remove('loaded');
 
-    // main.style.minHeight = '11000px';
-    // bikewayVeiw1();
-    // hfBikeway();
+    main.style.minHeight = '11000px';
+    bikewayVeiw1();
+    hfBikeway();
 
-    main.style.minHeight = '25500px';
-    bikewayVeiw2();
-    dfBikeway();
 }
 //有需要修改就打開
-// skip();
+skip();
 
 //后豐頁面的結構
 function bikewayVeiw1(){
@@ -165,138 +148,6 @@ function bikewayVeiw1(){
         </div>
         <div class="KM km-5">
             <h3 class="km-number">4.3K</h3>
-        </div>`;
-}
-//東豐頁面的結構
-function bikewayVeiw2(){
-    mainVeiw.innerHTML =`
-        <div class="scroll-tip">
-            <div class="mouse"></div>
-            <h3>請滾動滑鼠滾輪</h3>
-        </div>
-        <div class="background df"></div>
-        <div id="road" class="road">
-            <div class="line"></div>
-            <div class="shadow"></div>
-        </div>
-        <div class="camera">
-            <!-- 選單 -->
-            <div class="menu">
-                <div class="toggle"></div>
-                <!-- 調整li裡面的--i可以選擇位置 -->
-                <li style="--i:3;">
-                    <a href="/attraction.html"><ion-icon name="map-outline"></ion-icon></a>
-                </li>
-                <li style="--i:4;">
-                    <a href="/group.html"><ion-icon name="bicycle"></ion-icon></a>
-                </li>
-                <li style="--i:5;">
-                    <a href="/store.html"><ion-icon name="bag-handle-outline"></ion-icon></a>
-                </li>
-                <li style="--i:6;">
-                    <a href="/index.html"><ion-icon name="reader-outline"></ion-icon></a>
-                </li>
-            </div>
-            <div class="space">
-                <div class="box1">
-                    <div class="face1"></div>
-                    <div class="face2"></div>
-                    <div class="face3"></div>
-                    <div class="face4"></div>
-                </div>
-                <div class="box2">
-                    <div class="face1"></div>
-                    <div class="face2"></div>
-                    <div class="face3"></div>
-                    <div class="face4"></div>
-                </div>
-            </div>
-        </div>
-        <div class="bike"></div>
-        <div class="cloud cloud-1"></div>
-        <div class="cloud cloud-2"></div>
-        <div class="cloud cloud-3"></div>
-        <div class="cloud cloud-4"></div>
-        <div class="tree tree-1"></div>
-        <div class="tree tree-2"></div>
-        <div class="tree tree-3"></div>
-        <div class="tree tree-4"></div>
-        <div class="tree tree-5"></div>
-        <div class="tree tree-6"></div>
-        <div class="tree tree-7"></div>
-        <div class="tree tree-8"></div>
-        <div class="tree tree-9"></div>
-        <div class="streetLight streetLight-1"></div>
-        <div class="streetLight streetLight-2"></div>
-        <div class="streetLight streetLight-3"></div>
-        <div class="streetLight streetLight-4"></div>
-        <div class="grass grass-1 g-left"></div>
-        <div class="grass grass-2 g-left"></div>
-        <div class="grass grass-3 g-right"></div>
-        <div class="grass grass-4 g-right"></div>
-        <div class="grass grass-5 g-right"></div>
-        <div class="grass grass-6 g-center"></div>
-        <div class="grass grass-7 g-center"></div>
-        <div class="brige df"></div>
-        <div class="marker marker-d-1"></div>
-        <div class="marker marker-d-2"></div>
-        <div class="marker marker-d-3"></div>
-        <div class="marker marker-d-4"></div>
-        <div class="marker marker-d-5"></div>
-        <div class="marker marker-d-6"></div>
-        <div class="marker marker-d-7"></div>
-        <div class="marker marker-d-8"></div>
-        <div class="marker marker-d-9"></div>
-        <div class="marker marker-d-10"></div>
-        <div class="marker marker-d-11"></div>
-        <div class="marker marker-d-12"></div>
-
-
-        <div class="building building-1"></div>
-        <div class="building building-2"></div>
-        <div class="building building-3"></div>
-        <div class="building building-4"></div>
-        <div class="building building-5"></div>
-
-        <div class="info">
-            <div class="info-title"></div>
-            <div class="info-description"></div>
-        </div>
-        <div  class="KM km-d-1">
-            <h3 class="km-number">0.7K</h3>
-        </div>
-        <div class="KM km-d-2">
-            <h3 class="km-number">1.1K</h3>
-        </div>
-        <div class="KM km-d-3">
-            <h3 class="km-number">1.8K</h3>
-        </div>
-        <div class="KM km-d-4">
-            <h3 class="km-number">2.3K</h3>
-        </div>
-        <div class="KM km-d-5">
-            <h3 class="km-number">2.9K</h3>
-        </div>
-        <div class="KM km-d-6">
-            <h3 class="km-number">3.9K</h3>
-        </div>
-        <div class="KM km-d-7">
-            <h3 class="km-number">4.2K</h3>
-        </div>
-        <div class="KM km-d-8">
-            <h3 class="km-number">5.4K</h3>
-        </div>
-        <div class="KM km-d-9">
-            <h3 class="km-number">6.6K</h3>
-        </div>
-        <div class="KM km-d-10">
-            <h3 class="km-number">7.4K</h3>
-        </div>
-        <div class="KM km-d-11">
-            <h3 class="km-number">9.8K</h3>
-        </div>
-        <div class="KM km-d-12">
-            <h3 class="km-number">11.6K</h3>
         </div>`;
 }
 
@@ -428,13 +279,11 @@ function hfBikeway(){
         buildingElements.forEach(function (buildingElement) {
             buildingElement.style.transform = `translateX(${- yValue}px)`;
         })
-
-   
-
+        //說明欄
         if (kNum > 5) {
             infoElemet.classList.add('open')
             attractionName.textContent = '揪騎后豐';
-            attractionDescription.innerHTML = `<a class="index-link" href="/index.html">前往首頁</a>
+            attractionDescription.innerHTML = `<a class="index-link" href="/">前往首頁</a>
                                                 <a class="df-link" href="/bike-df.html">還沒滑夠?</a>`;
         } else if (kNum > 4.8) {
             deleteText();
@@ -473,154 +322,6 @@ function hfBikeway(){
             bikeElement.style.transform = `translateY(-60px)`;
             deleteText();
         }
-    });
-}
-
-function dfBikeway(){
-
-    //橫向捲軸
-    window.addEventListener('scroll', function () {
-        let yValue = window.scrollY;
-        let kNum = (yValue * 0.0005).toFixed(2);
-        scrollTip.style.transform = `translateY(${yValue * 1}px)`;
-        scrollTip.style.opacity = 1 -(yValue * 0.005);
-        
-        //腳踏車
-        setTimeout(function () {
-            bikeElement.style.animation =`animateBiking 1s steps(8)  running`;
-        }, 100);
-        
-        bikeElement.style.animation='';
-        //背景
-        backgroundElement.style.transform = `translateX(${-yValue}px)`;
-        //馬路中線
-        lineElement.style.left = yValue % 10 * - 50 + 'px';
-        //雲
-        cloudElemets.forEach(function (cloudElemet) {
-            cloudElemet.style.transform = `translateX(${yValue % 2300 * - 1}px)`;
-        })
-        //樹
-        treeElemets.forEach(function (treeElemet) {
-            treeElemet.style.transform = `translateX(${yValue % 5000 * -2}px)`;
-        })
-        //山
-        mountainElemets.forEach(function (mountainElemet) {
-            mountainElemet.style.transform = `translateX(${yValue % 6000 * - 1}px)`;
-        })
-        //草叢1
-        grassElemets1.forEach(function (grassElemet1) {
-            //                                           多遠出現一次       經過的速度
-            grassElemet1.style.transform = `translateX(${yValue % 1000 * - 3}px)`;
-        })
-        //草叢2
-        grassElemets2.forEach(function (grassElemet2) {
-            grassElemet2.style.transform = `translateX(${yValue % 2000 * - 3}px)`;
-        })
-        //草叢3
-        grassElemets3.forEach(function (grassElemet3) {
-            grassElemet3.style.transform = `translateX(${yValue % 5000 * - 3}px)`;
-        })
-        //鐵橋
-        brigeElement.style.transform = `translateX(${-yValue}px)`;
-        //景點
-        mapPoints.forEach(function (mapPoint) {
-            mapPoint.style.transform = `translateX(${- yValue}px)`;
-        })
-        //路牌
-        kmShowers.forEach(function (kmShower) {
-            kmShower.style.transform = `translateX(${- yValue}px)`;
-        })
-        buildingElements.forEach(function (buildingElement) {
-            buildingElement.style.transform = `translateX(${- yValue}px)`;
-        })
-    
-       
-       
-    
-        if (kNum > 12) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '揪騎后豐';
-            attractionDescription.innerHTML = `<a class="index-link" href="/index.html">前往首頁</a>`;
-        } else if (kNum > 11.9) {
-            deleteText();
-        } else if (kNum > 11.6) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '東勢客家園區';
-            attractionDescription.textContent = attractionText[5][11];
-        } else if (kNum > 10.2) {
-            deleteText();
-        }else if (kNum > 9.8) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '鯉魚伯公公園';
-            attractionDescription.textContent = attractionText[5][10];
-        } else if (kNum > 7.8) {
-            deleteText();
-        }else if (kNum > 7.4) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '梅子鐵橋';
-            attractionDescription.textContent = attractionText[5][9];
-        } else if (kNum > 7) {
-            deleteText();
-        }else if (kNum > 6.6) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '梅子車站';
-            attractionDescription.textContent = attractionText[5][8];
-        } else if (kNum > 5.8) {
-            deleteText();
-        }else if (kNum > 5.4) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '情人木橋';
-            attractionDescription.textContent = attractionText[5][7];
-        } else if (kNum > 4.6) {
-            deleteText();
-        }else if (kNum > 4.2) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '石岡穀倉';
-            attractionDescription.textContent = attractionText[5][6];
-        } else if (kNum > 4.1) {
-            deleteText();
-        } else if (kNum > 3.8) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '石岡斷層月台';
-            attractionDescription.textContent = attractionText[5][5];
-        } else if (kNum > 3.3) {
-            deleteText();
-        } else if (kNum > 2.9) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '石岡水壩';
-            attractionDescription.textContent = attractionText[5][4];
-            bikeElement.style.transform = `translateY(-60px)`;
-        } else if (kNum > 2.7) {
-            deleteText();
-        } else if (kNum > 2.3) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '榮豐水利碑';
-            attractionDescription.textContent = attractionText[5][3];
-        }else if (kNum > 2.2) {
-            deleteText();
-        } else if (kNum > 1.8) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '親水公園';
-            attractionDescription.textContent = attractionText[5][2];
-        }else if (kNum > 1.5) {
-            deleteText();
-        } else if (kNum > 1.1) {
-            infoElemet.classList.add('open')
-            attractionName.textContent = '200  days';
-            attractionDescription.textContent = attractionText[5][1];
-        } else if (kNum > 0.8) {
-            deleteText();
-        } else if (kNum > 0.4) {
-            bikeElement.style.transform = `translateY(0px)`;
-            infoElemet.classList.add('open');
-            infoElemet.style.backgroundImage ='url("")'
-            attractionName.textContent = '朴口車站';
-            attractionDescription.textContent = attractionText[5][0];
-        } else if (kNum <= 0.4) {
-            bikeElement.style.transform = `translateY(-60px)`;
-            deleteText();
-        }
-       
     });
 }
 

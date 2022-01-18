@@ -256,6 +256,7 @@
 
         .gorgeousness-text.right {
           width: 27.5%;
+
           margin-left: 5%;
         }
 
@@ -439,7 +440,7 @@
           background-image: url('https://placeholder.pics/svg/346');
           background-position: center;
           background-repeat: no-repeat;
-          background-size: cover;
+          background-size: contain;
         }
 
         #bottom .grass {

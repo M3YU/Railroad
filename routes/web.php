@@ -49,8 +49,9 @@ Route::get('/stores/{id}', [FrontController::class, 'storeContent'])->name('stor
 
 //揪一起騎
 Route::get('/teams', [FrontController::class, 'teams'])->name('teams');
-
+//服務中心
 Route::get('/services', [FrontController::class, 'service'])->name('services');
+Route::post('services-contact', [FrontController::class, 'contact'])->name('contact.mail');
 
 
 // //揪成會員(已定義)
@@ -68,10 +69,10 @@ Route::get('/services', [FrontController::class, 'service'])->name('services');
 
 
 
-//服務中心
+
 Route::prefix('/contact')->group(function () {
     Route::get('/', [ContactController::class, 'index'])->name('contact.index');
-    Route::post('/contact', [ContactController::class, 'contact'])->name('contact.mail');
+    Route::post('/contact', [ContactController::class, 'contact'])->name('contact.email');
 });
 
 

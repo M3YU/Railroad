@@ -8,9 +8,10 @@
 
  footer {
    width: 100vw;
-   height: 25.55vw;
-   background-color: #4E5643;
+   height: 22.55vw;
+   background-color: #4e5643;
    position: absolute;
+   margin-top: -9.427vw;
    z-index: -1;
  }
 
@@ -20,7 +21,7 @@
    height: 41.667vw;
    background-color: white;
    clip-path: ellipse(73.698vw 20.833vw at 50% 50%);
-   top: -137%;
+   top: -160%;
  }
 
 
@@ -33,7 +34,7 @@
    margin-left: 29.84vw;
    margin-top: 9.323vw;
    display: flex;
-   color: #ffffff;
+   color: azure;
  }
 
  .footer-menu {
@@ -55,7 +56,7 @@
    content: '一';
    width: 0.573vw;
    height: 1px;
-   color: #AEA83E;
+   color: azure;
    margin-right: 0.573vw;
  }
 
@@ -70,13 +71,4 @@
 
  .footer-menu-title .footer-menu-item:last-child {
    margin-bottom: 0;
- }
-
- .copyright {
-   color: #86817c;
-   left: 50%;
-   bottom: 10%;
-   position: absolute;
-   font-size: 0.7vw;
-   transform: translate(-50%);
  }
