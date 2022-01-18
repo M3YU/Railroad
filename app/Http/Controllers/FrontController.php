@@ -77,7 +77,7 @@ class FrontController extends Controller
         $store = Store::find($id);
         $souvenirs = Store::where('category_id', 3)->get();
         $storeImgs = StoreImage::where('store_id', $id)->limit(3)->get();
-        return view('front.store.content',compact('store','souvenirs','storeImgs'));
+        return view('front.store.content', compact('store', 'souvenirs', 'storeImgs'));
     }
     public function news()
     {
@@ -87,9 +87,9 @@ class FrontController extends Controller
     }
     public function teams()
     {
-        $teams = Team::get();
+        $teams = Team::orderBy('date', 'desc')->get();
         $imgs = AttractionImage::inRandomOrder()->take(9)->get();
-        return view('front.group.index',compact('teams','imgs'));
+        return view('front.group.index', compact('teams', 'imgs'));
     }
     public function teamStore(Request $request)
     {
