@@ -283,7 +283,7 @@ function hfBikeway(){
         if (kNum > 5) {
             infoElemet.classList.add('open')
             attractionName.textContent = '揪騎后豐';
-            attractionDescription.innerHTML = `<a class="index-link" href="/index.html">前往首頁</a>
+            attractionDescription.innerHTML = `<a class="index-link" href="/">前往首頁</a>
                                                 <a class="df-link" href="/bike-df.html">還沒滑夠?</a>`;
         } else if (kNum > 4.8) {
             deleteText();
