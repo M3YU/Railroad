@@ -41,7 +41,6 @@ body {
 
 .middle-background {
   background-image: url(/img/service/06-travel.taichung.gov.tw-SteelBridge-3.jpg);
-  clip-path: ellipse(97.643vw 43.867vw at 50% -10%);
   background-color: #86817c;
   background-position: center;
   background-size: cover;
@@ -100,10 +99,10 @@ body {
 }
 
 #middle .bike-img{
-  width: 15vw;
-  height: 15vw;
+  width: 17vw;
+  height: 17vw;
   position: absolute;
-  top: 19vw;
+  top: 14vw;
   right: 14vw;
   background-image: url('/img/service/LOGO-腳踏車.png');
   display: block;
