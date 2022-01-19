@@ -37,3 +37,18 @@ function active(index) {
     teamForm.classList.remove('inactive');
   };
 }
+
+
+// let inputElement = document.querySelectorAll('.input');
+
+// inputElement.addEventListener('click', function () {
+//     document.getElementById("input").style.color = '#4e5643';
+//     this.style.cssText ='background-color: #949267;'
+// });
+
+
+// let teamTimeElement = document.querySelectorAll('.team-time');
+
+// teamTimeElement.addEventListener('click',function(){
+//   this.BackColor = "red";
+// });
