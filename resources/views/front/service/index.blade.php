@@ -22,7 +22,7 @@
         position: absolute;
         z-index: 1;
         right: 0%;
-        top: -11.8%;
+        top: -7.5%;
         width: 36%;
     }
 

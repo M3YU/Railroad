@@ -6,6 +6,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.6/sweetalert2.css">
 <link rel="stylesheet" href="{{asset('css/member.css')}}">
+
+<style>
+  .grass {
+    top: -1.85vw;
+  }
+</style>
 @endsection
 
 @section('main')
@@ -68,50 +74,51 @@
             <div class="signup-cont cont">
               <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                <div>
                   <div>
-                    <div>
-                      <input type="text" name="name" id="name" class="inpt" @error('name') is-invalid @enderror
-                        required="required" value="{{ old('name') }}" placeholder="Your name">
-                      @error('name')
+                    <input type="text" name="name" id="name" class="inpt" @error('name') is-invalid @enderror
+                      required="required" value="{{ old('name') }}" placeholder="Your name">
+                    @error('name')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                    <label for="name">名字</label>
+                  </div>
+
+                  <div>
+                    <input type="email" name="email" id="email" class="inpt" @error('email') is-invalid @enderror
+                      required="required" value="{{ old('email') }}" placeholder="Your email">
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                    <label for="email">電子信箱</label>
+                  </div>
+
+                  <div>
+                    <input type="password" name="password" id="password" class="inpt" @error('password') is-invalid
+                      @enderror required="required" placeholder="Your password">
+                    <label for="password">你的密碼</label>
+                    <div class="submit-wrap">
+                      @error('password')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
                       @enderror
-                      <label for="name">名字</label>
                     </div>
 
                     <div>
-                      <input type="email" name="email" id="email" class="inpt" @error('email') is-invalid @enderror
-                        required="required" value="{{ old('email') }}" placeholder="Your email">
-                      @error('email')
-                      <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                      </span>
-                      @enderror
-                      <label for="email">電子信箱</label>
-                    </div>
-
-                    <div>
-                      <input type="password" name="password" id="password" class="inpt" @error('password') is-invalid
-                        @enderror required="required" placeholder="Your password">
-                      <label for="password">你的密碼</label>
+                      <input type="password" name="password_confirmation" id="password-confirm" class="inpt"
+                        required="required" placeholder="Your password" required autocomplete="new-password>
+                        <label for=" password>確認密碼</label>
                       <div class="submit-wrap">
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-
-                    <div>
-                        <input type="password" name="password_confirmation" id="password-confirm" class="inpt"  required="required" placeholder="Your password" required autocomplete="new-password>
-                        <label for="password>確認密碼</label>
-                        <div class="submit-wrap">
-                    </div>
+                      </div>
 
                       <input type="submit" value="Sign up" class="submit">
                       <a href="#" class="more">Terms and conditions</a>
-                  </div>
+                    </div>
               </form>
             </div>
           </div>

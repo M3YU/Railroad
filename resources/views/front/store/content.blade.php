@@ -7,20 +7,25 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.6/sweetalert2.css">
 <link rel="stylesheet" href="{{asset('css/store-content.css')}}">
+<style>
+    .grass {
+        top: -1.8vw;
+    }
+</style>
 @endsection
 
 @section('main')
 <section id="top">
-  <div class="title" style="background-image: none;">鄰近商店________________</div>
-  <embed class="title-mask" src="{{asset('img/index/banner點綴.png')}}" type="">
-  <div class="slogan">騎車才不會錯過美麗的風景。</div>
-  <div class="banner" style="background-image: url('{{asset('img/store/21-chevigal.com-mountain-02.jpg')}}')">
-  </div>
-  <embed class="banner-mask" src="{{asset('img/top/banner-mask.png')}}" type="">
-  <div class="banner-photo">
-  </div>
-  <!-- 背景有一段空白處 用白色去填 -->
-  <div class="white-background"></div>
+    <div class="title" style="background-image: none;">鄰近商店________________</div>
+    <embed class="title-mask" src="{{asset('img/index/banner點綴.png')}}" type="">
+    <div class="slogan">騎車才不會錯過美麗的風景。</div>
+    <div class="banner" style="background-image: url('{{asset('img/store/21-chevigal.com-mountain-02.jpg')}}')">
+    </div>
+    <embed class="banner-mask" src="{{asset('img/top/banner-mask.png')}}" type="">
+    <div class="banner-photo">
+    </div>
+    <!-- 背景有一段空白處 用白色去填 -->
+    <div class="white-background"></div>
 </section>
 
 <div class="container">
@@ -32,7 +37,8 @@
             <h3 class="subtitle">{{$store->subtitle}}</h3>
         </div>
         <div class="row row-cols-2 justify-content-center mb-5">
-            <div class="col-5 me-4 store-img" style="background-image: url('{{Storage::url($store->image_url)}}')"></div>
+            <div class="col-5 me-4 store-img" style="background-image: url('{{Storage::url($store->image_url)}}')">
+            </div>
             <div class="col-7 row row-cols-3 justify-content-lg-evenly justify-content-md-center align-content-end">
                 <div class="col-8 col-sm-7 col-md-5 col-lg-4 mb-xl-5 my-3 store-title">
                     <div class="store-title-border"></div>
@@ -44,26 +50,27 @@
                     </button>
                 </div>
                 @foreach ($storeImgs as $index => $storeImg)
-                @if ($index < 3) 
-                <div class="col-12 col-sm-12 col-md-12 col-lg-3 mb-3 mb-sm-3 mb-md-3 store-sub-img" style="background-image: url({{Storage::url($storeImg->image_url)}})"></div>
-                @endif
-                @endforeach
+                @if ($index < 3) <div class="col-12 col-sm-12 col-md-12 col-lg-3 mb-3 mb-sm-3 mb-md-3 store-sub-img"
+                    style="background-image: url({{Storage::url($storeImg->image_url)}})">
             </div>
+            @endif
+            @endforeach
         </div>
-        <div class="row row-cols-2 justify-content-center my-5 pt-5">
-            <div class="col-5 ps-5 news-title">
-                <h2>{{$store->name}}相關報導文章</h2>
-                <div class="news-title-border"></div>
-            </div>
-            <div class="col-7 px-4 news-content">
-                <p class="news-content-p">{!!$store->content!!}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col"></div>
-            <div class="col"></div>
-        </div>
-    </section>
+</div>
+<div class="row row-cols-2 justify-content-center my-5 pt-5">
+    <div class="col-5 ps-5 news-title">
+        <h2>{{$store->name}}相關報導文章</h2>
+        <div class="news-title-border"></div>
+    </div>
+    <div class="col-7 px-4 news-content">
+        <p class="news-content-p">{!!$store->content!!}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+</div>
+</section>
 </div>
 <div class="container-fluid px-0">
     <section class="maps">
@@ -85,27 +92,33 @@
                                     <div class="col-8 row-cols-2 d-flex flex-wrap">
                                         <span class="col-1 align-self-center">5</span>
                                         <div class="progress col-11 align-self-center">
-                                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar" role="progressbar" style="width: 100%"
+                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <span class="col-1 align-self-center">4</span>
                                         <div class="progress col-11 align-self-center">
-                                            <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar" role="progressbar" style="width: 45%"
+                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <span class="col-1 align-self-center">3</span>
                                         <div class="progress col-11 align-self-center">
-                                            <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar" role="progressbar" style="width: 10%"
+                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <span class="col-1 align-self-center">2</span>
                                         <div class="progress col-11 align-self-center">
-                                            <div class="progress-bar" role="progressbar" style="width: 3%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar" role="progressbar" style="width: 3%"
+                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <span class="col-1 align-self-center">1</span>
                                         <div class="progress col-11 align-self-center">
-                                            <div class="progress-bar" role="progressbar" style="width: 5%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar" role="progressbar" style="width: 5%"
+                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                     <div class="col-4">
-                                        <div class="comment-info d-flex flex-wrap flex-column justify-content-center align-items-center">
+                                        <div
+                                            class="comment-info d-flex flex-wrap flex-column justify-content-center align-items-center">
                                             <div class="score display-6">4.5</div>
                                             <div class="stars d-flex mb-2">
                                                 <i class="fas fa-star fa-xs"></i>
@@ -163,7 +176,9 @@
                         </div>
                     </div>
                     <div class="col-7 px-4 text-center store-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.4747731257908!2d120.82125521536896!3d24.260142275027874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34691c8a7eaa377d%3A0xa7a94e40acbf12a7!2zM1HoiovlnJM!5e0!3m2!1szh-TW!2stw!4v1642220924117!5m2!1szh-TW!2stw" width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.4747731257908!2d120.82125521536896!3d24.260142275027874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34691c8a7eaa377d%3A0xa7a94e40acbf12a7!2zM1HoiovlnJM!5e0!3m2!1szh-TW!2stw!4v1642220924117!5m2!1szh-TW!2stw"
+                            width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>

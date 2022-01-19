@@ -10,10 +10,6 @@
     color: #e0dda7;
   }
 
-  /* input[type="radio"]:checked+span {
-    color: #ffffff;
-  } */
-
   .detail-content {
     border: 1px solid;
     border-radius: 0.3125vw;

@@ -4,6 +4,11 @@
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/store.css')}}">
+<style>
+  .grass {
+    top: -1.8vw;
+  }
+</style>
 @endsection
 
 @section('main')
@@ -81,8 +86,8 @@
           <div class="img" style="background-image: url({{Storage::url($souvenir->image_url)}})"></div>
           <figcaption>
             <i class="ion-upload"></i>
-            <a href="{{route('stores.content',['id' =>$souvenir->id])}}"></a> 
-           <h4>{{$souvenir->name}}</h4>
+            <a href="{{route('stores.content',['id' =>$souvenir->id])}}"></a>
+            <h4>{{$souvenir->name}}</h4>
             <h2>{{$souvenir->subtitle}}</h2>
           </figcaption>
           <!-- <a href="#"></a> -->
