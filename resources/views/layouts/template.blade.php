@@ -139,6 +139,15 @@
                         <a href="{{route('members')}}">
                             <span>我的行程</span>
                         </a>
+                        @guest
+                        @else
+                        <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <span>登出</span>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                        @endguest
                     </div>
                 </li>
             </ul>

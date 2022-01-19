@@ -27,40 +27,34 @@ use App\Http\Controllers\JourneyCartController;
 
 //形象頁
 Route::get('bikeHf', [FrontController::class, 'bikeHf'])->name('bike.Page-Hf');
-
 Route::get('bikeDf', [FrontController::class, 'bikeDf'])->name('bike.Page-Df');
 
-// //首頁
+//首頁
 Route::get('/', [FrontController::class, 'index'])->name('index');
 
+//最新消息
 Route::get('/news', [FrontController::class, 'news'])->name('news');
-
 
 //沿途景點
 Route::get('/attractions', [FrontController::class, 'attraction'])->name('attractions');
-
 Route::get('/attractions/suit', [FrontController::class, 'attractionSuit'])->name('attractions.suit');
-
 Route::get('/attractions/{id}', [FrontController::class, 'attractionContent'])->name('attractions.content');
-
-Route::get('/members', [FrontController::class, 'member'])->name('members');
 
 //鄰近商店
 Route::get('/stores', [FrontController::class, 'store'])->name('stores');
-
 Route::get('/stores/{id}', [FrontController::class, 'storeContent'])->name('stores.content');
 
 //揪一起騎
 Route::get('/teams', [FrontController::class, 'teams'])->name('teams');
-
 Route::post('/teams', [FrontController::class, 'teamStore'])->name('teams.store');
 Route::post('/replies', [FrontController::class, 'replies'])->name('replies');
+
 //服務中心
 Route::get('/services', [FrontController::class, 'service'])->name('services');
 Route::post('services-contact', [FrontController::class, 'contact'])->name('contact.mail');
 
-
-// //揪成會員(已定義)
+//揪成會員(已定義)
+Route::get('/members', [FrontController::class, 'member'])->middleware(['auth'])->name('members');
 
 // Route::prefix('/user')->group(function () {
 //     Route::get('/', [Controller::class, 'index'])->name('user.index');
@@ -70,7 +64,7 @@ Route::post('services-contact', [FrontController::class, 'contact'])->name('cont
 //     Route::patch('/{id}', [Controller::class, 'update'])->name('user.update');
 // });
 
-// //行程(未定義)
+//自訂行程
 Route::prefix('journey-cart')->group(function () {
     Route::post('/add', [JourneyCartController::class, 'add'])->name('journey-cart.add');
     // Route::post('/update', [JourneyCartController::class, 'update'])->name('journey-cart.update');
@@ -85,46 +79,40 @@ Route::prefix('journey-cart')->group(function () {
 });
 
 
-
-
 Route::prefix('/contact')->group(function () {
     Route::get('/', [ContactController::class, 'index'])->name('contact.index');
     Route::post('/contact', [ContactController::class, 'contact'])->name('contact.email');
 });
 
 
-
-// //最新消息
+//最新消息
 // Route::resource('/news', NewController::class);
 
-// //會員行程(未定義)
+//會員行程(未定義)
 // Route::resource('/uese-itinerary', Controller::class);
 
-// // 自訂行程
+//自訂行程
 // Route::resource('/Member-itinerary', Controller::class);
 
-
-
-// //上面前台
-
+//上面前台
 
 // //////////////////////////////////////////////////////////// //
-// 先處理這個
-//下面後台
+//先處理這個
 
+//下面後台
 
 Route::prefix('/admin')->middleware(['auth'])->group(function () {
     //沿途景點
     Route::resource('/attractions', AttractionController::class);
     Route::resource('/attraction_categories', AttractionCategoryController::class);
-
     Route::delete('/attraction_image', [AttractionController::class, 'imageDelete'])->name('attraction.image_delete');
-
+    //鄰近商家
     Route::resource('/stores', StoreController::class);
     Route::resource('/store_categories', StoreCategoryController::class);
     Route::delete('/store_image', [StoreController::class, 'storeImagesDelete'])->name('stores.image-delete');
+    //消息類別
     Route::resource('/news_categories', NewsCategoryController::class);
-
+    //消息管理
     Route::prefix('/news')->group(function () {
         Route::get('/', [NewsController::class, 'index'])->name('news.index');
         Route::get('/create', [NewsController::class, 'create'])->name('news.create');
@@ -134,7 +122,6 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
         Route::delete('/{news}', [NewsController::class, 'destroy'])->name('news.destroy');
     });
 });
-
 
 Auth::routes();
 Route::get('/admin', [HomeController::class, 'index'])->name('home');
