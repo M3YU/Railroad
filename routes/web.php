@@ -137,4 +137,4 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
 
 
 Auth::routes();
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/admin', [HomeController::class, 'index'])->name('home');
