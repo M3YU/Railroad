@@ -10,10 +10,9 @@
     color: #e0dda7;
   }
 
-  input[type="radio"]:checked+span {
+  /* input[type="radio"]:checked+span {
     color: #ffffff;
-    background-color: #4e5643;
-  }
+  } */
 
   .detail-content {
     border: 1px solid;
@@ -32,19 +31,15 @@
     margin-top: 30px;
   }
 
-  /* .team-wall .team-form .form-check .team-time:focus{
-    background-color: #aba7e0;
+  .team-wall .team-form .form-check .team-time.active {
+    background-color: #3B7556;
+    display: inline-block;
   }
 
-  .team-wall .team-form .form-check .team-category:active{
-    background-color: #aba7e0;
-  } */
-  /* .spen{
-  display: block;
-  width: 130%;
-  height: 130%;
-  overflow:hidden;
-} */
+  .team-wall .team-form .form-check .team-category.active {
+    background-color: #71603B;
+    display: inline-block;
+  }
 </style>
 
 @section('main')
