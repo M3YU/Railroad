@@ -52,7 +52,7 @@ h3 {
     height: 450px;
     background-image: url('https://placeholder.pics/svg/450');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
 }
 
