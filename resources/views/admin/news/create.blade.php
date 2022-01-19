@@ -21,13 +21,15 @@
                     <form method="POST" action="{{ route('news.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row py-2">
-                            <label for="news-category-id">新聞類別</label>
-                            <select id="news-category-id" name="category_id" class="form-control custom-select" required>
-                                <option selected>請選擇新聞類別</option>
-                                @foreach ($newsCategories as $newsCategory)
-                                <option value="{{$newsCategory->id}}">{{$newsCategory->name}}</option>
-                                @endforeach
-                            </select>
+                            <label for="news-category-id" class="col-sm-2 col-form-label">新聞類別</label>
+                            <div class="col-sm-10">
+                                <select id="news-category-id" name="category_id" class="form-control custom-select" required>
+                                    <option selected>請選擇新聞類別</option>
+                                    @foreach ($newsCategories as $newsCategory)
+                                    <option value="{{$newsCategory->id}}">{{$newsCategory->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group row py-2">
                             <label for="title" class="col-sm-2 col-form-label">標題</label>
