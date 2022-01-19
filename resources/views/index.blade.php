@@ -244,7 +244,7 @@
 
         <div class="photos">
           @foreach ($imgs as $img)
-          <div class="photo" style="background-image: url({{Storage::url($img->image_url)}});">
+          <div class="photo" style="background-image: url({{Storage::url($img->image_url)}});" onclick="location.href='{{route('attractions.content', $img->attraction_id)}}'">
           </div>
           @endforeach
 

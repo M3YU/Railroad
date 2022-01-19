@@ -285,7 +285,8 @@ body {
   background-image: url('https://placeholder.pics/svg/202x202');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  cursor: pointer;
 }
 
 
