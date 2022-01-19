@@ -149,7 +149,7 @@
 
                 <div class="col package">
                     <div class="couple"></div>
-                    <div class="theme-name"><a href="{{route('attractions.suit'," category_id=3")}}">Couple </a></div>
+                    <div class="theme-name"><a href="{{route('attractions.suit', "category_id=3")}}">Couple </a></div>
                 </div>
 
             </div>
@@ -157,7 +157,7 @@
 
                 <div class="col package">
                     <div class="nature"></div>
-                    <div class="theme-name"><a href="{{route('attractions.suit'," category_id=1")}}">Nature</a></div>
+                    <div class="theme-name"><a href="{{route('attractions.suit', "category_id=1")}}">Nature</a></div>
                 </div>
 
                 <div
@@ -165,14 +165,14 @@
 
                     <div class="col package">
                         <div class="friend"></div>
-                        <div class="theme-name"><a href="{{route('attractions.suit'," category_id=2")}}">Friend</a>
+                        <div class="theme-name"><a href="{{route('attractions.suit', "category_id=2")}}">Friend</a>
                         </div>
                     </div>
 
 
                     <div class="col package">
                         <div class="family"></div>
-                        <div class="theme-name"><a href="{{route('attractions.suit'," category_id=5")}}">Family</a>
+                        <div class="theme-name"><a href="{{route('attractions.suit' ,"category_id=5")}}">Family</a>
                         </div>
                     </div>
 
@@ -187,7 +187,7 @@
 
                 <div class="col package">
                     <div class="history"></div>
-                    <div class="theme-name"> <a href="{{route('attractions.suit'," category_id=4")}}">History </a></div>
+                    <div class="theme-name"> <a href="{{route('attractions.suit' ,"category_id=4")}}">History </a></div>
                 </div>
 
             </div>
@@ -210,6 +210,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./js/attraction.js"></script>
+<script src="/js/attraction.js"></script>
 
 @endsection
