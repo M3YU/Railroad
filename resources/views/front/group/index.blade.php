@@ -13,6 +13,23 @@
   input[type="radio"]:checked+span {
     color: #b1e086;
   }
+
+  .detail-content {
+    border: 1px solid;
+    border-radius: 0.3125vw;
+    width: 100%;
+    padding: 0.78125vw;
+    margin: 0.2604vw 0 1.042vw;
+  }
+
+  .detail-content textarea {
+    width: 100%;
+  }
+
+  .team-detail {
+    width: 37.5vw;
+    margin-top: 30px;
+  }
 </style>
 
 @section('main')
@@ -42,7 +59,7 @@ use App\Models\Team;
       <div class="swiper-wrapper">
         @foreach ($teams as $team)
 
-        <div class="team swiper-slide">
+        <div class="team swiper-slide" data-id="{{$team->id}}">
           <div class="team-time">{{Team::TIMING[$team->timing]}}</div>
           <div class="team-category">{{Team::CATEGORY[$team->category_id]}}</div>
           <div class="team-summary">人數4人 / {{$team->name}} / {{$team->date}} </div>
@@ -99,6 +116,35 @@ use App\Models\Team;
       </div>
       <button type="submit" class="submit">新增行程</button>
     </form>
+    <div class="team-detail inactive">
+      @foreach ($teams as $team)
+      <div class="detail inactive">
+        <div class="team " data-id="{{$team->id}}">
+          <div class="team-time">{{Team::TIMING[$team->timing]}}</div>
+          <div class="team-category">{{Team::CATEGORY[$team->category_id]}}</div>
+          <div class="team-summary">人數4人 / {{$team->name}} / {{$team->date}} </div>
+        </div>
+        <div style="max-height: 45vw; overflow:auto;">
+          <span>{{$team->user->name}} : </span>
+          <div class="detail-content">{{$team->content}}</div>
+          @foreach ($replies as $reply)
+          @if ($reply->team_id == $team->id)
+          <span>{{$reply->user->name}} : </span>
+          <span style="display: inline-block;margin-left: 13.5vw;">{{$reply->created_at}}</span>
+          <div class="detail-content">{{$reply->comment}}</div>
+          @endif
+          @endforeach
+        </div>
+        <form action="{{route('replies')}}" method="POST" class="detail-content">
+          @csrf
+          <input type="text" name="team_id" value="{{$team->id}}" hidden>
+          <textarea class="" name="comment"></textarea>
+          <button type="submit" class="submit">回覆</button>
+        </form>
+      </div>
+      @endforeach
+
+    </div>
   </div>
 </section>
 
@@ -119,7 +165,8 @@ use App\Models\Team;
 
     <div class="photos">
       @foreach ($imgs as $img)
-      <div class="photo" style="background-image: url({{Storage::url($img->image_url)}});" onclick="location.href='{{route('attractions.content', $img->attraction_id)}}'">
+      <div class="photo" style="background-image: url({{Storage::url($img->image_url)}});"
+        onclick="location.href='{{route('attractions.content', $img->attraction_id)}}'">
       </div>
       @endforeach
 

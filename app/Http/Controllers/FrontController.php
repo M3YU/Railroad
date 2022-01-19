@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use App\Models\Team;
+use App\Models\Reply;
 use App\Models\Store;
 use App\models\Contact;
 use App\Models\Attraction;
@@ -88,8 +89,9 @@ class FrontController extends Controller
     public function teams()
     {
         $teams = Team::orderBy('date', 'desc')->get();
+        $replies = Reply::get();
         $imgs = AttractionImage::inRandomOrder()->take(9)->get();
-        return view('front.group.index', compact('teams', 'imgs'));
+        return view('front.group.index', compact('teams', 'imgs', 'replies'));
     }
     public function teamStore(Request $request)
     {
@@ -101,6 +103,15 @@ class FrontController extends Controller
             'content' => $request->content,
             'category_id' => $request->category,
             'timing' => $request->timing,
+        ]);
+        return redirect()->route('teams');
+    }
+    public function replies(Request $request)
+    {
+        Reply::create([
+            'user_id' => Auth::user()->id,
+            'team_id' => $request->team_id,
+            'comment' => $request->comment,
         ]);
         return redirect()->route('teams');
     }
