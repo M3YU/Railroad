@@ -1240,7 +1240,6 @@ main .veiw .marker {
 }
 
 main .veiw .marker-1 {
-  top: 300px;
   right: -400px;
 }
 
@@ -1332,10 +1331,11 @@ main .veiw .building-1.df {
   background-image: url("/img/biking/火車-02.png");
   right: -600px;
   width: 700px;
+  width: 500px;
 }
 
 main .veiw .building-2 {
-  background-image: url("/img/biking/商店-01.png");
+  background-image: none;
   right: -600px;
   bottom: 60px;
 }
