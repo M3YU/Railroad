@@ -66,18 +66,52 @@
               </form>
             </div>
             <div class="signup-cont cont">
-              <form action="#" method="post" enctype="multipart/form-data">
-                <input type="name" name="name" id="name" class="inpt" required="required" placeholder="Your name">
-                <label for="name">Your name</label>
-                <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
-                <label for="email">Your email</label>
-                <input type="password" name="password" id="password" class="inpt" required="required"
-                  placeholder="Your password">
-                <label for="password">Your password</label>
-                <div class="submit-wrap">
-                  <input type="submit" value="Sign up" class="submit">
-                  <a href="#" class="more">Terms and conditions</a>
-                </div>
+              <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                  <div>
+                    <div>
+                      <input type="text" name="name" id="name" class="inpt" @error('name') is-invalid @enderror
+                        required="required" value="{{ old('name') }}" placeholder="Your name">
+                      @error('name')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                      <label for="name">名字</label>
+                    </div>
+
+                    <div>
+                      <input type="email" name="email" id="email" class="inpt" @error('email') is-invalid @enderror
+                        required="required" value="{{ old('email') }}" placeholder="Your email">
+                      @error('email')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                      <label for="email">電子信箱</label>
+                    </div>
+
+                    <div>
+                      <input type="password" name="password" id="password" class="inpt" @error('password') is-invalid
+                        @enderror required="required" placeholder="Your password">
+                      <label for="password">你的密碼</label>
+                      <div class="submit-wrap">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+                    <div>
+                        <input type="password" name="password_confirmation" id="password-confirm" class="inpt"  required="required" placeholder="Your password" required autocomplete="new-password>
+                        <label for="password>確認密碼</label>
+                        <div class="submit-wrap">
+                    </div>
+
+                      <input type="submit" value="Sign up" class="submit">
+                      <a href="#" class="more">Terms and conditions</a>
+                  </div>
               </form>
             </div>
           </div>
@@ -108,11 +142,12 @@
       <h4>飲食</h4>
       <h4>租車行</h4>
     </div>
-    
+
 
     <div id="carousel" class="trip-carousel">
       <div class="carousel-mask"></div>
-      <form class="row row-cols-lg-auto g-3 mx-auto pt-4" action="{{ route('journey-cart.step01-store') }}" method="POST">
+      <form class="row row-cols-lg-auto g-3 mx-auto pt-4" action="{{ route('journey-cart.step01-store') }}"
+        method="POST">
         @csrf
         <div class="col-12">
           <label class="visually-hidden" for="orders-name">行程標題</label>
@@ -128,10 +163,12 @@
           @foreach ($items as $item)
           <div class="swiper-slide">
             <div class="delete-div">
-              <button type="button" class="btn btn-danger btn-sm rounded-circle shadow-sm mr-2 px-1 py-0 delete-btn" data-id="{{$item->id}}">
-              <i class="fas fa-times"></i></button>
+              <button type="button" class="btn btn-danger btn-sm rounded-circle shadow-sm mr-2 px-1 py-0 delete-btn"
+                data-id="{{$item->id}}">
+                <i class="fas fa-times"></i></button>
             </div>
-            <div class="swiper-image" style="background-image: url('{{Storage::url($item->attributes->image_url)}}')"></div>
+            <div class="swiper-image" style="background-image: url('{{Storage::url($item->attributes->image_url)}}')">
+            </div>
             <div class="swiper-title">{{$item->name}}</div>
             <div class="swiper-content">{{$item->attributes->content}}</div>
           </div>
