@@ -1069,6 +1069,7 @@ main .veiw .none {
 
 main .veiw .streetLight {
   position: absolute;
+  bottom: 200px;
   z-index: -2;
   width: 700px;
   height: 400px;
@@ -1103,7 +1104,7 @@ main .veiw .streetLight-4 {
 
 main .veiw .brige {
   position: absolute;
-  bottom: -50%;
+  bottom: -400px;
   right: -3000px;
   z-index: 7;
   width: 1640px;
@@ -1116,7 +1117,7 @@ main .veiw .brige {
 
 main .veiw .brige.df {
   right: -15800px;
-  bottom: -63%;
+  bottom:-400px;
 }
 
 main .veiw .info {
@@ -1231,7 +1232,7 @@ main .veiw .info.open .info-description {
 main .veiw .marker {
   position: absolute;
   z-index: 8;
-  top: 20%;
+  bottom: 500px;
   width: 60px;
   height: 90px;
   background-image: url("/img/biking/地標-01.png");
@@ -1265,22 +1266,18 @@ main .veiw .marker-d-1 {
 
 main .veiw .marker-d-2 {
   right: -1500px;
-  top: 5%;
 }
 
 main .veiw .marker-d-3 {
   right: -3100px;
-  top: 5%;
 }
 
 main .veiw .marker-d-4 {
   right: -3990px;
-  top: 5%;
 }
 
 main .veiw .marker-d-5 {
   right: -5200px;
-  top: 5%;
 }
 
 main .veiw .marker-d-6 {
@@ -1341,6 +1338,7 @@ main .veiw .building-2 {
 }
 
 main .veiw .building-2.df {
+  background-image: url("/public/img/biking/商店-01.png");
   bottom: 140px;
   right: -1800px;
 }
@@ -1466,8 +1464,8 @@ main .veiw .building-8.df {
 main .veiw .building-9.df {
   background-image: url("/img/biking/火車-03.png");
   z-index: 8;
-  right: -12700px;
-  bottom: -200px;
+  right: -12800px;
+  bottom: -150px;
 }
 main .veiw .building-11.df {
   width: 1500px;
