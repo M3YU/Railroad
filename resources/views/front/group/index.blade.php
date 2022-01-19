@@ -18,8 +18,25 @@
     margin: 0.2604vw 0 1.042vw;
   }
 
+  form.detail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
   .detail-content textarea {
     width: 100%;
+  }
+
+  .detail-content button {
+    margin-top: 0.6vw;
+    width: 3.917vw;
+    height: 1.917vw;
+    border-radius: 0.52vw;
+    background-color: #3B7556;
+    color: #E4FFD7;
+    font-size: 1.354vw;
+
   }
 
   .team-detail {
