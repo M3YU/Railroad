@@ -110,7 +110,7 @@ body {
   width: 3.541vw;
   height: 1.615vw;
   border-radius: 0.52vw;
-  color: #E4FFD7;
+  color: #ffffff;
   margin-top: 0.4vw;
 
 }
@@ -149,11 +149,11 @@ body {
 }
 
 .team-wall .team-form .form-check .team-time {
-  background-color: #3B7556;
+  background-color: #949267;
 }
 
 .team-wall .team-form .form-check .team-category {
-  background-color: #71603B;
+  background-color: #aea83e;
 }
 
 .team-wall .team-form .form-check.name,

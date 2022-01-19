@@ -7,11 +7,12 @@
 <link rel="stylesheet" href="{{asset('css/group.css')}}">
 <style>
   .team-summary:hover {
-    color: #121d05;
+    color: #e0dda7;
   }
 
   input[type="radio"]:checked+span {
-    color: #b1e086;
+    color: #ffffff;
+    background-color: #4e5643;
   }
 
   .detail-content {
@@ -30,6 +31,20 @@
     width: 37.5vw;
     margin-top: 30px;
   }
+
+  /* .team-wall .team-form .form-check .team-time:focus{
+    background-color: #aba7e0;
+  }
+
+  .team-wall .team-form .form-check .team-category:active{
+    background-color: #aba7e0;
+  } */
+  /* .spen{
+  display: block;
+  width: 130%;
+  height: 130%;
+  overflow:hidden;
+} */
 </style>
 
 @section('main')
