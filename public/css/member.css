@@ -352,7 +352,7 @@ body .container .content .signup-cont {
 
 #bottom {
   width: 100vw;
-  height: 70.492vw;
+  height: 90.492vw;
   background-color: transparent;
   padding-top: 24.315vw;
   position: relative;
@@ -556,12 +556,20 @@ footer {
   left: 0;
 }
 
-.grass{
-  top: -2.8vw;
-}
-
 .delete-div {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.orders-detail {
+  position: absolute;
+  width: 41.667vw;
+  height: 19.6vw;
+  padding: 1vw;
+  background-color: #f0f4ca;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 51.073vw;
+  border-radius: 1.042vw;
 }

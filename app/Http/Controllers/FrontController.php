@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use App\Models\Team;
+use App\Models\Order;
 use App\Models\Reply;
 use App\Models\Store;
 use App\models\Contact;
@@ -36,7 +37,6 @@ class FrontController extends Controller
     public function index()
     {
         $imgs = AttractionImage::inRandomOrder()->take(9)->get();
-
         return view('index', compact('imgs'));
     }
 
@@ -45,27 +45,20 @@ class FrontController extends Controller
         return view('front.attraction.attraction');
     }
 
-
-
     public function attractionSuit(Request $request)
     {
         $suits = Attraction::where('category_id', $request->category_id)->get();
         return view('front.attraction.suit', compact('suits'));
     }
 
-
     public function attractionContent($id)
     {
         $attraction = Attraction::find($id);
-
         $categories = Attraction::where('category_id', $attraction->category_id)->get();
-
         $attractionImgs = AttractionImage::where('attraction_id', $id)->get();
-
 
         return view('front.attraction.content', compact('attraction', 'categories', 'attractionImgs'));
     }
-
 
     public function store()
     {
@@ -73,6 +66,7 @@ class FrontController extends Controller
         $souvenirs = Store::where('category_id', 3)->get();
         return view('front.store.index', compact('foods', 'souvenirs'));
     }
+
     public function storeContent($id)
     {
         $store = Store::find($id);
@@ -80,12 +74,14 @@ class FrontController extends Controller
         $storeImgs = StoreImage::where('store_id', $id)->limit(3)->get();
         return view('front.store.content', compact('store', 'souvenirs', 'storeImgs'));
     }
+
     public function news()
     {
         $news = News::with('NewsCategory')->where('category_id', 2)->orderBy('date', 'desc')->limit(3)->get();
         $carRentalInfos = News::with('NewsCategory')->where('category_id', 3)->orderBy('date', 'desc')->limit(3)->get();
         return view('front.news.index', compact('news', 'carRentalInfos'));
     }
+
     public function teams()
     {
         $teams = Team::orderBy('date', 'desc')->get();
@@ -93,9 +89,9 @@ class FrontController extends Controller
         $imgs = AttractionImage::inRandomOrder()->take(9)->get();
         return view('front.group.index', compact('teams', 'imgs', 'replies'));
     }
+
     public function teamStore(Request $request)
     {
-
         Team::create([
             'name' => $request->name,
             'date' => $request->date,
@@ -106,6 +102,7 @@ class FrontController extends Controller
         ]);
         return redirect()->route('teams');
     }
+
     public function replies(Request $request)
     {
         Reply::create([
@@ -115,15 +112,14 @@ class FrontController extends Controller
         ]);
         return redirect()->route('teams');
     }
+
     public function service()
     {
         return view('front.service.index');
     }
 
     public function contact(Request $request)
-
     {
-
         $contact = contact::create([
             'name' => $request->name,
             'phone' => $request->phone,
@@ -139,7 +135,14 @@ class FrontController extends Controller
 
     public function member()
     {
-        $items = \Cart::getContent()->sortBy('id');
-        return view('front.member.index', compact('items'));
+        $user_id = Auth::user()->id;
+        $items = \Cart::getContent()
+        ->sortBy([
+            fn ($a, $b) => $a['attributes']['direction'] <=> $b['attributes']['direction'],
+            fn ($a, $b) => $a['price'] <=> $b['price'],
+            ]);
+        $orders = Order::where('user_id', '=', $user_id)->orderBy('created_at', 'desc')->limit(4)->get();
+
+        return view('front.member.index', compact('items', 'orders'));
     }
 }
