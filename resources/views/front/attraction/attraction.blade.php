@@ -131,7 +131,7 @@
                         <a class="text-decoration-none" href="#"><span>#鐵馬道</span></a>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <button class="button-55" role="button">詳細內容</button>
+                        <button class="button-55" role="button" onclick="location.href='{{route('attractions.content', 3)}}'">詳細內容</button>
                     </div>
                 </div>
             </div>
