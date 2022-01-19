@@ -98,6 +98,9 @@ h3 {
     width: 200px;
     height: 200px;
     background-color: #e0dda7;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -155,6 +158,12 @@ h3 {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.swiper-slide:hover {
+    cursor: pointer;
 }
 
 .swiper {
