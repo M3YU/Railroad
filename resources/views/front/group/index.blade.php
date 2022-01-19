@@ -28,7 +28,7 @@
 
   .team-detail {
     width: 37.5vw;
-    margin-top: 30px;
+    margin-top: 1.5625;
   }
 
   .team-wall .team-form .form-check .team-time.active {
