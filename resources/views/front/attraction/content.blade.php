@@ -102,7 +102,7 @@
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         @foreach ($categories as $category)
-                        <div class="swiper-slide" style="background-image: url('{{Storage::url($category->image_url)}}')"></div>
+                        <div class="swiper-slide" style="background-image: url('{{Storage::url($category->image_url)}}')" onclick="location.href='{{ route('attractions.content', $category->id) }}'"></div>
                         @endforeach
                     </div>
                     <div class="swiper-button-next"></div>
