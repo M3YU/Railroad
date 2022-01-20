@@ -88,7 +88,7 @@
             <a class="collapse-item" href="https://github.com/">github</a>
             <a class="collapse-item" href="https://summernote.org/">summernote</a>
             <a class="collapse-item" href="https://datatables.net/">datatable</a>
-            <a class="collapse-item" href="https://startbootstrap.com/theme/sb-admin-2">startbootstrap</a>
+            <a class="collapse-item" href="https://startbootstrap.com/theme/sb-admin-2">sb-admin2</a>
 
 
           </div>
