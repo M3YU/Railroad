@@ -1321,7 +1321,7 @@ main .veiw .building {
 main .veiw .building-1 {
   background-image: url("/img/biking/商店-02.png");
   right: -600px;
-  bottom: 45px;
+  bottom: 0;
 }
 
 main .veiw .building-1.df {
