@@ -1333,7 +1333,7 @@ main .veiw .building-1.df {
 main .veiw .building-2 {
   background-image: none;
   right: -600px;
-  bottom: 60px;
+  bottom: 0;
 }
 
 main .veiw .building-2.df {
